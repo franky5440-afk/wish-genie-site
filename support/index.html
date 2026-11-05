@@ -21,7 +21,10 @@
 <p>Automatic exports run in the background when iOS gives the app time, so the exact timing is decided by the system. Health data can't be read while your iPhone is locked, so a run that falls in that window waits for the next one. You can always tap "Export now" on a task.</p>
 
 <h3>What does my server receive?</h3>
-<p>An HTTPS POST with a JSON or CSV body, depending on the format you picked. Each sample has a unique ID, so your server can safely ignore duplicates. Sleep is sent one row per segment with its stage (deep, REM, core, awake, in bed).</p>
+<p>A POST request (HTTPS, or http on your home network) with a JSON or CSV body, depending on the format you picked. Each sample has a unique ID, so your server can safely ignore duplicates. Sleep is sent one row per segment with its stage (deep, REM, core, awake, in bed).</p>
+
+<h3>Can I send to a server on my home network?</h3>
+<p>Yes. Besides HTTPS, the app accepts plain http:// for addresses on your own network: a name ending in .local (for example http://my-nas.local:8080), a private IP address (10.x.x.x, 172.16–31.x.x or 192.168.x.x), or localhost. Any other address needs HTTPS. The first time, iOS asks whether Wish Genie may connect to devices on your local network; tap Allow. If that first export fails while the question is on screen, tap "Export now" again. You can change this later in iOS Settings › Privacy &amp; Security › Local Network.</p>
 
 <h3>How does the free trial work?</h3>
 <p>Open the plans screen and tap "Start 7-day free trial". Everything is unlocked for 7 days. It's free and never turns into a paid subscription. After it ends, widgets and charts stay free; manual export and Shortcuts need Basic, and automatic exports need Premium.</p>
