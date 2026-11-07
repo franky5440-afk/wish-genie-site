@@ -15,7 +15,27 @@
 <h2>Frequently asked questions</h2>
 
 <h3>Some data shows "—"</h3>
-<p>iOS doesn't tell apps which Health types you turned off. Open the Health app, tap your profile picture, then Apps (under Privacy) › Wish Genie, and allow the types you want.</p>
+<p>Wish Genie can only read the Health data you allow, and iOS doesn't tell apps which types you turned off. To change it, open the iPhone Settings app, tap Privacy &amp; Security › Health › Wish Genie, and turn on the types you want. (If your iPhone was set to Chinese when you first allowed access, it's listed as 許願精靈.) Wish Genie doesn't appear under Apps in the Health app itself: that list only shows apps that write Health data, and Wish Genie only reads.</p>
+<p>If you never allowed Health access (for example, you tapped "Not now" at the start), Wish Genie isn't in that Settings list yet. Tap "Allow Health access" on Wish Genie's home screen, or in Wish Genie's Settings › Health data, and iOS lists each type so you can pick.</p>
+
+<h3>What does the message on a task mean?</h3>
+<p>When an export fails, the task shows one of these messages. Codes like HTTP 404 come from your server or the cloud service.</p>
+<ul>
+<li><strong>Genie isn't allowed to read Health data yet.</strong> Tap "Check Health access" on the task and allow access (see above).</li>
+<li><strong>Please reconnect Dropbox / Google Drive / OneDrive.</strong> The sign-in expired or was removed. Tap "Reconnect" on the task and sign in again.</li>
+<li><strong>Dropbox / Google Drive / OneDrive refused the request (HTTP 401 or 403).</strong> Make sure you can still save files in that account (for example, it isn't read-only), or reconnect it.</li>
+<li><strong>Dropbox / Google Drive / OneDrive couldn't find the folder to save to (HTTP 404).</strong> If it keeps happening, reconnect the account.</li>
+<li><strong>Your Dropbox / Google Drive / OneDrive storage is full.</strong> Free up space in that account; the next run tries again.</li>
+<li><strong>Couldn't reach the server.</strong> Check the iPhone's internet connection. For a server on your home network, make sure you're on the same Wi-Fi and Local Network access is allowed (see above).</li>
+<li><strong>The server refused the request (HTTP 401 or 403).</strong> Your server didn't accept the request: check the API key or token in the destination's headers.</li>
+<li><strong>The address wasn't found (HTTP 404).</strong> Check the destination's URL.</li>
+<li><strong>The server tried to redirect (HTTP 3xx).</strong> Wish Genie doesn't follow redirects. Use the final address instead.</li>
+<li><strong>The server said the file is too large (HTTP 413).</strong> Raise your server's upload size limit, or split the task so each one sends fewer types.</li>
+<li><strong>The server asked us to slow down (HTTP 429), or the server ran into a problem (HTTP 5xx).</strong> A problem on the server side; the next run tries again.</li>
+<li><strong>This destination's settings need fixing.</strong> Open the destination and check its fields.</li>
+<li><strong>A password or key is missing.</strong> Open the destination and enter the password or header value again.</li>
+<li><strong>Something went wrong. Genie will try again.</strong> An unexpected error. If it keeps happening, email us and tell us when it happened.</li>
+</ul>
 
 <h3>When do automatic exports run?</h3>
 <p>Automatic exports run in the background when iOS gives the app time, so the exact timing is decided by the system. Health data can't be read while your iPhone is locked, so a run that falls in that window waits for the next one. You can always tap "Export now" on a task.</p>
