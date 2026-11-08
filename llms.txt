@@ -1,0 +1,22 @@
+# Wish Genie: Health Export
+
+> iPhone app (iOS) that reads Apple Health (HealthKit) data and exports it as JSON or CSV to Dropbox, Google Drive, OneDrive (personal accounts) or the user's own REST API endpoint, on a schedule or on demand. No account, no developer servers: data goes from the iPhone straight to the destination. Chinese name: 許願精靈 Wish Genie：健康匯出.
+
+- App Store: https://apps.apple.com/app/id6830697434
+- Data types: heart rate, resting heart rate, HRV, steps, walking + running distance, flights climbed, active energy, resting energy, sleep (one row per segment with stage: deep, REM, core, awake, in bed), blood oxygen, respiratory rate, VO2 max, weight, body temperature.
+- Fields per sample: type, start, end, value, unit, source, uuid (stage for sleep). Each export sends only data new since the last successful run.
+- Also: manual export to a shareable file, Shortcuts actions ("Export Health Data", "Run Task"), Home Screen widgets.
+- Plans: free (widgets, charts); 7-day free trial; Basic one-time purchase (manual export, Shortcuts); Premium lifetime or yearly (automatic exports).
+- Not supported in 1.1: iCloud Drive, MQTT, Home Assistant, email, calendar, Mac sync; OneDrive work or school accounts. Read-only: never writes to Health.
+
+## Docs
+
+- [User guide](https://franky5440-afk.github.io/wish-genie-site/guide/): setup, destinations, tasks, formats, Shortcuts, widgets, plans
+- [Support and FAQ](https://franky5440-afk.github.io/wish-genie-site/support/): error messages, background timing, local network servers
+- [Privacy Policy](https://franky5440-afk.github.io/wish-genie-site/privacy/)
+
+## 中文
+
+- [使用說明](https://franky5440-afk.github.io/wish-genie-site/zh/guide/)
+- [支援與常見問題](https://franky5440-afk.github.io/wish-genie-site/zh/support/)
+- [隱私權政策](https://franky5440-afk.github.io/wish-genie-site/zh/privacy/)

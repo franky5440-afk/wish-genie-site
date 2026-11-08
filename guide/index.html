@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>User Guide · Wish Genie: Health Export</title>
+<meta name="description" content="How to use Wish Genie: Health Export to send Apple Health data to Dropbox, Google Drive, OneDrive or your own REST API as JSON or CSV.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+<header><a class="brand" href="../">Wish Genie</a><nav><a href="../support/">Support</a><a href="../privacy/">Privacy</a><a href="../zh/guide/" lang="zh-Hant">中文</a></nav></header>
+<h1>User Guide</h1>
+<p class="meta">Wish Genie: Health Export 1.1 · iPhone</p>
+<p>Wish Genie reads data from the Health app and sends it where you choose: Dropbox, Google Drive, OneDrive (personal accounts), your own REST API, or a file you share yourself. It has no account and no server of its own. <a href="https://apps.apple.com/app/id6830697434">Get it on the App Store</a>.</p>
+
+<h2>1. Allow Health access</h2>
+<p>The first time you open the app, tap "Allow Health access". iOS lists each kind of Health data so you can choose what Genie reads. If you skipped this, tap "Allow Health access" on the home screen or in Settings › Health data.</p>
+<p>iOS shows that list only once. To change it later, open the iPhone Settings app › Privacy &amp; Security › Health › Wish Genie. Genie only reads Health data; it never writes to it.</p>
+
+<h2>2. Add a destination</h2>
+<p>A destination is a place your tasks send data to. Open "Manage destinations" on the home screen (or Settings › Destinations) and tap "Add a destination".</p>
+<ul>
+<li><strong>Dropbox, Google Drive, OneDrive:</strong> tap "Connect account" and sign in. Genie saves files in its own folder: Apps › Wish Genie in Dropbox and OneDrive, and a "Wish Genie" folder in Google Drive. It can't see your other files. OneDrive works with personal Microsoft accounts only, not work or school accounts.</li>
+<li><strong>REST API:</strong> enter the URL. Add headers such as an API key under "Headers". If the URL itself contains a token, turn on "URL contains a secret" and the full URL is kept in the iPhone Keychain. Plain http:// is allowed only for addresses on your own network (see <a href="../support/">Support</a>).</li>
+</ul>
+<p>To disconnect a cloud account, open the destination and tap "Disconnect". You can also remove Wish Genie's access from the service's own account settings.</p>
+
+<h2>3. Give Genie a task</h2>
+<p>Tap "Give Genie a task". A task is one sentence, for example "Send Heart Rate as JSON to Home NAS every hour." Tap any highlighted word to change the data, the format (JSON or CSV), the destination or how often it runs (every 15 or 30 minutes, every hour, every 6 or 12 hours, every day or every week). Then tap "Hand it to Genie".</p>
+<p>Genie won't send anything until you give it a task. Each run sends only data that is new since the last successful run.</p>
+<ul>
+<li><strong>Export now:</strong> open the task and tap "Export now" to send new data right away.</li>
+<li><strong>Pause:</strong> turn the task's switch off. "Export now" still works.</li>
+<li><strong>Run now:</strong> shown on the home screen when a task failed, to try again immediately.</li>
+</ul>
+
+<h2>4. When automatic exports run</h2>
+<p>Automatic exports run in the background when iOS gives the app time, so the exact timing is decided by the system and can be later than the schedule. Health data can't be read while your iPhone is locked, so a run that falls in that window waits for the next one. If a task shows an error, see <a href="../support/#messages">what the messages mean</a>.</p>
+
+<h2>5. What gets exported</h2>
+<p>Heart Rate, Resting Heart Rate, Heart Rate Variability, Steps, Walking + Running Distance, Flights Climbed, Active Energy, Resting Energy, Sleep, Blood Oxygen, Respiratory Rate, VO₂ Max, Weight and Body Temperature.</p>
+<ul>
+<li><strong>JSON or CSV.</strong> Every sample has a unique ID, so your server or script can safely ignore duplicates.</li>
+<li><strong>Fields:</strong> each sample has type, start, end, value, unit, source and uuid. Sleep is one row per segment, with the minutes as its value and a stage (deep, REM, core, awake, in bed).</li>
+<li><strong>File names</strong> look like WishGenie-&lt;task&gt;-&lt;time in UTC&gt;.json. A REST API receives the same content as the request body.</li>
+</ul>
+
+<h2>6. Manual export</h2>
+<p>Tap the share button on the home screen ("Export once"), choose "Which data?" and "Which days?", pick a file format, then tap "Create file and share" to save the file to Files, AirDrop it or send it anywhere. Manual export needs Basic or Premium.</p>
+
+<h2>7. Shortcuts and Siri</h2>
+<p>In the Shortcuts app, Wish Genie adds two actions: "Export Health Data" (returns a JSON or CSV file for the last 7 or 30 days) and "Run Task" (sends a task's new data now). You can also ask Siri. Shortcuts need Basic or Premium.</p>
+
+<h2>8. Home screen and widgets</h2>
+<p>The home screen shows three tiles, one large and two small (heart rate, steps and sleep to start). To change them, open Settings › Tiles, tap a tile and pick what it shows. Your Home Screen widgets show the same three. Readings you take only now and then, such as weight or VO₂ Max, show the most recent value from the last 30 days with its date. Widget values are hidden while your iPhone is locked.</p>
+
+<h2>9. Plans</h2>
+<ul>
+<li><strong>Free:</strong> Home Screen widgets and charts.</li>
+<li><strong>7-day free trial:</strong> tap "Start 7-day free trial" on the plans screen. It starts only when you tap it and never turns into a paid subscription.</li>
+<li><strong>Basic</strong> (one-time purchase): manual export and Shortcuts.</li>
+<li><strong>Premium</strong> (lifetime purchase or yearly subscription): automatic exports to Dropbox, Google Drive, OneDrive or your REST API, plus everything in Basic.</li>
+</ul>
+<p>Bought on another device or reinstalled? Tap Settings › "Restore Purchases".</p>
+
+<h2>10. Privacy</h2>
+<p>We don't collect any data. Your health data goes straight from your iPhone to the destinations you set up. Cloud sign-ins, secret headers and secret URLs are stored in the iPhone Keychain on this device only. Details are in the <a href="../privacy/">Privacy Policy</a>.</p>
+
+<footer>© 2026 Tzu-Yang Lin · <a href="../support/">Support</a> · <a href="../privacy/">Privacy Policy</a></footer>
+</main>
+</body>
+</html>

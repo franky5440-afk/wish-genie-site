@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>使用說明 · 許願精靈：健康匯出</title>
+<meta name="description" content="許願精靈（Wish Genie）使用說明：把 Apple「健康」資料用 JSON 或 CSV 送到 Dropbox、Google 雲端硬碟、OneDrive 或你自己的 REST API。">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<main>
+<header><a class="brand" href="../">許願精靈</a><nav><a href="../support/">支援</a><a href="../privacy/">隱私權政策</a><a href="../../guide/" lang="en">English</a></nav></header>
+<h1>使用說明</h1>
+<p class="meta">許願精靈 Wish Genie：健康匯出 1.1 · iPhone</p>
+<p>許願精靈從「健康」App 讀取資料，送到你指定的地方：Dropbox、Google 雲端硬碟、OneDrive（個人版）、你自己的 REST API，或是你自己分享出去的檔案。不用註冊帳號，我們也沒有架伺服器。<a href="https://apps.apple.com/tw/app/id6830697434">到 App Store 下載</a>。</p>
+
+<h2>1. 允許讀取健康資料</h2>
+<p>第一次打開 App 時，點「允許讀取健康資料」，iOS 會逐項列出健康資料，讓你選擇精靈能讀取哪些。如果當時跳過了，可以在首頁或「設定 › 健康資料」再點「允許讀取健康資料」。</p>
+<p>iOS 只會跳出這個清單一次。之後要改，請到 iPhone 的「設定」App › 隱私權與安全性 › 健康 › 許願精靈。精靈只讀取「健康」的資料，從不寫入。</p>
+
+<h2>2. 新增目的地</h2>
+<p>目的地就是任務會把資料送到的地方。在首頁點「管理目的地」（或「設定 › 目的地」），再點「新增目的地」。</p>
+<ul>
+<li><strong>Dropbox、Google 雲端硬碟、OneDrive：</strong>點「連結帳號」登入。精靈會把檔案存在它自己的資料夾：Dropbox 和 OneDrive 是「應用程式 › Wish Genie」，Google 雲端硬碟是「Wish Genie」資料夾。它看不到你其他的檔案。OneDrive 只支援個人版 Microsoft 帳號，公司或學校帳號不行。</li>
+<li><strong>REST API：</strong>輸入網址，API 金鑰之類的放在「標頭」。如果網址本身就含有 token，打開「網址含密碼」，整條網址會存在 iPhone 的鑰匙圈。http:// 只限你自己網路裡的位址（見<a href="../support/">支援</a>）。</li>
+</ul>
+<p>要中斷雲端帳號，打開那個目的地點「中斷連結」。也可以到那個服務的帳號設定裡移除 Wish Genie 的存取權。</p>
+
+<h2>3. 交給精靈一件事</h2>
+<p>點「交給精靈一件事」。任務就是一句話，例如「每小時把心率存成 JSON，送到家裡的 NAS」。點句子裡任何一個醒目的詞，就能換資料、格式（JSON 或 CSV）、目的地或頻率（每 15 或 30 分鐘、每小時、每 6 或 12 小時、每天、每週）。最後點「交給精靈」。</p>
+<p>你交代之前，精靈什麼都不會送出。每次執行只送上次成功之後的新資料。</p>
+<ul>
+<li><strong>立即匯出：</strong>打開任務點「立即匯出」，馬上把新資料送出去。</li>
+<li><strong>暫停：</strong>把任務的開關關掉，「立即匯出」仍然可以用。</li>
+<li><strong>現在執行：</strong>任務失敗時首頁會出現這個按鈕，按了馬上重試。</li>
+</ul>
+
+<h2>4. 自動匯出什麼時候跑</h2>
+<p>自動匯出在 iOS 給 App 背景執行時間時才會跑，確切時間由系統決定，可能比排定的時間晚。iPhone 鎖著時讀不到健康資料，剛好碰上的那一次會等到下一次再送。任務出現錯誤訊息時，請看<a href="../support/#messages">訊息是什麼意思</a>。</p>
+
+<h2>5. 會匯出什麼</h2>
+<p>心率、靜止心率、心率變異度、步數、步行＋跑步距離、爬樓層數、活動能量、靜止能量、睡眠、血氧、呼吸速率、最大攝氧量、體重、體溫。</p>
+<ul>
+<li><strong>JSON 或 CSV。</strong>每一筆都有獨一無二的 ID，你的伺服器或程式可以放心略過重複的。</li>
+<li><strong>欄位：</strong>每一筆有 type、start、end、value、unit、source、uuid。睡眠每一段一筆，value 是分鐘數，另外附上 stage 階段（深層、REM、核心、清醒、躺在床上）。</li>
+<li><strong>檔名</strong>像 WishGenie-&lt;任務&gt;-&lt;UTC 時間&gt;.json。REST API 收到的請求內容跟檔案一樣。</li>
+</ul>
+
+<h2>6. 手動匯出</h2>
+<p>點首頁的分享按鈕，選「要帶哪些資料？」和「哪幾天？」、選檔案格式，再點「建立檔案並分享」，就能存到「檔案」App、用 AirDrop 傳，或分享到任何地方。手動匯出需要基本版或高級版。</p>
+
+<h2>7. 捷徑與 Siri</h2>
+<p>在「捷徑」App 裡，許願精靈提供兩個動作：「匯出健康資料」（回傳最近 7 天或 30 天的 JSON 或 CSV 檔）和「執行任務」（現在就把這個任務的新資料送出去）。也可以用 Siri 叫。捷徑需要基本版或高級版。</p>
+
+<h2>8. 首頁與小工具</h2>
+<p>首頁顯示三格，一大兩小（一開始是心率、步數和睡眠）。要換的話，到「設定 › 顯示的指標」，點一格再選它要顯示什麼，主畫面小工具也會顯示這三格。體重、最大攝氧量這類偶爾才量的，會顯示最近 30 天內最新的一筆和日期。iPhone 鎖著時小工具的數值會遮住。</p>
+
+<h2>9. 方案</h2>
+<ul>
+<li><strong>免費：</strong>主畫面小工具、統計圖表。</li>
+<li><strong>7 天免費試用：</strong>在方案頁點「免費試用 7 天」。按了才開始，也不會自動轉成付費訂閱。</li>
+<li><strong>基本版</strong>（一次買斷）：手動匯出、捷徑。</li>
+<li><strong>高級版</strong>（終身買斷或年訂閱）：自動匯出到 Dropbox、Google 雲端硬碟、OneDrive 或你的 REST API，加上基本版全部功能。</li>
+</ul>
+<p>在別的裝置買過或重新安裝了？到「設定」點「恢復購買」。</p>
+
+<h2>10. 隱私</h2>
+<p>我們不收集任何資料，你的健康資料直接從 iPhone 送到你設定的目的地。雲端登入資訊、機密標頭和含密碼的網址都存在這台 iPhone 的鑰匙圈。詳細內容見<a href="../privacy/">隱私權政策</a>。</p>
+
+<footer>© 2026 Tzu-Yang Lin · <a href="../support/">支援</a> · <a href="../privacy/">隱私權政策</a></footer>
+</main>
+</body>
+</html>

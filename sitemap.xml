@@ -24,4 +24,12 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://franky5440-afk.github.io/wish-genie-site/privacy/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://franky5440-afk.github.io/wish-genie-site/zh/privacy/"/>
   </url>
+  <url><loc>https://franky5440-afk.github.io/wish-genie-site/guide/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://franky5440-afk.github.io/wish-genie-site/guide/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://franky5440-afk.github.io/wish-genie-site/zh/guide/"/>
+  </url>
+  <url><loc>https://franky5440-afk.github.io/wish-genie-site/zh/guide/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://franky5440-afk.github.io/wish-genie-site/guide/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://franky5440-afk.github.io/wish-genie-site/zh/guide/"/>
+  </url>
 </urlset>
