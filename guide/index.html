@@ -4,15 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>User Guide · Wish Genie: Health Export</title>
-<meta name="description" content="How to use Wish Genie: Health Export to send Apple Health data to Dropbox, Google Drive, OneDrive or your own REST API as JSON or CSV.">
+<meta name="description" content="How to use Wish Genie: Health Export to send Apple Health data to iCloud Drive, Dropbox, Google Drive, OneDrive or your own REST API as JSON or CSV.">
 <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 <main>
 <header><a class="brand" href="../">Wish Genie</a><nav><a href="../support/">Support</a><a href="../privacy/">Privacy</a><a href="../zh/guide/" lang="zh-Hant">中文</a></nav></header>
 <h1>User Guide</h1>
-<p class="meta">Wish Genie: Health Export 1.1 · iPhone</p>
-<p>Wish Genie reads data from the Health app and sends it where you choose: Dropbox, Google Drive, OneDrive (personal accounts), your own REST API, or a file you share yourself. It has no account and no server of its own. <a href="https://apps.apple.com/app/id6830697434">Get it on the App Store</a>.</p>
+<p class="meta">Wish Genie: Health Export 1.2 · iPhone</p>
+<p>Wish Genie reads data from the Health app and sends it where you choose: iCloud Drive, Dropbox, Google Drive, OneDrive (personal accounts), your own REST API, or a file you share yourself. It has no account and no server of its own. <a href="https://apps.apple.com/app/id6830697434">Get it on the App Store</a>.</p>
 
 <h2>1. Allow Health access</h2>
 <p>The first time you open the app, tap "Allow Health access". iOS lists each kind of Health data so you can choose what Genie reads. If you skipped this, tap "Allow Health access" on the home screen or in Settings › Health data.</p>
@@ -21,6 +21,7 @@
 <h2>2. Add a destination</h2>
 <p>A destination is a place your tasks send data to. Open "Manage destinations" on the home screen (or Settings › Destinations) and tap "Add a destination".</p>
 <ul>
+<li><strong>iCloud Drive:</strong> no sign-in needed. Genie saves files in the Wish Genie folder of your own iCloud Drive, so you can open them in the Files app (iCloud Drive › Wish Genie). iCloud Drive must be on: iPhone Settings › your name › iCloud.</li>
 <li><strong>Dropbox, Google Drive, OneDrive:</strong> tap "Connect account" and sign in. Genie saves files in its own folder: Apps › Wish Genie in Dropbox and OneDrive, and a "Wish Genie" folder in Google Drive. It can't see your other files. OneDrive works with personal Microsoft accounts only, not work or school accounts.</li>
 <li><strong>REST API:</strong> enter the URL. Add headers such as an API key under "Headers". If the URL itself contains a token, turn on "URL contains a secret" and the full URL is kept in the iPhone Keychain. Plain http:// is allowed only for addresses on your own network (see <a href="../support/">Support</a>).</li>
 </ul>
@@ -60,7 +61,7 @@
 <li><strong>Free:</strong> Home Screen widgets and charts.</li>
 <li><strong>7-day free trial:</strong> tap "Start 7-day free trial" on the plans screen. It starts only when you tap it and never turns into a paid subscription.</li>
 <li><strong>Basic</strong> (one-time purchase): manual export and Shortcuts.</li>
-<li><strong>Premium</strong> (lifetime purchase or yearly subscription): automatic exports to Dropbox, Google Drive, OneDrive or your REST API, plus everything in Basic.</li>
+<li><strong>Premium</strong> (lifetime purchase or yearly subscription): automatic exports to iCloud Drive, Dropbox, Google Drive, OneDrive or your REST API, plus everything in Basic.</li>
 </ul>
 <p>Bought on another device or reinstalled? Tap Settings › "Restore Purchases".</p>
 
