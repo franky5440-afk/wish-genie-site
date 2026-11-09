@@ -41,8 +41,14 @@
 <h3>When do automatic exports run?</h3>
 <p>Automatic exports run in the background when iOS gives the app time, so the exact timing is decided by the system. Health data can't be read while your iPhone is locked, so a run that falls in that window waits for the next one. You can always tap "Export now" on a task.</p>
 
+<h3 id="ai">Can I give my health data to ChatGPT, Claude or Gemini?</h3>
+<p>Yes, as a file you share yourself. Wish Genie doesn't connect to any AI service. In manual export, choose "AI summary" under "What goes in the file?", pick 7, 30 or 90 days and Markdown, then tap "Create file and share" and share the file to your AI assistant app (or save it and upload it in that app). A task can also send an AI summary to your cloud every day or every week. The summary has daily averages, the change from the previous period, the lowest and highest day, daily values and sleep stages, in English. If you share it with an AI app, that company receives this health data. The summary is not a medical record. See the <a href="../guide/#ai">user guide</a>.</p>
+
+<h3>Why do hourly or daily files repeat values I already received?</h3>
+<p>Watches often sync to the Health app hours later, so a task with hourly or daily values sends the last 24 hours (hourly) or the last 7 days (daily) again on every run, with up-to-date numbers. If you store them, replace earlier values that have the same data type and start time instead of adding them again.</p>
+
 <h3>What does my server receive?</h3>
-<p>A POST request (HTTPS, or http on your home network) with a JSON or CSV body, depending on the format you picked. Each sample has a unique ID, so your server can safely ignore duplicates. Sleep is sent one row per segment with its stage (deep, REM, core, awake, in bed).</p>
+<p>A POST request (HTTPS, or http on your home network) with a JSON, CSV or Markdown body, depending on what goes in the file and the format you picked. Each sample has a unique ID, so your server can safely ignore duplicates. Sleep is sent one row per segment with its stage (deep, REM, core, awake, in bed).</p>
 
 <h3>Can I send to a server on my home network?</h3>
 <p>Yes. Besides HTTPS, the app accepts plain http:// for addresses on your own network: a name ending in .local (for example http://my-nas.local:8080), a private IP address (10.x.x.x, 172.16–31.x.x or 192.168.x.x), or localhost. Any other address needs HTTPS. The first time, iOS asks whether Wish Genie may connect to devices on your local network; tap Allow. If that first export fails while the question is on screen, tap "Export now" again. You can change this later in iOS Settings › Privacy &amp; Security › Local Network.</p>

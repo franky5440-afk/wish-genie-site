@@ -4,15 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>User Guide · Wish Genie: Health Export</title>
-<meta name="description" content="How to use Wish Genie: Health Export to send Apple Health data to iCloud Drive, Dropbox, Google Drive, OneDrive or your own REST API as JSON or CSV.">
+<meta name="description" content="How to use Wish Genie: Health Export to send Apple Health data to iCloud Drive, Dropbox, Google Drive, OneDrive or your own REST API as JSON or CSV, plus hourly or daily values and AI summaries for AI assistant apps.">
 <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 <main>
 <header><a class="brand" href="../">Wish Genie</a><nav><a href="../support/">Support</a><a href="../privacy/">Privacy</a><a href="../zh/guide/" lang="zh-Hant">中文</a></nav></header>
 <h1>User Guide</h1>
-<p class="meta">Wish Genie: Health Export 1.2 · iPhone</p>
-<p>Wish Genie reads data from the Health app and sends it where you choose: iCloud Drive, Dropbox, Google Drive, OneDrive (personal accounts), your own REST API, or a file you share yourself. It has no account and no server of its own. <a href="https://apps.apple.com/app/id6830697434">Get it on the App Store</a>.</p>
+<p class="meta">Wish Genie: Health Export 1.3 · iPhone</p>
+<p>Wish Genie reads data from the Health app and sends it where you choose: iCloud Drive, Dropbox, Google Drive, OneDrive (personal accounts), your own REST API, or a file you share yourself. It can also turn your data into hourly or daily values, or a summary that an AI assistant app can read. It has no account and no server of its own. <a href="https://apps.apple.com/app/id6830697434">Get it on the App Store</a>.</p>
 
 <h2>1. Allow Health access</h2>
 <p>The first time you open the app, tap "Allow Health access". iOS lists each kind of Health data so you can choose what Genie reads. If you skipped this, tap "Allow Health access" on the home screen or in Settings › Health data.</p>
@@ -28,7 +28,7 @@
 <p>To disconnect a cloud account, open the destination and tap "Disconnect". You can also remove Wish Genie's access from the service's own account settings.</p>
 
 <h2>3. Give Genie a task</h2>
-<p>Tap "Give Genie a task". A task is one sentence, for example "Send Heart Rate as JSON to Home NAS every hour." Tap any highlighted word to change the data, the format (JSON or CSV), the destination or how often it runs (every 15 or 30 minutes, every hour, every 6 or 12 hours, every day or every week). Then tap "Hand it to Genie".</p>
+<p>Tap "Give Genie a task". A task is one sentence, for example "Send every reading of Heart Rate as JSON to Home NAS every hour." Tap any highlighted word to change the data, what goes in the file (every reading, hourly or daily values, or an AI summary; see <a href="#ai">section 6</a>), the format (JSON or CSV; Markdown or JSON for an AI summary), the destination or how often it runs (every 15 or 30 minutes, every hour, every 6 or 12 hours, every day or every week; an AI summary runs every day or every week). Then tap "Hand it to Genie".</p>
 <p>Genie won't send anything until you give it a task. Each run sends only data that is new since the last successful run.</p>
 <ul>
 <li><strong>Export now:</strong> open the task and tap "Export now" to send new data right away.</li>
@@ -47,26 +47,38 @@
 <li><strong>File names</strong> look like WishGenie-&lt;task&gt;-&lt;time in UTC&gt;.json. A REST API receives the same content as the request body.</li>
 </ul>
 
-<h2>6. Manual export</h2>
-<p>Tap the share button on the home screen ("Export once"), choose "Which data?" and "Which days?", pick a file format, then tap "Create file and share" to save the file to Files, AirDrop it or send it anywhere. Manual export needs Basic or Premium.</p>
+<h2 id="ai">6. Hourly and daily values, and AI summaries</h2>
+<p>Instead of every reading, a manual export or a task can put one of these in the file (choose it under "What goes in the file?"):</p>
+<ul>
+<li><strong>Hourly or Daily:</strong> one value per data type for each hour or each day. Steps, distance, flights climbed and energy are totals. Sleep is minutes per stage (asleep, deep, REM, core, awake, in bed); in daily values, a night counts on the day you woke up. Everything else has the average, lowest and highest value and how many readings there were. JSON or CSV, with no device names or sample IDs.</li>
+<li><strong>AI summary:</strong> the last 7, 30 or 90 complete days (today isn't included), compared with the same number of days before that. For each data type: the daily average, the change in %, the lowest and highest day and how many days had data, plus a table of daily values and the average sleep stages. Markdown (easy for AI assistant apps and people to read) or JSON. The file is written in English and is not a medical record.</li>
+</ul>
+<p>Wish Genie doesn't connect to any AI service. It only makes the file, and you decide where it goes. To ask an AI assistant app about your data, share the file to that app from manual export, or upload it from the folder your task sends it to. If you share it with an AI app, that company receives this health data.</p>
+<ul>
+<li><strong>Tasks with hourly or daily values</strong> send an hour or a day only after it has ended. Watches often sync late, so each run also sends the last 24 hours (hourly) or the last 7 days (daily) again with up-to-date numbers. If your server or script keeps them, replace earlier values that have the same data type and start time instead of adding them again.</li>
+<li><strong>AI summary tasks</strong> run every day or every week, and every run sends a whole summary. If there's no data for the period, nothing is sent.</li>
+</ul>
 
-<h2>7. Shortcuts and Siri</h2>
-<p>In the Shortcuts app, Wish Genie adds two actions: "Export Health Data" (returns a JSON or CSV file for the last 7 or 30 days) and "Run Task" (sends a task's new data now). You can also ask Siri. Shortcuts need Basic or Premium.</p>
+<h2>7. Manual export</h2>
+<p>Tap the share button on the home screen ("Export once"), choose "What goes in the file?" (raw data, hourly, daily or an AI summary), "Which data?" and "Which days?" (an AI summary uses the last 7, 30 or 90 complete days instead), pick a file format, then tap "Create file and share" to save the file to Files, AirDrop it or send it anywhere. Manual export needs Basic or Premium.</p>
 
-<h2>8. Home screen and widgets</h2>
+<h2>8. Shortcuts and Siri</h2>
+<p>In the Shortcuts app, Wish Genie adds two actions: "Export Health Data" (returns a JSON or CSV file of raw readings for the last 7 or 30 days) and "Run Task" (sends a task's new data now). You can also ask Siri. Shortcuts need Basic or Premium.</p>
+
+<h2>9. Home screen and widgets</h2>
 <p>The home screen shows three tiles, one large and two small (heart rate, steps and sleep to start). To change them, open Settings › Tiles, tap a tile and pick what it shows. Your Home Screen widgets show the same three. Readings you take only now and then, such as weight or VO₂ Max, show the most recent value from the last 30 days with its date. Widget values are hidden while your iPhone is locked.</p>
 
-<h2>9. Plans</h2>
+<h2>10. Plans</h2>
 <ul>
 <li><strong>Free:</strong> Home Screen widgets and charts.</li>
 <li><strong>7-day free trial:</strong> tap "Start 7-day free trial" on the plans screen. It starts only when you tap it and never turns into a paid subscription.</li>
-<li><strong>Basic</strong> (one-time purchase): manual export and Shortcuts.</li>
-<li><strong>Premium</strong> (lifetime purchase or yearly subscription): automatic exports to iCloud Drive, Dropbox, Google Drive, OneDrive or your REST API, plus everything in Basic.</li>
+<li><strong>Basic</strong> (one-time purchase): manual export, including hourly, daily and AI summary files, and Shortcuts.</li>
+<li><strong>Premium</strong> (lifetime purchase or yearly subscription): automatic exports (any file contents, including AI summaries) to iCloud Drive, Dropbox, Google Drive, OneDrive or your REST API, plus everything in Basic.</li>
 </ul>
 <p>Bought on another device or reinstalled? Tap Settings › "Restore Purchases".</p>
 
-<h2>10. Privacy</h2>
-<p>We don't collect any data. Your health data goes straight from your iPhone to the destinations you set up. Cloud sign-ins, secret headers and secret URLs are stored in the iPhone Keychain on this device only. Details are in the <a href="../privacy/">Privacy Policy</a>.</p>
+<h2>11. Privacy</h2>
+<p>We don't collect any data. Your health data goes straight from your iPhone to the destinations you set up. Cloud sign-ins, secret headers and secret URLs are stored in the iPhone Keychain on this device only. Wish Genie never sends your data to an AI service; an AI summary goes only where you share or send it. Details are in the <a href="../privacy/">Privacy Policy</a>.</p>
 
 <footer>© 2026 Tzu-Yang Lin · <a href="../support/">Support</a> · <a href="../privacy/">Privacy Policy</a></footer>
 </main>
