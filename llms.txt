@@ -1,20 +1,33 @@
 # Wish Genie: Health Export
 
-> iPhone app (iOS) that reads Apple Health (HealthKit) data and exports it as JSON or CSV to iCloud Drive, Dropbox, Google Drive, OneDrive (personal accounts) or the user's own REST API endpoint, on a schedule or on demand. Since 1.3 it can also export hourly or daily values and an AI summary (Markdown or JSON) for AI assistant apps; the app itself never connects to any AI service. No account, no developer servers: data goes from the iPhone straight to the destination. Chinese name: 許願精靈 Wish Genie：健康匯出.
+> iPhone app (iOS) that reads Apple Health (HealthKit) data and exports it as JSON or CSV to iCloud Drive, Dropbox, Google Drive, OneDrive (personal accounts) or the user's own REST API endpoint, on a schedule or on demand. Since 1.4 it reads more than 60 kinds of Health data plus workouts. Since 1.3 it can also export hourly or daily values and an AI summary (Markdown or JSON) for AI assistant apps; the app itself never connects to any AI service. No account, no developer servers: data goes from the iPhone straight to the destination. Chinese name: 許願精靈 Wish Genie：健康匯出.
 
 - App Store: https://apps.apple.com/app/id6830697434
-- Data types: heart rate, resting heart rate, HRV, steps, walking + running distance, flights climbed, active energy, resting energy, sleep (one row per segment with stage: deep, REM, core, awake, in bed), blood oxygen, respiratory rate, VO2 max, weight, body temperature.
-- Fields per sample: type, start, end, value, unit, source, uuid (stage for sleep). Each export sends only data new since the last successful run.
+- Data types (1.4, grouped as in the app):
+  - Activity: steps, walking + running distance, flights climbed, active energy, resting energy, exercise minutes, stand minutes, move minutes, physical effort, swimming distance, swimming strokes, wheelchair distance, wheelchair pushes, time in daylight.
+  - Running: speed, power, stride length, vertical oscillation, ground contact time.
+  - Walking: speed, step length, asymmetry, double support time, stair speed up, stair speed down, six-minute walk.
+  - Cycling: distance, speed, power, cadence, functional threshold power.
+  - Heart: heart rate, resting heart rate, HRV, VO2 max, walking heart rate average, cardio recovery, systolic and diastolic blood pressure.
+  - Body: blood oxygen, respiratory rate, weight, body temperature, height, body fat percentage, lean body mass, body mass index, waist circumference, blood glucose.
+  - Nutrition: dietary energy, protein, carbohydrates, total fat, sugar, fiber, sodium, caffeine, water.
+  - Hearing: environmental sound levels, headphone audio levels.
+  - Sleep: one row per segment with stage (deep, REM, core, awake, in bed).
+  - Workouts: one row per session (see fields below). Workout routes, GPS and location are not read.
+- Not read as of 1.4: workout routes/GPS, ECG, AFib history, cycle tracking, medications, State of Mind, stand hours, Activity rings.
+- Units: fixed per type, for example count/min (heart rate), ms, mmHg (blood pressure), mg/dL (blood glucose), % as 0–100 (blood oxygen, body fat, walking asymmetry, double support), cm (height, waist, vertical oscillation), m, m/s, W, kcal, g, mg, mL, min, dBASPL (sound levels).
+- Fields per sample: type, start, end, value, unit, source, uuid (stage for sleep). Workouts: value is the duration in minutes; JSON adds a "workout" object (activity, distanceMeters, activeEnergyKcal, averageHeartRate, maxHeartRate, indoor; statistics are left out when not recorded); CSV always ends with six columns workout_activity, workout_distance_m, workout_energy_kcal, workout_avg_hr, workout_max_hr, workout_indoor (empty for other types; added in 1.4, the earlier columns are unchanged). Activity names are HealthKit's, such as running or traditionalStrengthTraining. Each export sends only data new since the last successful run.
 - iCloud Drive (since 1.2): no sign-in; files are saved to iCloud Drive › Wish Genie in the user's own iCloud Drive (visible in the Files app). iCloud Drive must be turned on in iPhone Settings.
-- File contents (1.3, for manual export and tasks): every reading; hourly or daily values (totals for steps, distance, flights climbed and energy; average, min, max and count for other types; sleep minutes per stage, in daily values a night counts on the wake-up date; no device names or sample IDs); or an AI summary of the last 7, 30 or 90 complete days compared with the previous period (daily average, % change, lowest and highest day, daily table, sleep stages; written in English; not a medical record). To use it with an AI assistant app, the user shares or uploads the file. Hourly/daily tasks re-send the last 24 hours or 7 days on each run, so receivers should overwrite by type + start time. AI summary tasks run daily or weekly.
-- Also: manual export to a shareable file, Shortcuts actions ("Export Health Data", "Run Task"), Home Screen widgets.
+- File contents (since 1.3, for manual export and tasks): every reading; hourly or daily values (totals for types that add up, such as steps, distances, energy, exercise minutes, time in daylight and nutrition; average, min, max and count for other types; sleep minutes per stage, in daily values a night counts on the wake-up date; workouts as total minutes and number of sessions, plus per-activity counts in JSON; no device names or sample IDs); or an AI summary of the last 7, 30 or 90 complete days compared with the previous period (daily average, % change, lowest and highest day, a daily table of the types that had data, sleep stages, workout sessions and time per activity; written in English; not a medical record). To use it with an AI assistant app, the user shares or uploads the file. Hourly/daily tasks re-send the last 24 hours or 7 days on each run, so receivers should overwrite by type + start time. AI summary tasks run daily or weekly.
+- Also: manual export to a shareable file, Shortcuts actions ("Export Health Data" for any of the data types, "Run Task"), Home Screen widgets (three tiles; blood pressure, height, nutrition and workouts can't be shown on tiles).
+- Upgrading from 1.3: the home screen shows "More Health data can be read"; tapping the button lets iOS ask about the new types only.
 - Plans: free (widgets, charts); 7-day free trial; Basic one-time purchase (manual export including hourly, daily and AI summary files; Shortcuts); Premium lifetime or yearly (automatic exports of any file contents).
-- Not supported in 1.3: MQTT, Home Assistant, email, calendar, Mac sync; OneDrive work or school accounts. Read-only: never writes to Health.
+- Not supported in 1.4: MQTT, Home Assistant, email, calendar, Mac sync; OneDrive work or school accounts. Read-only: never writes to Health.
 
 ## Docs
 
-- [User guide](https://franky5440-afk.github.io/wish-genie-site/guide/): setup, destinations, tasks, formats, Shortcuts, widgets, plans
-- [Support and FAQ](https://franky5440-afk.github.io/wish-genie-site/support/): error messages, background timing, local network servers, using the AI summary with AI assistant apps
+- [User guide](https://franky5440-afk.github.io/wish-genie-site/guide/): setup, destinations, tasks, data types, formats, Shortcuts, widgets, plans
+- [Support and FAQ](https://franky5440-afk.github.io/wish-genie-site/support/): error messages, background timing, local network servers, workouts, using the AI summary with AI assistant apps
 - [Privacy Policy](https://franky5440-afk.github.io/wish-genie-site/privacy/)
 
 ## 中文
