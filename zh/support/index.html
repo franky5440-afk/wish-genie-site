@@ -28,7 +28,7 @@
 <li><strong>Dropbox／Google 雲端硬碟／OneDrive 拒絕了這次請求（HTTP 401 或 403）。</strong>確認那個帳號還能存檔（例如沒有變成唯讀），或重新連結。</li>
 <li><strong>Dropbox／Google 雲端硬碟／OneDrive 找不到要存檔的資料夾（HTTP 404）。</strong>一直發生的話，請重新連結帳號。</li>
 <li><strong>Dropbox／Google 雲端硬碟／OneDrive 的空間滿了。</strong>清出一些空間，下一次會再試。</li>
-<li><strong>連不上伺服器，請檢查網路連線。</strong>檢查 iPhone 的網路。如果是家裡區域網路的伺服器，確認連的是同一個 Wi-Fi，而且允許了「區域網路」（見上面）。</li>
+<li><strong>連不上伺服器，請檢查網路連線。</strong>檢查 iPhone 的網路。如果是家裡區域網路的伺服器，確認連的是同一個 Wi-Fi，而且允許了「區域網路」（見下面的<a href="#local-network">可以送到家裡區域網路的伺服器嗎？</a>）。</li>
 <li><strong>伺服器拒絕了請求（HTTP 401 或 403）。</strong>你的伺服器不接受這次請求：請檢查目的地標頭裡的 API 金鑰或權杖。</li>
 <li><strong>找不到這個網址（HTTP 404）。</strong>請檢查目的地的網址。</li>
 <li><strong>伺服器要求轉址（HTTP 3xx）。</strong>精靈不會跟著轉，請改用最終網址。</li>
@@ -52,9 +52,9 @@
 <p>手錶常常過幾個小時才同步到「健康」App，所以彙總任務每次執行都會把最近 24 小時（每小時）或最近 7 天（每天）用最新的數字再送一次。你有存下來的話，請用「資料種類＋開始時間」把舊的值覆蓋掉，不要再新增一筆。</p>
 
 <h3>我的伺服器會收到什麼？</h3>
-<p>一個 POST 請求（HTTPS；在家裡區域網路可以用 http），內容依你選的檔案內容和格式，是 JSON、CSV 或 Markdown。每筆資料都有唯一 ID，伺服器可以放心略過重複的。睡眠每一段一筆，附上階段（深層、REM、核心、清醒、躺在床上）。體能訓練每一次運動一筆；JSON 的細節放在「workout」物件裡，CSV 檔最後面固定有 6 個欄位：workout_activity、workout_distance_m、workout_energy_kcal、workout_avg_hr、workout_max_hr、workout_indoor（不是體能訓練的列就留空）。</p>
+<p>一個 POST 請求（HTTPS；在家裡區域網路可以用 http），內容依你選的檔案內容和格式，是 JSON、CSV 或 Markdown。每筆資料都有唯一 ID，伺服器可以放心略過重複的。睡眠每一段一筆，附上階段：deep（深層）、rem（REM）、core（核心）、awake（清醒）、inBed（躺在床上），或 unspecified（睡著了，但沒有記錄是哪個階段）。體能訓練每一次運動一筆；JSON 的細節放在「workout」物件裡，CSV 檔最後面固定有 6 個欄位：workout_activity、workout_distance_m、workout_energy_kcal、workout_avg_hr、workout_max_hr、workout_indoor（不是體能訓練的列就留空）。</p>
 
-<h3>可以送到家裡區域網路的伺服器嗎？</h3>
+<h3 id="local-network">可以送到家裡區域網路的伺服器嗎？</h3>
 <p>可以。除了 HTTPS，送到你自己網路裡的位址也能用一般的 http://：名稱結尾是 .local 的（例如 http://my-nas.local:8080）、私有 IP 位址（10.x.x.x、172.16～31.x.x 或 192.168.x.x），或 localhost。其他位址一律要用 HTTPS。第一次送的時候，iOS 會問要不要讓許願精靈連到區域網路上的裝置，請按「允許」。如果詢問還在畫面上時那次匯出失敗了，再按一次「立即匯出」就好。之後可以在 iOS「設定」›「隱私權與安全性」›「區域網路」裡更改。</p>
 
 <h3>免費試用怎麼算？</h3>

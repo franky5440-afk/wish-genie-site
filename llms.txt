@@ -1,8 +1,9 @@
 # Wish Genie: Health Export
 
-> iPhone app (iOS) that reads Apple Health (HealthKit) data and exports it as JSON or CSV to iCloud Drive, Dropbox, Google Drive, OneDrive (personal accounts) or the user's own REST API endpoint, on a schedule or on demand. Since 1.4 it reads more than 60 kinds of Health data plus workouts. Since 1.3 it can also export hourly or daily values and an AI summary (Markdown or JSON) for AI assistant apps; the app itself never connects to any AI service. No account, no developer servers: data goes from the iPhone straight to the destination. Chinese name: 許願精靈 Wish Genie：健康匯出.
+> iPhone app (iOS 18 or later) that reads Apple Health (HealthKit) data and exports it as JSON or CSV to iCloud Drive, Dropbox, Google Drive, OneDrive (personal accounts) or the user's own REST API endpoint, on a schedule or on demand. Since 1.4 it reads more than 60 kinds of Health data plus workouts. Since 1.3 it can also export hourly or daily values and an AI summary (Markdown or JSON) for AI assistant apps; the app itself never connects to any AI service. No account, no developer servers: data goes from the iPhone straight to the destination. Chinese name: 許願精靈 Wish Genie：健康匯出.
 
 - App Store: https://apps.apple.com/app/id6830697434
+- Last updated: 2026-11-12 (version 1.4). Requires iOS 18 or later. Prices are shown in the App Store in local currency.
 - Data types (1.4, grouped as in the app):
   - Activity: steps, walking + running distance, flights climbed, active energy, resting energy, exercise minutes, stand minutes, move minutes, physical effort, swimming distance, swimming strokes, wheelchair distance, wheelchair pushes, time in daylight.
   - Running: speed, power, stride length, vertical oscillation, ground contact time.
@@ -12,7 +13,7 @@
   - Body: blood oxygen, respiratory rate, weight, body temperature, height, body fat percentage, lean body mass, body mass index, waist circumference, blood glucose.
   - Nutrition: dietary energy, protein, carbohydrates, total fat, sugar, fiber, sodium, caffeine, water.
   - Hearing: environmental sound levels, headphone audio levels.
-  - Sleep: one row per segment with stage (deep, REM, core, awake, in bed).
+  - Sleep: one row per segment with stage (deep, rem, core, awake, inBed, or unspecified = asleep with no stage recorded). In hourly/daily values: total "asleep" minutes (rem + core + deep + unspecified) plus minutes per stage; in daily values a night counts on the wake-up date.
   - Workouts: one row per session (see fields below). Workout routes, GPS and location are not read.
 - Not read as of 1.4: workout routes/GPS, ECG, AFib history, cycle tracking, medications, State of Mind, stand hours, Activity rings.
 - Units: fixed per type, for example count/min (heart rate), ms, mmHg (blood pressure), mg/dL (blood glucose), % as 0–100 (blood oxygen, body fat, walking asymmetry, double support), cm (height, waist, vertical oscillation), m, m/s, W, kcal, g, mg, mL, min, dBASPL (sound levels).

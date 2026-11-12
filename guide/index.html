@@ -11,11 +11,11 @@
 <main>
 <header><a class="brand" href="../">Wish Genie</a><nav><a href="../support/">Support</a><a href="../privacy/">Privacy</a><a href="../zh/guide/" lang="zh-Hant">中文</a></nav></header>
 <h1>User Guide</h1>
-<p class="meta">Wish Genie: Health Export 1.4 · iPhone</p>
+<p class="meta">Wish Genie: Health Export 1.4 · iPhone with iOS 18 or later · Updated November 12, 2026</p>
 <p>Wish Genie reads data from the Health app (more than 60 kinds, plus workouts) and sends it where you choose: iCloud Drive, Dropbox, Google Drive, OneDrive (personal accounts), your own REST API, or a file you share yourself. It can also turn your data into hourly or daily values, or a summary that an AI assistant app can read. It has no account and no server of its own. <a href="https://apps.apple.com/app/id6830697434">Get it on the App Store</a>.</p>
 
 <h2>1. Allow Health access</h2>
-<p>The first time you open the app, tap "Allow Health access". iOS lists each kind of Health data so you can choose what Genie reads. If you skipped this, tap "Allow Health access" on the home screen or in Settings › Health data.</p>
+<p>The first time you open the app, tap "Allow Health access". iOS lists each kind of Health data so you can choose what Genie reads. If you skipped this, tap "Allow Health access" on the home screen or in Settings › Health data. If a task fails because Genie can't read Health data, the task shows "Check Health access", which leads to the same steps.</p>
 <p>iOS shows that list only once. To change it later, open the iPhone Settings app › Privacy &amp; Security › Health › Wish Genie. Genie only reads Health data; it never writes to it.</p>
 <p>Updated from an earlier version? Version 1.4 can read many new kinds of data, so the home screen shows "More Health data can be read". Tap the button and iOS lists only the kinds you haven't answered yet; turn on the ones you want.</p>
 
@@ -56,7 +56,7 @@
 <p>Workout routes (GPS and location) aren't read.</p>
 <ul>
 <li><strong>JSON or CSV.</strong> Every sample has a unique ID, so your server or script can safely ignore duplicates.</li>
-<li><strong>Fields:</strong> each sample has type, start, end, value, unit, source and uuid. Sleep is one row per segment, with the minutes as its value and a stage (deep, REM, core, awake, in bed).</li>
+<li><strong>Fields:</strong> each sample has type, start, end, value, unit, source and uuid. Sleep is one row per segment, with the minutes as its value and a stage: deep, rem, core, awake, inBed, or unspecified (asleep, but no stage was recorded).</li>
 <li><strong>Workouts:</strong> one row per workout, with its length in minutes as the value. It also has the activity (for example running) and, when they were recorded, the distance in meters, active energy in kcal, average and maximum heart rate, and whether it was indoors. In JSON these are in a "workout" object; a CSV file always ends with six workout_ columns, which are empty for other kinds of data. The earlier CSV columns haven't changed.</li>
 <li><strong>Units</strong> are fixed for each kind of data, for example mmHg for blood pressure, mg/dL for blood glucose and cm for height. Percentages are from 0 to 100.</li>
 <li><strong>File names</strong> look like WishGenie-&lt;task&gt;-&lt;time in UTC&gt;.json. A REST API receives the same content as the request body.</li>
@@ -65,7 +65,7 @@
 <h2 id="ai">6. Hourly and daily values, and AI summaries</h2>
 <p>Instead of every reading, a manual export or a task can put one of these in the file (choose it under "What goes in the file?"):</p>
 <ul>
-<li><strong>Hourly or Daily:</strong> one value per data type for each hour or each day. Data that adds up, such as steps, distances, energy, exercise minutes, time in daylight and nutrition, is a total. Workouts are the total minutes and the number of workouts (JSON also lists them per activity). Sleep is minutes per stage (asleep, deep, REM, core, awake, in bed); in daily values, a night counts on the day you woke up. Everything else has the average, lowest and highest value and how many readings there were. JSON or CSV, with no device names or sample IDs.</li>
+<li><strong>Hourly or Daily:</strong> one value per data type for each hour or each day. Data that adds up, such as steps, distances, energy, exercise minutes, time in daylight and nutrition, is a total. Workouts are the total minutes and the number of workouts (JSON also lists them per activity). Sleep is the total minutes asleep (the "asleep" column: REM, core, deep and unspecified together) plus minutes per stage (in bed, awake, REM, core, deep, unspecified); in daily values, a night counts on the day you woke up. Everything else has the average, lowest and highest value and how many readings there were. JSON or CSV, with no device names or sample IDs.</li>
 <li><strong>AI summary:</strong> the last 7, 30 or 90 complete days (today isn't included), compared with the same number of days before that. For each data type: the daily average, the change in %, the lowest and highest day and how many days had data, plus a table of daily values for the kinds that had data, the average sleep stages, and the number and total time of workouts per activity. Markdown (easy for AI assistant apps and people to read) or JSON. The file is written in English and is not a medical record.</li>
 </ul>
 <p>Wish Genie doesn't connect to any AI service. It only makes the file, and you decide where it goes. To ask an AI assistant app about your data, share the file to that app from manual export, or upload it from the folder your task sends it to. If you share it with an AI app, that company receives this health data.</p>
@@ -90,7 +90,7 @@
 <li><strong>Basic</strong> (one-time purchase): manual export, including hourly, daily and AI summary files, and Shortcuts.</li>
 <li><strong>Premium</strong> (lifetime purchase or yearly subscription): automatic exports (any file contents, including AI summaries) to iCloud Drive, Dropbox, Google Drive, OneDrive or your REST API, plus everything in Basic.</li>
 </ul>
-<p>Bought on another device or reinstalled? Tap Settings › "Restore Purchases".</p>
+<p>Prices are shown on the plans screen and on the App Store page, in your own currency. Bought on another device or reinstalled? Tap Settings › "Restore Purchases".</p>
 
 <h2>11. Privacy</h2>
 <p>We don't collect any data. Your health data goes straight from your iPhone to the destinations you set up. Cloud sign-ins, secret headers and secret URLs are stored in the iPhone Keychain on this device only. Wish Genie never sends your data to an AI service; an AI summary goes only where you share or send it. Details are in the <a href="../privacy/">Privacy Policy</a>.</p>
