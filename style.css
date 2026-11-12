@@ -11,3 +11,4 @@ p.meta { color:var(--soft); margin-top:0; }
 a { color:var(--clay); }
 li { margin:6px 0; }
 footer { margin-top:48px; color:var(--soft); font-size:14px; }
+pre.note { white-space:pre-wrap; overflow-wrap:anywhere; background:#fff; border-left:4px solid var(--clay); border-radius:8px; padding:14px 16px; font:14px/1.55 ui-monospace, SFMono-Regular, Menlo, monospace; color:var(--ink); }

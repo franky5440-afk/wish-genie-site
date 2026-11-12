@@ -3,7 +3,7 @@
 > iPhone app (iOS 18 or later) that reads Apple Health (HealthKit) data and exports it as JSON or CSV to iCloud Drive, Dropbox, Google Drive, OneDrive (personal accounts) or the user's own REST API endpoint, on a schedule or on demand. Since 1.4 it reads more than 60 kinds of Health data plus workouts. Since 1.3 it can also export hourly or daily values and an AI summary (Markdown or JSON) for AI assistant apps; the app itself never connects to any AI service. No account, no developer servers: data goes from the iPhone straight to the destination. Chinese name: 許願精靈 Wish Genie：健康匯出.
 
 - App Store: https://apps.apple.com/app/id6830697434
-- Last updated: 2026-11-12 (version 1.4). Requires iOS 18 or later. Prices are shown in the App Store in local currency.
+- Last updated: 2026-11-12 (version 1.5). Requires iOS 18 or later. Prices are shown in the App Store in local currency.
 - Data types (1.4, grouped as in the app):
   - Activity: steps, walking + running distance, flights climbed, active energy, resting energy, exercise minutes, stand minutes, move minutes, physical effort, swimming distance, swimming strokes, wheelchair distance, wheelchair pushes, time in daylight.
   - Running: speed, power, stride length, vertical oscillation, ground contact time.
@@ -23,7 +23,8 @@
 - Also: manual export to a shareable file, Shortcuts actions ("Export Health Data" for any of the data types, "Run Task"), Home Screen widgets (three tiles; blood pressure, height, nutrition and workouts can't be shown on tiles).
 - Upgrading from 1.3: the home screen shows "More Health data can be read"; tapping the button lets iOS ask about the new types only.
 - Plans: free (widgets, charts); 7-day free trial; Basic one-time purchase (manual export including hourly, daily and AI summary files; Shortcuts); Premium lifetime or yearly (automatic exports of any file contents).
-- Not supported in 1.4: MQTT, Home Assistant, email, calendar, Mac sync; OneDrive work or school accounts. Read-only: never writes to Health.
+- New in 1.5: schedules keep their original times (a late run does not shift later runs; missed runs are caught up once); opening the app sends every task that is due; optional per-task notification "Remind me if it doesn't send" when a task is an hour late (Health data cannot be read while the iPhone is locked); Home Screen widget "Catch up" button (opens the app and sends due tasks); "Resend recent data" (last 1, 7 or 30 days) for raw and hourly/daily tasks; "Select all" when choosing data; Markdown AI summaries start with a fixed note for the user's AI assistant (trends, no diagnosis, suggest a doctor; can be turned off); AI summary JSON is schemaVersion 2 and daily entries of averaged types (such as heart rate) include min and max.
+- Not supported in 1.5: MQTT, Home Assistant, email, calendar, Mac sync; OneDrive work or school accounts. Read-only: never writes to Health.
 
 ## Docs
 

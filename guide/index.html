@@ -11,7 +11,7 @@
 <main>
 <header><a class="brand" href="../">Wish Genie</a><nav><a href="../support/">Support</a><a href="../privacy/">Privacy</a><a href="../zh/guide/" lang="zh-Hant">中文</a></nav></header>
 <h1>User Guide</h1>
-<p class="meta">Wish Genie: Health Export 1.4 · iPhone with iOS 18 or later · Updated November 12, 2026</p>
+<p class="meta">Wish Genie: Health Export 1.5 · iPhone with iOS 18 or later · Updated November 12, 2026</p>
 <p>Wish Genie reads data from the Health app (more than 60 kinds, plus workouts) and sends it where you choose: iCloud Drive, Dropbox, Google Drive, OneDrive (personal accounts), your own REST API, or a file you share yourself. It can also turn your data into hourly or daily values, or a summary that an AI assistant app can read. It has no account and no server of its own. <a href="https://apps.apple.com/app/id6830697434">Get it on the App Store</a>.</p>
 
 <h2>1. Allow Health access</h2>
@@ -29,16 +29,18 @@
 <p>To disconnect a cloud account, open the destination and tap "Disconnect". You can also remove Wish Genie's access from the service's own account settings.</p>
 
 <h2>3. Give Genie a task</h2>
-<p>Tap "Give Genie a task". A task is one sentence, for example "Send every reading of Heart Rate as JSON to Home NAS every hour." Tap any highlighted word to change the data, what goes in the file (every reading, hourly or daily values, or an AI summary; see <a href="#ai">section 6</a>), the format (JSON or CSV; Markdown or JSON for an AI summary), the destination or how often it runs (every 15 or 30 minutes, every hour, every 6 or 12 hours, every day or every week; an AI summary runs every day or every week). Then tap "Hand it to Genie".</p>
+<p>Tap "Give Genie a task". A task is one sentence, for example "Send every reading of Heart Rate as JSON to Home NAS every hour." Tap any highlighted word to change the data, what goes in the file (every reading, hourly or daily values, or an AI summary; see <a href="#ai">section 6</a>), the format (JSON or CSV; Markdown or JSON for an AI summary), the destination or how often it runs (every 15 or 30 minutes, every hour, every 6 or 12 hours, every day or every week; an AI summary runs every day or every week). On the data page, "Select all" picks every kind of data at once ("Deselect all" clears them). Then tap "Hand it to Genie".</p>
 <p>Genie won't send anything until you give it a task. Each run sends only data that is new since the last successful run.</p>
 <ul>
 <li><strong>Export now:</strong> open the task and tap "Export now" to send new data right away.</li>
 <li><strong>Pause:</strong> turn the task's switch off. "Export now" still works.</li>
+<li><strong>Remind me if it doesn't send:</strong> turn this on in a task, and if the task is an hour late (for example because your iPhone stayed locked), Genie sends you a notification. Open Wish Genie and it catches up. iOS asks for permission to send notifications the first time you turn it on.</li>
+<li><strong>Resend recent data:</strong> for a task with every reading or hourly or daily values that has sent before, sends the last day, 7 days or 30 days again. Use it when the receiving end missed something. Data that was already sent goes again: skip records you already have (every reading has a uuid), or replace hourly and daily values that have the same data type and start time.</li>
 <li><strong>Run now:</strong> shown on the home screen when a task failed, to try again immediately.</li>
 </ul>
 
 <h2>4. When automatic exports run</h2>
-<p>Automatic exports run in the background when iOS gives the app time, so the exact timing is decided by the system and can be later than the schedule. Health data can't be read while your iPhone is locked, so a run that falls in that window waits for the next one. If a task shows an error, see <a href="../support/#messages">what the messages mean</a>.</p>
+<p>Automatic exports run in the background when iOS gives the app time, so the exact timing is decided by the system and can be later than the schedule. A late run doesn't move the schedule: a daily task set for 12:30 keeps running around 12:30, and if several runs were missed, Genie catches up once. Health data can't be read while your iPhone is locked, so a run that falls in that window waits. To catch up right away, open Wish Genie (it sends every task that is due), tap "Catch up" on the widget, or turn on "Remind me if it doesn't send" on the task. If a task shows an error, see <a href="../support/#messages">what the messages mean</a>.</p>
 
 <h2 id="data">5. What gets exported</h2>
 <p>More than 60 kinds of Health data, grouped the same way as in the app:</p>
@@ -66,9 +68,20 @@
 <p>Instead of every reading, a manual export or a task can put one of these in the file (choose it under "What goes in the file?"):</p>
 <ul>
 <li><strong>Hourly or Daily:</strong> one value per data type for each hour or each day. Data that adds up, such as steps, distances, energy, exercise minutes, time in daylight and nutrition, is a total. Workouts are the total minutes and the number of workouts (JSON also lists them per activity). Sleep is the total minutes asleep (the "asleep" column: REM, core, deep and unspecified together) plus minutes per stage (in bed, awake, REM, core, deep, unspecified); in daily values, a night counts on the day you woke up. Everything else has the average, lowest and highest value and how many readings there were. JSON or CSV, with no device names or sample IDs.</li>
-<li><strong>AI summary:</strong> the last 7, 30 or 90 complete days (today isn't included), compared with the same number of days before that. For each data type: the daily average, the change in %, the lowest and highest day and how many days had data, plus a table of daily values for the kinds that had data, the average sleep stages, and the number and total time of workouts per activity. Markdown (easy for AI assistant apps and people to read) or JSON. The file is written in English and is not a medical record.</li>
+<li><strong>AI summary:</strong> the last 7, 30 or 90 complete days (today isn't included), compared with the same number of days before that. For each data type: the daily average, the change in %, the lowest and highest day and how many days had data, plus a table of daily values for the kinds that had data, the average sleep stages, and the number and total time of workouts per activity. Markdown (easy for AI assistant apps and people to read) or JSON. The file is written in English and is not a medical record. In JSON (schemaVersion 2), each day of a kind that is averaged, such as heart rate, also has that day's lowest and highest value (min and max).</li>
 </ul>
 <p>Wish Genie doesn't connect to any AI service. It only makes the file, and you decide where it goes. To ask an AI assistant app about your data, share the file to that app from manual export, or upload it from the folder your task sends it to. If you share it with an AI app, that company receives this health data.</p>
+<p>A Markdown AI summary starts with this note for your AI assistant. To leave it out, turn off "Add a note for AI assistants" in the task or in manual export.</p>
+<pre class="note">## For your AI assistant
+
+Wish Genie added this note so an AI assistant can read the data below. Please:
+1. Summarize the main trends over this period and compare them with the previous period (see "Change").
+2. Point out days or values that stand out from this person's usual range.
+3. Treat days without data as missing. Do not guess values.
+4. Use plain language and keep it short.
+
+Do not diagnose or suggest treatment. If something looks concerning, suggest talking to a doctor.
+This note only asks for an analysis of the data in this file.</pre>
 <ul>
 <li><strong>Tasks with hourly or daily values</strong> send an hour or a day only after it has ended. Watches often sync late, so each run also sends the last 24 hours (hourly) or the last 7 days (daily) again with up-to-date numbers. If your server or script keeps them, replace earlier values that have the same data type and start time instead of adding them again.</li>
 <li><strong>AI summary tasks</strong> run every day or every week, and every run sends a whole summary. If there's no data for the period, nothing is sent.</li>
@@ -79,9 +92,10 @@
 
 <h2>8. Shortcuts and Siri</h2>
 <p>In the Shortcuts app, Wish Genie adds two actions: "Export Health Data" (returns a JSON or CSV file of raw readings for today, yesterday, or the last 7 or 30 days, for any of the kinds of data above) and "Run Task" (sends a task's new data now). You can also ask Siri. Shortcuts need Basic or Premium.</p>
+<p>Tip: to send at a set time, create a personal automation in the Shortcuts app (Time of Day) that runs "Run Task". It still can't read Health data while your iPhone is locked.</p>
 
 <h2>9. Home screen and widgets</h2>
-<p>The home screen shows three tiles, one large and two small (heart rate, steps and sleep to start). To change them, open Settings › Tiles, tap a tile and pick what it shows. Blood pressure, height, nutrition and workouts can't be shown on a tile. Your Home Screen widgets show the same three. Readings you take only now and then, such as weight or VO₂ Max, show the most recent value from the last 30 days with its date. Widget values are hidden while your iPhone is locked.</p>
+<p>The home screen shows three tiles, one large and two small (heart rate, steps and sleep to start). To change them, open Settings › Tiles, tap a tile and pick what it shows. Blood pressure, height, nutrition and workouts can't be shown on a tile. Your Home Screen widgets show the same three. Readings you take only now and then, such as weight or VO₂ Max, show the most recent value from the last 30 days with its date. Widget values are hidden while your iPhone is locked. When you have a task that's turned on, the widget also shows a "Catch up" button: it opens Wish Genie, sends the tasks that are due and shows the result.</p>
 
 <h2>10. Plans</h2>
 <ul>
