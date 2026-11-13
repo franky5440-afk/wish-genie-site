@@ -10,16 +10,16 @@
 <main>
 <header><a class="brand" href="../">Wish Genie</a><nav><a href="../support/">Support</a><a href="../zh/privacy/" lang="zh-Hant">中文</a></nav></header>
 <h1>Privacy Policy</h1>
-<p class="meta">Wish Genie: Health Export · Last updated: November 9, 2026</p>
+<p class="meta">Wish Genie: Health Export · Last updated: November 13, 2026</p>
 
 <h2>The short version</h2>
-<p>We don't collect any data. Wish Genie reads health data on your iPhone and sends it only to the destinations you set up yourself. We don't run servers, we don't use analytics or advertising, and the app contains no third-party tracking code.</p>
+<p>We don't collect any data. Wish Genie reads health data on your iPhone and sends it only to the destinations you set up yourself. We don't run servers, we don't use analytics or advertising, and the app contains no third-party tracking code. If you choose to use Ask AI, a summary of your health data and your questions are sent from your iPhone to OpenRouter and the AI model provider you pick; see <a href="#ask-ai">Ask AI</a> below.</p>
 
 <h2>Health data</h2>
 <ul>
 <li>With your permission, the app reads data from the Health app (for example heart rate, steps and sleep). You choose which types to allow in iOS Settings, and you can change that at any time.</li>
 <li>The app only reads. It never writes to the Health app.</li>
-<li>Health data is sent only when you give Genie a task (an export) or start a manual export, and only to the destination you picked: your own iCloud Drive, a Dropbox, Google Drive or OneDrive account you connect, a REST API endpoint you enter, or a file you share. Those destinations are run by you or by a service you chose, and their own privacy terms apply.</li>
+<li>Health data is sent only when you give Genie a task (an export) or start a manual export, and only to the destination you picked: your own iCloud Drive, a Dropbox, Google Drive or OneDrive account you connect, a REST API endpoint you enter, a file you share, or, when you use Ask AI, OpenRouter and the model provider you pick. Those destinations are run by you or by a service you chose, and their own privacy terms apply.</li>
 <li>We never receive, see or store your health data, and we don't use it for advertising, marketing or data mining.</li>
 </ul>
 
@@ -31,11 +31,23 @@
 <li>"Disconnect" removes the sign-in from your iPhone; files already sent stay in your account. To revoke access completely, also remove Wish Genie from the connected apps in your account settings at that service.</li>
 </ul>
 
+<h2 id="ask-ai">Ask AI (OpenRouter)</h2>
+<ul>
+<li>Ask AI is optional. Nothing is sent until you agree on the "Before you ask AI" screen, and you can withdraw that in Settings › AI assistant.</li>
+<li>When you send a question, the app sends a summary of the Health data you picked (the days and kinds of data you chose), the earlier questions and answers in that conversation, and your new question. They go over HTTPS from your iPhone to OpenRouter (openrouter.ai), which passes them to the company behind the model you chose. They don't pass through us.</li>
+<li>OpenRouter's privacy policy and the model provider's own terms apply to what you send. Some model providers may keep what you send and use it to train their models. You can limit this in your OpenRouter account's privacy settings.</li>
+<li>Usage is billed to your own OpenRouter account. We don't receive your OpenRouter account details or payment details.</li>
+<li>Connecting: you sign in on OpenRouter's own page, shown by iOS. OpenRouter then sends you back to the app through a page on this website, which only passes a one-time code to the app and doesn't store it. The app exchanges that code for a key.</li>
+<li>The key is stored in the iPhone Keychain, available only on this device and not synced to iCloud Keychain. "Disconnect" deletes it from your iPhone; to delete it from your OpenRouter account, use the Keys page on openrouter.ai.</li>
+<li>To show the list of models, the app downloads OpenRouter's public model list. That request contains no health data and no key.</li>
+</ul>
+
 <h2>What stays on your iPhone</h2>
 <ul>
 <li><strong>Settings</strong> (your tasks, destination names and hosts, export history): stored in the app's private storage. Like other app data, they can be included in your iPhone backup.</li>
-<li><strong>Secrets</strong> (API keys, secret headers, URLs that contain a token, and the sign-in and account email for Dropbox, Google Drive and OneDrive): stored in the iPhone Keychain, available only on this device and not synced to iCloud Keychain.</li>
+<li><strong>Secrets</strong> (API keys, secret headers, URLs that contain a token, the sign-in and account email for Dropbox, Google Drive and OneDrive, and the OpenRouter key): stored in the iPhone Keychain, available only on this device and not synced to iCloud Keychain.</li>
 <li><strong>Home Screen widget</strong>: today's summary values (for example total steps and the latest heart rate) are saved so the widget can show them. This file is excluded from backups, and the values are hidden while your iPhone is locked.</li>
+<li><strong>Ask AI conversations</strong> (the summary sent, your questions and the answers): saved only on this iPhone, protected while your iPhone is locked, and excluded from iCloud and backups. You can delete one or all of them at any time. A report you save contains only the questions and answers, and goes only where you share it.</li>
 </ul>
 
 <h2>Purchases</h2>

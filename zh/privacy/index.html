@@ -10,16 +10,16 @@
 <main>
 <header><a class="brand" href="../">許願精靈</a><nav><a href="../support/">支援</a><a href="../../privacy/" lang="en">English</a></nav></header>
 <h1>隱私權政策</h1>
-<p class="meta">許願精靈：健康匯出 · 最後更新：2026 年 11 月 9 日</p>
+<p class="meta">許願精靈：健康匯出 · 最後更新：2026 年 11 月 13 日</p>
 
 <h2>簡單說</h2>
-<p>我們不收集任何資料。許願精靈在你的 iPhone 上讀取健康資料，只送到你自己設定的目的地。我們沒有架伺服器、不用分析或廣告服務，App 裡也沒有任何第三方追蹤程式。</p>
+<p>我們不收集任何資料。許願精靈在你的 iPhone 上讀取健康資料，只送到你自己設定的目的地。我們沒有架伺服器、不用分析或廣告服務，App 裡也沒有任何第三方追蹤程式。如果你選擇使用「問 AI」，你的健康資料摘要和問題會從 iPhone 送到 OpenRouter，以及你選的 AI 模型提供者，詳見下面的<a href="#ask-ai">問 AI</a>。</p>
 
 <h2>健康資料</h2>
 <ul>
 <li>經你同意後，App 會讀取「健康」App 裡的資料（例如心率、步數、睡眠）。要開放哪些項目由你在 iOS 設定裡決定，隨時可以改。</li>
 <li>App 只讀取，從不寫入「健康」App。</li>
-<li>只有在你交代精靈一件事（匯出任務）或手動匯出時才會送出，而且只送到你選的目的地：你自己的 iCloud 雲碟、你連結的 Dropbox、Google 雲端硬碟或 OneDrive 帳號、你填的 REST API 網址，或你分享出去的檔案。這些目的地由你或你選的服務經營，適用它們自己的隱私條款。</li>
+<li>只有在你交代精靈一件事（匯出任務）或手動匯出時才會送出，而且只送到你選的目的地：你自己的 iCloud 雲碟、你連結的 Dropbox、Google 雲端硬碟或 OneDrive 帳號、你填的 REST API 網址、你分享出去的檔案，或是在你使用「問 AI」時，送到 OpenRouter 和你選的模型提供者。這些目的地由你或你選的服務經營，適用它們自己的隱私條款。</li>
 <li>我們不會收到、看到或儲存你的健康資料，也不會拿來做廣告、行銷或資料探勘。</li>
 </ul>
 
@@ -31,11 +31,23 @@
 <li>「中斷連結」會把登入資訊從 iPhone 刪掉，已經送出的檔案仍留在你的帳號裡。要完全撤銷存取權，請再到該服務的帳號設定，把 Wish Genie 從已連結的 App 中移除。</li>
 </ul>
 
+<h2 id="ask-ai">問 AI（OpenRouter）</h2>
+<ul>
+<li>「問 AI」是選用的。在你於「問 AI 之前」畫面按同意之前，什麼都不會送出；之後可以在「設定 › AI 助理」撤回同意。</li>
+<li>你送出問題時，App 會送出你挑選的健康資料摘要（你選的天數與資料種類）、這個對話裡之前的問題和回答，以及新的問題。這些內容透過 HTTPS 從你的 iPhone 送到 OpenRouter（openrouter.ai），再由 OpenRouter 轉給你選的模型背後的公司，不會經過我們。</li>
+<li>你送出的內容適用 OpenRouter 的隱私權政策，以及模型提供者自己的條款。有些模型提供者可能會保存你送出的內容、拿去訓練模型，你可以在 OpenRouter 帳號的隱私設定裡限制。</li>
+<li>費用由你自己的 OpenRouter 帳號支付，我們收不到你的 OpenRouter 帳號資料或付款資料。</li>
+<li>連結時，你是在 OpenRouter 自己的網頁上登入，由 iOS 顯示。接著 OpenRouter 會經過本網站的一個轉接頁把你帶回 App；這一頁只把一次性的授權碼交給 App，不會儲存。App 再用這個授權碼換到金鑰。</li>
+<li>金鑰存在 iPhone 的鑰匙圈，只在這台裝置上可用，不會同步到 iCloud 鑰匙圈。「中斷連結」會把它從 iPhone 刪掉；要從 OpenRouter 帳號刪掉，請到 openrouter.ai 的 Keys 頁面。</li>
+<li>為了顯示模型清單，App 會下載 OpenRouter 公開的模型清單，這個請求不含健康資料，也不帶金鑰。</li>
+</ul>
+
 <h2>留在你 iPhone 上的東西</h2>
 <ul>
 <li><strong>設定</strong>（你交代的任務、目的地名稱與主機、匯出紀錄）：存在 App 的私有空間。跟其他 App 的資料一樣，可能會包含在你的 iPhone 備份裡。</li>
-<li><strong>機密</strong>（API 金鑰、機密 header、含密碼的網址，以及 Dropbox、Google 雲端硬碟、OneDrive 的登入資訊與帳號 email）：存在 iPhone 的鑰匙圈，只在這台裝置上可用，不會同步到 iCloud 鑰匙圈。</li>
+<li><strong>機密</strong>（API 金鑰、機密 header、含密碼的網址，Dropbox、Google 雲端硬碟、OneDrive 的登入資訊與帳號 email，以及 OpenRouter 的金鑰）：存在 iPhone 的鑰匙圈，只在這台裝置上可用，不會同步到 iCloud 鑰匙圈。</li>
 <li><strong>主畫面小工具</strong>：為了讓小工具顯示，會存一份今天的摘要數值（例如今天的總步數、最新心率）。這個檔案不會進備份，iPhone 鎖著時數值會遮住。</li>
+<li><strong>「問 AI」的對話</strong>（送出的摘要、你的問題和回答）：只存在這支 iPhone 上，iPhone 鎖著時受到保護，不會進 iCloud，也不會進備份，隨時可以刪一則或全部刪掉。存成報告時只包含問題與回答，只會送到你分享的地方。</li>
 </ul>
 
 <h2>購買</h2>
