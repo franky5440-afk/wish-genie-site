@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Returning to Wish Genie</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+<h1>Returning to Wish Genie…</h1>
+<p>If the app doesn't open, go back to Wish Genie and try connecting again.</p>
+<p lang="zh-Hant">正在回到許願精靈…如果 App 沒有自動打開，請回到許願精靈再連結一次。</p>
+<p><a id="open" href="wishgenie://openrouter-callback">Open Wish Genie／打開許願精靈</a></p>
+</main>
+<script>
+// OpenRouter OAuth callback relay: OpenRouter only redirects to https URLs, so this page hands the
+// authorization code back to the app. The code is useless without the PKCE verifier that stays in the app.
+// Only code, state and error are forwarded; nothing is stored or sent anywhere else.
+(function () {
+  var allowed = ["code", "state", "error"];
+  var safe = /^[A-Za-z0-9._~-]{1,512}$/;
+  var source = new URLSearchParams(window.location.search);
+  var out = new URLSearchParams();
+  allowed.forEach(function (name) {
+    var value = source.get(name);
+    if (value !== null && safe.test(value)) { out.set(name, value); }
+  });
+  var target = "wishgenie://openrouter-callback" + (out.toString() ? "?" + out.toString() : "");
+  document.getElementById("open").setAttribute("href", target);
+  if (out.has("code") || out.has("error")) { window.location.replace(target); }
+})();
+</script>
+</body>
+</html>
