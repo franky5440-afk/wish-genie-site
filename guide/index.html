@@ -4,22 +4,23 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>User Guide · Wish Genie: Health Export</title>
-<meta name="description" content="How to use Wish Genie: Health Export to send Apple Health data to iCloud Drive, Dropbox, Google Drive, OneDrive or your own REST API as JSON or CSV, plus hourly or daily values and AI summaries for AI assistant apps.">
+<meta name="description" content="How to use Wish Genie: Health Export to send Apple Health data to iCloud Drive, Dropbox, Google Drive, OneDrive or your own REST API as JSON or CSV, plus hourly or daily values and AI summaries for AI assistant apps, including a fixed-name latest copy your own AI tools can read on a schedule.">
 <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 <main>
 <header><a class="brand" href="../">Wish Genie</a><nav><a href="../support/">Support</a><a href="../privacy/">Privacy</a><a href="../zh/guide/" lang="zh-Hant">中文</a></nav></header>
 <h1>User Guide</h1>
-<p class="meta">Wish Genie: Health Export 1.6 · iPhone with iOS 18 or later · Updated November 13, 2026</p>
-<p>Wish Genie reads data from the Health app (more than 60 kinds, plus workouts) and sends it where you choose: iCloud Drive, Dropbox, Google Drive, OneDrive (personal accounts), your own REST API, or a file you share yourself. It can also turn your data into hourly or daily values, or a summary that an AI assistant app can read, and you can ask an AI model about that summary in the app with your own OpenRouter account. It has no account and no server of its own. <a href="https://apps.apple.com/app/id6830697434">Get it on the App Store</a>.</p>
+<p class="meta">Wish Genie: Health Export 1.7 · iPhone with iOS 18 or later · Updated November 14, 2026</p>
+<p>Wish Genie reads data from the Health app (more than 70 kinds, plus workouts) and sends it where you choose: iCloud Drive, Dropbox, Google Drive, OneDrive (personal accounts), your own REST API, or a file you share yourself. It can also turn your data into hourly or daily values, or a summary that an AI assistant app can read, and you can ask an AI model about that summary in the app with your own OpenRouter account. It has no account and no server of its own. <a href="https://apps.apple.com/app/id6830697434">Get it on the App Store</a>.</p>
 
 <h2>1. Allow Health access</h2>
 <p>The first time you open the app, tap "Allow Health access". iOS lists each kind of Health data so you can choose what Genie reads. If you skipped this, tap "Allow Health access" on the home screen or in Settings › Health data. If a task fails because Genie can't read Health data, the task shows "Check Health access", which leads to the same steps.</p>
 <p>iOS shows that list only once. To change it later, open the iPhone Settings app › Privacy &amp; Security › Health › Wish Genie. Genie only reads Health data; it never writes to it.</p>
-<p>Updated from an earlier version? Version 1.4 can read many new kinds of data, so the home screen shows "More Health data can be read". Tap the button and iOS lists only the kinds you haven't answered yet; turn on the ones you want.</p>
+<p>Updated from an earlier version? Versions 1.4 and 1.7 can read new kinds of data, so the home screen shows "More Health data can be read". Tap the button and iOS lists only the kinds you haven't answered yet; turn on the ones you want.</p>
+<p>Cycle Tracking and State of Mind aren't in that first list. iOS asks about them the first time you choose them in a task or an export, so you're only asked if you use them.</p>
 
-<h2>2. Add a destination</h2>
+<h2 id="destinations">2. Add a destination</h2>
 <p>A destination is a place your tasks send data to. Open "Manage destinations" on the home screen (or Settings › Destinations) and tap "Add a destination".</p>
 <ul>
 <li><strong>iCloud Drive:</strong> no sign-in needed. Genie saves files in the Wish Genie folder of your own iCloud Drive, so you can open them in the Files app (iCloud Drive › Wish Genie). iCloud Drive must be on: iPhone Settings › your name › iCloud.</li>
@@ -29,7 +30,7 @@
 <p>To disconnect a cloud account, open the destination and tap "Disconnect". You can also remove Wish Genie's access from the service's own account settings.</p>
 
 <h2>3. Give Genie a task</h2>
-<p>Tap "Give Genie a task". A task is one sentence, for example "Send every reading of Heart Rate as JSON to Home NAS every hour." Tap any highlighted word to change the data, what goes in the file (every reading, hourly or daily values, or an AI summary; see <a href="#ai">section 6</a>), the format (JSON or CSV; Markdown or JSON for an AI summary), the destination or how often it runs (every 15 or 30 minutes, every hour, every 6 or 12 hours, every day or every week; an AI summary runs every day or every week). A daily task sends at the time you pick under "Send at"; a weekly task also lets you pick the day of the week. New tasks start at 8:00 (Monday for weekly), and you can change this later. On the data page, "Select all" picks every kind of data at once ("Deselect all" clears them). Then tap "Hand it to Genie".</p>
+<p>Tap "Give Genie a task". A task is one sentence, for example "Send every reading of Heart Rate as JSON to Home NAS every hour." Tap any highlighted word to change the data, what goes in the file (every reading, hourly or daily values, or an AI summary; see <a href="#ai">section 6</a>), the format (JSON or CSV; Markdown or JSON for an AI summary), the destination or how often it runs (every 15 or 30 minutes, every hour, every 6 or 12 hours, every day or every week; an AI summary runs every day or every week). A daily task sends at the time you pick under "Send at"; a weekly task also lets you pick the day of the week. New tasks start at 8:00 (Monday for weekly), and you can change this later. On the data page, "Select all" picks every kind of data at once, except Cycle Tracking and State of Mind: tap those yourself if you want them ("Deselect all" clears them). For hourly or daily values or an AI summary, the Cycle Tracking group isn't shown (see <a href="#data">section 5</a>). Then tap "Hand it to Genie".</p>
 <p>Genie won't send anything until you give it a task. Each run sends only data that is new since the last successful run.</p>
 <ul>
 <li><strong>Export now:</strong> open the task and tap "Export now" to send new data right away.</li>
@@ -37,6 +38,7 @@
 <li><strong>Remind me if it doesn't send:</strong> turn this on in a task, and if the task is an hour late (for example because your iPhone stayed locked), Genie sends you a notification. Open Wish Genie and it catches up. iOS asks for permission to send notifications the first time you turn it on.</li>
 <li><strong>Resend recent data:</strong> for a task with every reading or hourly or daily values that has sent before, sends the last day, 7 days or 30 days again. Use it when the receiving end missed something. Data that was already sent goes again: skip records you already have (every reading has a uuid), or replace hourly and daily values that have the same data type and start time.</li>
 <li><strong>Run now:</strong> shown on the home screen when a task failed, to try again immediately.</li>
+<li id="latest"><strong>Also save a latest copy:</strong> for a task with hourly or daily values or an AI summary that sends to iCloud Drive, Dropbox, Google Drive or OneDrive. Each time it sends, Genie also saves the same file under a fixed name, WishGenie-&lt;task name&gt;-latest.md (or .json or .csv), replacing the copy from the run before, so an AI assistant app or another tool can always read one file on a schedule (see <a href="#ai-schedule">section 8</a>). The actual file name is shown below the switch. Characters that can't be in a file name become -, the name is cut to 40 characters, and two tasks with the same name get a short ID added. If you rename the task, the next copy uses the new name; the old file stays, because Genie doesn't delete files in your cloud. It isn't offered for tasks with every reading (each run sends only the new data, not the whole period) or for a REST API. If the latest copy couldn't be saved, the main file was still sent and the task shows a red message (see <a href="../support/#latest">Support</a>).</li>
 </ul>
 
 <h2>4. When automatic exports run</h2>
@@ -45,7 +47,7 @@
 <h2 id="data">5. What gets exported</h2>
 <p>More than 60 kinds of Health data, grouped the same way as in the app:</p>
 <ul>
-<li><strong>Activity:</strong> Steps, Walking + Running Distance, Flights Climbed, Active Energy, Resting Energy, Exercise Minutes, Stand Minutes, Move Minutes, Physical Effort, Swimming Distance, Swimming Strokes, Wheelchair Distance, Wheelchair Pushes, Time in Daylight</li>
+<li><strong>Activity:</strong> Steps, Walking + Running Distance, Flights Climbed, Active Energy, Resting Energy, Exercise Minutes, Stand Minutes, Move Minutes, Physical Effort, Swimming Distance, Swimming Strokes, Wheelchair Distance, Wheelchair Pushes, Time in Daylight, Stand Hours, Activity Rings</li>
 <li><strong>Running:</strong> Running Speed, Running Power, Running Stride Length, Vertical Oscillation, Ground Contact Time</li>
 <li><strong>Walking:</strong> Walking Speed, Walking Step Length, Walking Asymmetry, Double Support Time, Stair Speed: Up, Stair Speed: Down, Six-Minute Walk</li>
 <li><strong>Cycling:</strong> Cycling Distance, Cycling Speed, Cycling Power, Cycling Cadence, Cycling Functional Threshold Power</li>
@@ -53,13 +55,22 @@
 <li><strong>Body:</strong> Blood Oxygen, Respiratory Rate, Weight, Body Temperature, Height, Body Fat Percentage, Lean Body Mass, Body Mass Index, Waist Circumference, Blood Glucose</li>
 <li><strong>Nutrition:</strong> Dietary Energy, Protein, Carbohydrates, Total Fat, Dietary Sugar, Fiber, Sodium, Caffeine, Water</li>
 <li><strong>Hearing:</strong> Environmental Sound Levels, Headphone Audio Levels</li>
-<li><strong>Sleep</strong> and <strong>Workouts</strong></li>
+<li><strong>Sleep</strong></li>
+<li><strong>Mental Wellbeing:</strong> Mindful Minutes, State of Mind</li>
+<li><strong>Cycle Tracking:</strong> Menstruation, Spotting, Ovulation Test Result, Cervical Mucus Quality, Infrequent Periods, Irregular Cycles, Persistent Spotting, Prolonged Periods</li>
+<li><strong>Workouts</strong></li>
 </ul>
 <p>Workout routes (GPS and location) aren't read.</p>
 <ul>
 <li><strong>JSON or CSV.</strong> Every sample has a unique ID, so your server or script can safely ignore duplicates.</li>
 <li><strong>Fields:</strong> each sample has type, start, end, value, unit, source and uuid. Sleep is one row per segment, with the minutes as its value and a stage: deep, rem, core, awake, inBed, or unspecified (asleep, but no stage was recorded).</li>
-<li><strong>Workouts:</strong> one row per workout, with its length in minutes as the value. It also has the activity (for example running) and, when they were recorded, the distance in meters, active energy in kcal, average and maximum heart rate, and whether it was indoors. In JSON these are in a "workout" object; a CSV file always ends with six workout_ columns, which are empty for other kinds of data. The earlier CSV columns haven't changed.</li>
+<li><strong>Workouts:</strong> one row per workout, with its length in minutes as the value. It also has the activity (for example running) and, when they were recorded, the distance in meters, active energy in kcal, average and maximum heart rate, and whether it was indoors. In JSON these are in a "workout" object; a CSV file has six workout_ columns, which are empty for other kinds of data.</li>
+<li><strong>Stand Hours:</strong> one row per hour, with 1 as the value if you stood during that hour or 0 if you didn't (category stood or idle). <strong>Mindful Minutes:</strong> one row per session, with its length in minutes as the value.</li>
+<li><strong>State of Mind:</strong> one row per entry, with the valence as the value, from −1 (very unpleasant) to +1 (very pleasant). It also has the kind (momentaryEmotion for an emotion, dailyMood for the whole day), the classification (for example slightlyPleasant), and the labels (for example calm or stressed) and associations (for example work or family) that were chosen. In JSON these are in a "stateOfMind" object.</li>
+<li><strong>Activity Rings:</strong> one row per day, with the number of rings closed (0 to 3) as the value. It also has each ring's value and goal (Move in kcal, Exercise in minutes, Stand in hours) and whether the rings were paused that day. In JSON these are in a "rings" object.</li>
+<li><strong>Cycle Tracking:</strong> one row per entry, with its length in minutes as the value. Menstruation has the flow (unspecified, light, medium, heavy or none) and, when it was recorded, whether the entry marks the start of a cycle. An ovulation test result is negative, luteinizingHormoneSurge, estrogenSurge or indeterminate; cervical mucus quality is dry, sticky, creamy, watery or eggWhite. In JSON these are in a "category" object (value and cycleStart).</li>
+<li><strong>CSV columns:</strong> after the six workout_ columns, a CSV file ends with 14 more columns, empty for other kinds of data: category, cycle_start, mood_kind, mood_valence, mood_classification, mood_labels, mood_associations (labels and associations are separated by ;), rings_move_kcal, rings_move_goal_kcal, rings_exercise_min, rings_exercise_goal_min, rings_stand_h, rings_stand_goal_h and rings_paused, 28 columns in all. They're added after the earlier columns, which haven't changed, so a program that reads columns by name keeps working.</li>
+<li><strong>Good to know:</strong> Activity Rings are read only when a task runs or you export manually; iOS doesn't wake the app for them. If your Move ring uses Move time (minutes) as its goal, "rings closed" doesn't count the Move ring, because only calories are compared. Stand Hours can be counted more than once when more than one device recorded the same hour. A mindful session that goes past midnight counts on the day it started.</li>
 <li><strong>Units</strong> are fixed for each kind of data, for example mmHg for blood pressure, mg/dL for blood glucose and cm for height. Percentages are from 0 to 100.</li>
 <li><strong>File names</strong> look like WishGenie-&lt;task&gt;-&lt;time in UTC&gt;.json. A REST API receives the same content as the request body.</li>
 </ul>
@@ -67,9 +78,10 @@
 <h2 id="ai">6. Hourly and daily values, and AI summaries</h2>
 <p>Instead of every reading, a manual export or a task can put one of these in the file (choose it under "What goes in the file?"):</p>
 <ul>
-<li><strong>Hourly or Daily:</strong> one value per data type for each hour or each day. Data that adds up, such as steps, distances, energy, exercise minutes, time in daylight and nutrition, is a total. Workouts are the total minutes and the number of workouts (JSON also lists them per activity). Sleep is the total minutes asleep (the "asleep" column: REM, core, deep and unspecified together) plus minutes per stage (in bed, awake, REM, core, deep, unspecified); in daily values, a night counts on the day you woke up. Everything else has the average, lowest and highest value and how many readings there were. JSON or CSV, with no device names or sample IDs.</li>
-<li><strong>AI summary:</strong> the last 7, 30 or 90 complete days (today isn't included), compared with the same number of days before that. For each data type: the daily average, the change in %, the lowest and highest day and how many days had data, plus a table of daily values for the kinds that had data, the average sleep stages, and the number and total time of workouts per activity. Markdown (easy for AI assistant apps and people to read) or JSON. The file is written in English and is not a medical record. In JSON (schemaVersion 2), each day of a kind that is averaged, such as heart rate, also has that day's lowest and highest value (min and max).</li>
+<li><strong>Hourly or Daily:</strong> one value per data type for each hour or each day. Data that adds up, such as steps, distances, energy, exercise minutes, time in daylight and nutrition, is a total. Workouts are the total minutes and the number of workouts (JSON also lists them per activity). Sleep is the total minutes asleep (the "asleep" column: REM, core, deep and unspecified together) plus minutes per stage (in bed, awake, REM, core, deep, unspecified); in daily values, a night counts on the day you woke up. Everything else has the average, lowest and highest value and how many readings there were. Stand Hours and Mindful Minutes are totals, and State of Mind is the average, lowest and highest valence. Activity Rings are in daily values only, with the rings closed and each ring's value and goal (a CSV file ends with seven rings_ columns, 23 columns in all). JSON or CSV, with no device names or sample IDs.</li>
+<li><strong>AI summary:</strong> the last 7, 30 or 90 complete days (today isn't included), compared with the same number of days before that. For each data type: the daily average, the change in %, the lowest and highest day and how many days had data, plus a table of daily values for the kinds that had data, the average sleep stages, and the number and total time of workouts per activity. Markdown (easy for AI assistant apps and people to read) or JSON. The file is written in English and is not a medical record. In JSON (schemaVersion 2), each day of a kind that is averaged, such as heart rate, also has that day's lowest and highest value (min and max). Stand Hours and Mindful Minutes are daily totals; State of Mind is the daily average valence (−1 very unpleasant to +1 very pleasant) and the number of entries; Activity Rings are the rings closed per day and, for each ring, the days it was closed and how much of the goal was reached on average.</li>
 </ul>
+<p>Cycle Tracking is never put in hourly or daily values or an AI summary, and it's never sent with Ask AI. It's only in exports with every reading (JSON or CSV), which go only to the destination you chose.</p>
 <p>An AI summary file only goes where you send it; Wish Genie doesn't send it to any AI service. (To ask an AI model inside the app instead, see <a href="#ask-ai">Ask AI</a>.) To ask an AI assistant app about your data, share the file to that app from manual export, or upload it from the folder your task sends it to. If you share it with an AI app, that company receives this health data.</p>
 <p>A Markdown AI summary starts with this note for your AI assistant. To leave it out, turn off "Add a note for AI assistants" in the task or in manual export.</p>
 <pre class="note">## For your AI assistant
@@ -93,7 +105,7 @@ This note only asks for an analysis of the data in this file.</pre>
 <li><strong>Start:</strong> tap "Ask AI about your Health data" on the home screen (or Settings › AI assistant › Open AI assistant).</li>
 <li><strong>Agree first:</strong> the first time, "Before you ask AI" explains what's sent, who receives it, that it uses your own account, and that answers aren't medical advice. Nothing is sent until you tap "I agree". You can withdraw this in Settings › AI assistant › Withdraw agreement.</li>
 <li><strong>Connect OpenRouter:</strong> tap "Connect OpenRouter", sign in (or create an account) and allow access. You come back to Wish Genie, sometimes through a short page on this website. To add credits, open openrouter.ai and go to Settings › Credits.</li>
-<li><strong>New conversation:</strong> pick the days (7, 30 or 90) and which data to include, and choose a model. Genie makes the same summary as the AI summary export, then you type a question and tap "Send". Answers can take up to a minute; you can cancel while waiting. Answers are in the app's language.</li>
+<li><strong>New conversation:</strong> pick the days (7, 30 or 90) and which data to include, and choose a model. Genie makes the same summary as the AI summary export, then you type a question and tap "Send". Answers can take up to a minute; you can cancel while waiting. Answers are in the app's language. Cycle Tracking isn't in the list of data, so it's never sent.</li>
 <li><strong>What's sent:</strong> each question sends the summary, the earlier questions and answers in that conversation and your new question, from your iPhone to OpenRouter, which passes them to the company behind the model you chose.</li>
 <li><strong>Choosing a model:</strong> three recommended models are at the top with their prices (US dollars per million tokens, charged by OpenRouter). "Other models" lists the rest and can be searched. Free models are often busy, and the companies behind some models may keep what you send and use it to train their models. In your OpenRouter account's privacy settings (Settings › Privacy) you can turn off providers that may train on your data, separately for paid and free models; some models may then be unavailable.</li>
 <li><strong>Not medical advice:</strong> AI answers can be wrong. Every answer carries a reminder to talk to a doctor about anything concerning.</li>
@@ -103,17 +115,33 @@ This note only asks for an analysis of the data in this file.</pre>
 </ul>
 <p>If something goes wrong, see <a href="../support/#ask-ai-messages">what the Ask AI messages mean</a>.</p>
 
-<h2>8. Manual export</h2>
+<h2 id="ai-schedule">8. Let an AI read your exports on a schedule</h2>
+<p>If you use your own AI tools, such as an AI assistant app or an AI agent that can read files in your cloud on a schedule, it can read a fresh summary every day without you sharing a file by hand. Wish Genie only puts the file in your cloud; your AI tool reads it from there.</p>
+<ol>
+<li>Add a cloud destination: iCloud Drive, Dropbox, Google Drive or OneDrive (see <a href="#destinations">section 2</a>).</li>
+<li>Give Genie a task: an AI summary (Markdown is easiest for an AI to read), the last 7, 30 or 90 days, every day at the time you pick under "Send at", to that destination.</li>
+<li>In the task, turn on "Also save a latest copy" and note the file name shown below the switch, for example WishGenie-Health summary-latest.md. It's in Genie's folder of that destination (iCloud Drive › Wish Genie, Apps › Wish Genie in Dropbox and OneDrive, or the "Wish Genie" folder in Google Drive).</li>
+<li>In your AI tool, give it access to that file or folder and set it to read that file on a schedule. Leave some time after the task's send time (for example an hour or more), because iOS decides exactly when background exports run. The summary shows the period it covers, so the AI can tell how recent it is.</li>
+</ol>
+<ul>
+<li>Wish Genie never sends your data to an AI service by itself. The only time it does is when you use <a href="#ask-ai">Ask AI</a>. When your AI tool reads the file from your cloud, the company behind that tool receives this health data, and its own terms apply.</li>
+<li>Cycle Tracking is never in an AI summary. A Markdown summary starts with the note for your AI assistant (see <a href="#ai">section 6</a>), which asks it not to diagnose; you can turn the note off.</li>
+<li>Health data can't be read while your iPhone is locked. Turn on "Remind me if it doesn't send" in the task, or open Wish Genie, so the day's file isn't missed.</li>
+<li>For your own program instead of an AI, a task with hourly or daily values (JSON or CSV) can keep a latest copy too.</li>
+</ul>
+<p>Tasks need Premium (automatic exports).</p>
+
+<h2>9. Manual export</h2>
 <p>Tap the share button on the home screen ("Export once"), choose "What goes in the file?" (raw data, hourly, daily or an AI summary), "Which data?" and "Which days?" (an AI summary uses the last 7, 30 or 90 complete days instead), pick a file format, then tap "Create file and share" to save the file to Files, AirDrop it or send it anywhere. Manual export needs Basic or Premium.</p>
 
-<h2>9. Shortcuts and Siri</h2>
+<h2>10. Shortcuts and Siri</h2>
 <p>In the Shortcuts app, Wish Genie adds two actions: "Export Health Data" (returns a JSON or CSV file of raw readings for today, yesterday, or the last 7 or 30 days, for any of the kinds of data above) and "Run Task" (sends a task's new data now). You can also ask Siri. Shortcuts need Basic or Premium.</p>
 <p>Tip: to send at a set time, create a personal automation in the Shortcuts app (Time of Day) that runs "Run Task". It still can't read Health data while your iPhone is locked.</p>
 
-<h2>10. Home screen and widgets</h2>
-<p>The home screen shows three tiles, one large and two small (heart rate, steps and sleep to start). To change them, open Settings › Tiles, tap a tile and pick what it shows. Blood pressure, height, nutrition and workouts can't be shown on a tile. Your Home Screen widgets show the same three. Readings you take only now and then, such as weight or VO₂ Max, show the most recent value from the last 30 days with its date. Widget values are hidden while your iPhone is locked. When you have a task that's turned on, the widget also shows a "Catch up" button: it opens Wish Genie, sends the tasks that are due and shows the result.</p>
+<h2>11. Home screen and widgets</h2>
+<p>The home screen shows three tiles, one large and two small (heart rate, steps and sleep to start). To change them, open Settings › Tiles, tap a tile and pick what it shows. Blood pressure, height, nutrition, workouts, Stand Hours, Activity Rings, Mental Wellbeing and Cycle Tracking can't be shown on a tile. Your Home Screen widgets show the same three. Readings you take only now and then, such as weight or VO₂ Max, show the most recent value from the last 30 days with its date. Widget values are hidden while your iPhone is locked. When you have a task that's turned on, the widget also shows a "Catch up" button: it opens Wish Genie, sends the tasks that are due and shows the result.</p>
 
-<h2>11. Plans</h2>
+<h2>12. Plans</h2>
 <ul>
 <li><strong>Free:</strong> Home Screen widgets and charts.</li>
 <li><strong>7-day free trial:</strong> tap "Start 7-day free trial" on the plans screen. It starts only when you tap it and never turns into a paid subscription.</li>
@@ -122,8 +150,8 @@ This note only asks for an analysis of the data in this file.</pre>
 </ul>
 <p>Prices are shown on the plans screen and on the App Store page, in your own currency. Bought on another device or reinstalled? Tap Settings › "Restore Purchases".</p>
 
-<h2>12. Privacy</h2>
-<p>We don't collect any data. Your health data goes straight from your iPhone to the destinations you set up. Cloud sign-ins, secret headers and secret URLs are stored in the iPhone Keychain on this device only. Your data goes to an AI service only when you use Ask AI: then the summary and your questions go from your iPhone to OpenRouter and the company behind the model you chose. An AI summary file goes only where you share or send it. Details are in the <a href="../privacy/">Privacy Policy</a>.</p>
+<h2>13. Privacy</h2>
+<p>We don't collect any data. Your health data goes straight from your iPhone to the destinations you set up. Cloud sign-ins, secret headers and secret URLs are stored in the iPhone Keychain on this device only. Your data goes to an AI service only when you use Ask AI: then the summary and your questions go from your iPhone to OpenRouter and the company behind the model you chose. An AI summary file goes only where you share or send it, and Cycle Tracking is never put in an AI summary or sent with Ask AI. Details are in the <a href="../privacy/">Privacy Policy</a>.</p>
 
 <footer>© 2026 Tzu-Yang Lin · <a href="../support/">Support</a> · <a href="../privacy/">Privacy Policy</a></footer>
 </main>
