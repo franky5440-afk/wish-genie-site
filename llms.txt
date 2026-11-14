@@ -15,7 +15,7 @@
   - Hearing: environmental sound levels, headphone audio levels.
   - Sleep: one row per segment with stage (deep, rem, core, awake, inBed, or unspecified = asleep with no stage recorded). In hourly/daily values: total "asleep" minutes (rem + core + deep + unspecified) plus minutes per stage; in daily values a night counts on the wake-up date.
   - Mental Wellbeing: mindful minutes, State of Mind.
-  - Cycle Tracking: menstruation, spotting, ovulation test result, cervical mucus quality, infrequent periods, irregular cycles, persistent spotting, prolonged periods.
+  - Cycle Tracking: menstruation, spotting, ovulation test result, cervical mucus quality, infrequent periods, irregular cycles, persistent spotting, prolonged periods. Only in exports with every reading (raw JSON/CSV); never in hourly/daily values, AI summaries or Ask AI (privacy, and the values are states that can't be meaningfully totaled or averaged), so the group is hidden from the data list for those contents.
   - Workouts: one row per session (see fields below). Workout routes, GPS and location are not read.
 - Not read as of 1.7: workout routes/GPS, ECG, AFib history, medications, GAD-7/PHQ-9 questionnaires, symptoms, and the other cycle tracking types (sexual activity, contraceptives, pregnancy, lactation, pregnancy and progesterone tests).
 - Units: fixed per type, for example count/min (heart rate), ms, mmHg (blood pressure), mg/dL (blood glucose), % as 0–100 (blood oxygen, body fat, walking asymmetry, double support), cm (height, waist, vertical oscillation), m, m/s, W, kcal, g, mg, mL, min, dBASPL (sound levels).
