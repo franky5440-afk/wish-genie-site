@@ -44,6 +44,13 @@
 <li><strong>The latest copy wasn't saved: …</strong> The main file was sent; only the extra copy under the fixed name failed, for the reason after the colon. See <a href="#latest">below</a>.</li>
 </ul>
 
+<h3 id="nothing-new">Why does a task with hourly or daily values or an AI summary keep saying &quot;Nothing new to send&quot;?</h3>
+<p>These kinds of content only send time periods that have ended, so data you just recorded doesn't show up right away:</p>
+<ul>
+<li><strong>Hourly or daily values:</strong> only hours or days that have ended are sent (today isn't over, so today isn't sent), and each one is sent once, the first time the task runs after it ends. If it had no data at that point, it still counts as done, so tapping "Export now" again the same day says there's nothing new. Data you add later is sent along with the next hour or day when the task sends again (hourly values go back 24 hours, daily values go back 7 days).</li>
+<li><strong>AI summary:</strong> covers the last 7, 30 or 90 complete days, not today, and each run rebuilds the whole period. If the only data is from today, there's nothing new.</li>
+</ul>
+<p>To see data you just recorded right away, use a task with raw data, or export manually.</p>
 <h3 id="latest">The latest copy wasn't saved. What should I do?</h3>
 <p>With "Also save a latest copy" on, Genie sends the main file first and then saves the same file under the fixed name. If only the second step fails, the main file was still sent and the task's progress is kept; the task shows the message in red with the reason, which means the same as the messages above (for example reconnect the account, free up space, or check iCloud Drive). The next run tries again, or tap "Export now" on the task. Until then, the latest copy is still the one from the last time it worked, so a tool that reads it sees older data.</p>
 
