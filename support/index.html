@@ -18,6 +18,20 @@
 <p>Wish Genie can only read the Health data you allow, and iOS doesn't tell apps which types you turned off. To change it, open the iPhone Settings app, tap Privacy &amp; Security › Health › Wish Genie, and turn on the types you want. (If your iPhone was set to Chinese when you first allowed access, it's listed as 許願精靈.) Wish Genie doesn't appear under Apps in the Health app itself: that list only shows apps that write Health data, and Wish Genie only reads.</p>
 <p>If you never allowed Health access (for example, you tapped "Not now" at the start), Wish Genie isn't in that Settings list yet. Tap "Allow Health access" on Wish Genie's home screen, or in Wish Genie's Settings › Health data, and iOS lists each type so you can pick.</p>
 <p>Updated to 1.4 or 1.7 and new kinds of data (such as blood pressure or nutrition) show "—"? Tap "More Health data can be read" on the home screen and allow the new items. If an item still isn't turned on (some iOS versions close the list early), turn it on in Settings › Privacy &amp; Security › Health › Wish Genie.</p>
+<p>Just moved to a new iPhone and the heart rate tile shows "—"? See <a href="#new-iphone">the next question</a>. Older days missing or marked "not shared"? See <a href="#limited-history">Why do I only get the last 30 days?</a></p>
+
+<h3 id="new-iphone">I moved to a new iPhone and the heart rate on the home screen shows "—"</h3>
+<p>Wish Genie shows what the Health app on this iPhone has. Right after you switch iPhones, your Apple Watch data may not have reached the new iPhone yet. Check these in order:</p>
+<ol>
+<li><strong>Is your Apple Watch paired with the new iPhone?</strong> Open the Watch app on the new iPhone. If the watch is still paired with your old iPhone, its readings keep going there; pair it with the new one.</li>
+<li><strong>Is Health on in iCloud?</strong> iPhone Settings › your name › iCloud: make sure Health is turned on, so your earlier data comes over.</li>
+<li><strong>Turn on Wi-Fi.</strong> Health data syncs more reliably over Wi-Fi; in one case the data only came in after Wi-Fi was turned on.</li>
+<li><strong>Wait a little.</strong> Syncing can take from a few minutes to about an hour. Then open the Health app to check that today's heart rate is there, and open Wish Genie again.</li>
+</ol>
+
+<h3 id="limited-history">Why do I only get the last 30 days, or see "not shared" in my AI summary?</h3>
+<p>Since iOS 27, after you allow Health access iOS asks "How much data do you want to share with Wish Genie?". If you chose the past 30 days and future data, Apple Health doesn't give Wish Genie anything older than 30 days before the day you allowed it. That start day is fixed; it doesn't move forward each day. Wish Genie can't tell those older days apart from days without data, so where it can, it says so: an AI summary marks them "not shared" and doesn't calculate a change for those kinds, and manual export shows a note under the dates (see the <a href="../guide/#not-shared">user guide</a>).</p>
+<p>To share everything, open the iPhone Settings app › Health › Data Access &amp; Devices › Wish Genie and change each item to Full Access. There's no button to change them all at once, so tap them one by one. You don't need to reinstall the app. (These are the names Wish Genie uses; your iOS version may word them slightly differently.)</p>
 
 <h3 id="sensitive">Why weren't Cycle Tracking and State of Mind asked for, or picked by "Select all"?</h3>
 <p>They're more sensitive, so Wish Genie asks for them only if you use them. iOS asks about them the first time you choose them in a task or an export, not when you first open the app. "Select all" skips them, so tap them yourself if you want them. If you didn't allow them when iOS asked, turn them on in the iPhone Settings app › Privacy &amp; Security › Health › Wish Genie. In a task or export with hourly or daily values or an AI summary, the Cycle Tracking group isn't shown, because it's only in exports with every reading.</p>
@@ -86,7 +100,15 @@
 <p>In Wish Genie, open Settings › AI assistant. "Disconnect" removes the key from this iPhone; to delete it from your OpenRouter account too, tap "Open the OpenRouter Keys page" and delete the key named "Wish Genie" (the app can't do this for you). "Withdraw agreement" stops anything from being sent until you agree again, and "Delete all conversations" removes your saved conversations from this iPhone.</p>
 
 <h3 id="workouts">Can I export my workouts?</h3>
-<p>Yes, since 1.4. Choose "Workouts" (the last group) in a task or in manual export. Each workout is one row: its length in minutes, the activity (for example running or traditionalStrengthTraining), and, when they were recorded, distance, active energy, average and maximum heart rate, and whether it was indoors. Workout routes (GPS and location) aren't read. Hourly and daily values count the number of workouts and their total minutes, and an AI summary lists them per activity. See the <a href="../guide/#data">user guide</a>.</p>
+<p>Yes, since 1.4. Choose "Workouts" (the last group) in a task or in manual export. Each workout is one row: its length in minutes, the activity (for example running or traditionalStrengthTraining), and, when they were recorded, distance, active energy, average and maximum heart rate, and whether it was indoors. Hourly and daily values count the number of workouts and their total minutes, and an AI summary lists them per activity. Since 2.0 you can also export workout routes as GPX (see the next question). See the <a href="../guide/#data">user guide</a>.</p>
+
+<h3 id="routes">How do I export my workout routes (GPX)?</h3>
+<p>Since 2.0. In manual export, choose raw data, then Workout Routes in the Workouts group (the last group). The format becomes GPX and you get one .gpx file per workout, which you can import into Strava, Garmin Connect or another fitness app that accepts GPX. For automatic exports, give Genie a task with only Workout Routes; in Shortcuts, use "Export Workout Routes".</p>
+<ul>
+<li><strong>Why on their own?</strong> A GPX file is a map track, not a table, so routes can't share a file with other kinds of data. Choosing Workout Routes clears the other kinds, and choosing another kind clears Workout Routes.</li>
+<li><strong>"There are no workout routes in this date range"?</strong> Only outdoor workouts recorded with GPS have a route. Indoor workouts (for example strength training or an indoor walk) don't, so they don't produce a file.</li>
+<li><strong>Location:</strong> routes contain the places you went. iOS asks for Workout Routes the first time you choose it. Wish Genie reads routes from Health only; it doesn't use Location Services. Routes go only where you export them and are never put in an AI summary or Ask AI.</li>
+</ul>
 
 <h3 id="rings">Why are Activity Rings, stand hours or mindful minutes different from the Health app?</h3>
 <ul>

@@ -18,7 +18,8 @@
 <p>The first time you open the app, tap "Allow Health access". iOS lists each kind of Health data so you can choose what Genie reads. If you skipped this, tap "Allow Health access" on the home screen or in Settings › Health data. If a task fails because Genie can't read Health data, the task shows "Check Health access", which leads to the same steps.</p>
 <p>iOS shows that list only once. To change it later, open the iPhone Settings app › Privacy &amp; Security › Health › Wish Genie. Genie only reads Health data; it never writes to it.</p>
 <p>Updated from an earlier version? Versions 1.4 and 1.7 can read new kinds of data, so the home screen shows "More Health data can be read". Tap the button and iOS lists only the kinds you haven't answered yet; turn on the ones you want.</p>
-<p>Cycle Tracking and State of Mind aren't in that first list. iOS asks about them the first time you choose them in a task or an export, so you're only asked if you use them.</p>
+<p>Workout Routes, Cycle Tracking and State of Mind aren't in that first list. iOS asks about them the first time you choose them in a task or an export, so you're only asked if you use them.</p>
+<p id="limited-history">On iOS 27, after you allow access, iOS also asks "How much data do you want to share with Wish Genie?": the past 30 days and future data, or all recorded data and future data. If you choose the past 30 days, Wish Genie can't read anything from before the 30 days ending on the day you allowed it. That start day stays fixed; it doesn't move forward. An AI summary then marks earlier days as "not shared" (see <a href="#not-shared">section 6</a>), and manual export shows a note under the dates. To share everything, open the iPhone Settings app › Health › Data Access &amp; Devices › Wish Genie and set each item to Full Access. There's no button to change them all at once. (These are the names Wish Genie uses; your iOS version may word them slightly differently.)</p>
 
 <h2 id="destinations">2. Add a destination</h2>
 <p>A destination is a place your tasks send data to. Open "Manage destinations" on the home screen (or Settings › Destinations) and tap "Add a destination".</p>
@@ -61,7 +62,14 @@
 <li><strong>Cycle Tracking:</strong> Menstruation, Spotting, Ovulation Test Result, Cervical Mucus Quality, Infrequent Periods, Irregular Cycles, Persistent Spotting, Prolonged Periods</li>
 <li><strong>Workouts</strong></li>
 </ul>
-<p>Workout routes (GPS and location) aren't read.</p>
+<p id="routes"><strong>Workout Routes</strong> (in the Workouts group) are the GPS tracks recorded during outdoor workouts, for example by your Apple Watch. They contain locations. Routes need a task or a manual export of their own: choosing Workout Routes clears the other kinds, choosing another kind clears Workout Routes, and the file contents must be every reading. The format is always GPX:</p>
+<ul>
+<li>One .gpx file per workout, named like WishGenie-route-20261118T073000Z-walking-1a2b3c4d.gpx (start time in UTC, activity, short ID). A task sends each file separately, so a REST API receives one request per workout.</li>
+<li>Each route recorded during the workout is one track segment. Each point has latitude, longitude, elevation and time, plus the heart rate when one was recorded within 30 seconds of that point (as hr in Garmin's TrackPointExtension).</li>
+<li>Workouts without a route, such as indoor workouts, don't produce a file. If none of the workouts in the period has a route, manual export says "There are no workout routes in this date range."</li>
+<li>You can import the files into Strava, Garmin Connect and other fitness apps that accept GPX.</li>
+<li>Routes are never put in hourly or daily values, AI summaries, Ask AI, the home screen, widgets or a latest copy.</li>
+</ul>
 <ul>
 <li><strong>JSON or CSV.</strong> Every sample has a unique ID, so your server or script can safely ignore duplicates.</li>
 <li><strong>Fields:</strong> each sample has type, start, end, value, unit, source and uuid. Sleep is one row per segment, with the minutes as its value and a stage: deep, rem, core, awake, inBed, or unspecified (asleep, but no stage was recorded).</li>
@@ -82,6 +90,7 @@
 <li><strong>Hourly or Daily:</strong> one value per data type for each hour or each day. Data that adds up, such as steps, distances, energy, exercise minutes, time in daylight and nutrition, is a total. Workouts are the total minutes and the number of workouts (JSON also lists them per activity). Sleep is the total minutes asleep (the "asleep" column: REM, core, deep and unspecified together) plus minutes per stage (in bed, awake, REM, core, deep, unspecified); in daily values, a night counts on the day you woke up. Everything else has the average, lowest and highest value and how many readings there were. Stand Hours and Mindful Minutes are totals, and State of Mind is the average, lowest and highest valence. Activity Rings are in daily values only, with the rings closed and each ring's value and goal (a CSV file ends with seven rings_ columns, 23 columns in all). JSON or CSV, with no device names or sample IDs.</li>
 <li><strong>AI summary:</strong> the last 7, 30 or 90 complete days (today isn't included), compared with the same number of days before that. For each data type: the daily average, the change in %, the lowest and highest day and how many days had data, plus a table of daily values for the kinds that had data, the average sleep stages, and the number and total time of workouts per activity. Markdown (easy for AI assistant apps and people to read) or JSON. The file is written in English and is not a medical record. In JSON (schemaVersion 2), each day of a kind that is averaged, such as heart rate, also has that day's lowest and highest value (min and max). Stand Hours and Mindful Minutes are daily totals; State of Mind is the daily average valence (−1 very unpleasant to +1 very pleasant) and the number of entries; Activity Rings are the rings closed per day and, for each ring, the days it was closed and how much of the goal was reached on average.</li>
 </ul>
+<p id="not-shared">If Apple Health shares only recent data for some kinds (see <a href="#limited-history">section 1</a>), an AI summary says so. In Markdown, a "Shared history" line lists the day each of those kinds is shared from. In the daily table, days before that are marked "not shared", which isn't the same as no data. "Previous N days" and "Change" show "—" for those kinds, because the previous period includes days that weren't shared; in the workouts table, "Previous sessions" and "Previous total time" show "—" too. "Days with data" leaves out the days that weren't shared, for example 20/25 (5 not shared). The note for your AI assistant gets one more point: don't guess values for days that weren't shared. In JSON, those kinds also have sharedFrom, daysNotShared and previousDaysNotShared, and previousAverage and changePercent are null. Kinds that are fully shared look the same as before.</p>
 <p>Cycle Tracking is never put in hourly or daily values or an AI summary, and it's never sent with Ask AI. It's only in exports with every reading (JSON or CSV), which go only to the destination you chose.</p>
 <p>An AI summary file only goes where you send it; Wish Genie doesn't send it to any AI service. (To ask an AI model inside the app instead, see <a href="#ask-ai">Ask AI</a>.) To ask an AI assistant app about your data, share the file to that app from manual export, or upload it from the folder your task sends it to. If you share it with an AI app, that company receives this health data.</p>
 <p>A Markdown AI summary starts with this note for your AI assistant. To leave it out, turn off "Add a note for AI assistants" in the task or in manual export.</p>
@@ -134,9 +143,13 @@ This note only asks for an analysis of the data in this file.</pre>
 
 <h2>9. Manual export</h2>
 <p>Tap the share button on the home screen ("Export once"), choose "What goes in the file?" (raw data, hourly, daily or an AI summary), "Which data?" and "Which days?" (an AI summary uses the last 7, 30 or 90 complete days instead), pick a file format, then tap "Create file and share" to save the file to Files, AirDrop it or send it anywhere. Manual export needs Basic or Premium.</p>
+<ul>
+<li><strong>Workout Routes:</strong> choose raw data, then Workout Routes in the Workouts group. The format becomes GPX, and all the GPX files (one per workout) are shared at once.</li>
+<li><strong>Only recent data shared:</strong> if the dates start before the day Apple Health shares a chosen kind from, a note under the dates lists those kinds and how to share everything (see <a href="#limited-history">section 1</a>). You can still export; earlier days just won't be in the file.</li>
+</ul>
 
 <h2>10. Shortcuts and Siri</h2>
-<p>In the Shortcuts app, Wish Genie adds two actions: "Export Health Data" (returns a JSON or CSV file of raw readings for today, yesterday, or the last 7 or 30 days, for any of the kinds of data above) and "Run Task" (sends a task's new data now). You can also ask Siri. Shortcuts need Basic or Premium.</p>
+<p>In the Shortcuts app, Wish Genie adds three actions: "Export Health Data" (returns a JSON or CSV file of raw readings for today, yesterday, or the last 7 or 30 days, for any of the kinds of data above except Workout Routes), "Export Workout Routes" (since 2.0: returns one GPX file per workout with a route, for today, yesterday, or the last 7 or 30 days) and "Run Task" (sends a task's new data now). You can also ask Siri. Shortcuts need Basic or Premium.</p>
 <p>Tip: to send at a set time, create a personal automation in the Shortcuts app (Time of Day) that runs "Run Task". It still can't read Health data while your iPhone is locked.</p>
 
 <h2>11. Home screen and widgets</h2>
@@ -146,13 +159,13 @@ This note only asks for an analysis of the data in this file.</pre>
 <ul>
 <li><strong>Free:</strong> Home Screen widgets and charts.</li>
 <li><strong>7-day free trial:</strong> tap "Start 7-day free trial" on the plans screen. It starts only when you tap it and never turns into a paid subscription.</li>
-<li><strong>Basic</strong> (one-time purchase): manual export, including hourly, daily and AI summary files, Shortcuts, and Ask AI (with your own OpenRouter account).</li>
-<li><strong>Premium</strong> (lifetime purchase or yearly subscription): automatic exports (any file contents, including AI summaries) to iCloud Drive, Dropbox, Google Drive, OneDrive or your REST API, plus everything in Basic.</li>
+<li><strong>Basic</strong> (one-time purchase): manual export, including hourly, daily and AI summary files and workout routes (GPX), Shortcuts, and Ask AI (with your own OpenRouter account).</li>
+<li><strong>Premium</strong> (lifetime purchase or yearly subscription): automatic exports (any file contents, including AI summaries and workout routes) to iCloud Drive, Dropbox, Google Drive, OneDrive or your REST API, plus everything in Basic.</li>
 </ul>
 <p>Prices are shown on the plans screen and on the App Store page, in your own currency. Bought on another device or reinstalled? Tap Settings › "Restore Purchases".</p>
 
 <h2>13. Privacy</h2>
-<p>We don't collect any data. Your health data goes straight from your iPhone to the destinations you set up. Cloud sign-ins, secret headers and secret URLs are stored in the iPhone Keychain on this device only. Your data goes to an AI service only when you use Ask AI: then the summary and your questions go from your iPhone to OpenRouter and the company behind the model you chose. An AI summary file goes only where you share or send it, and Cycle Tracking is never put in an AI summary or sent with Ask AI. Details are in the <a href="../privacy/">Privacy Policy</a>.</p>
+<p>We don't collect any data. Your health data goes straight from your iPhone to the destinations you set up. Cloud sign-ins, secret headers and secret URLs are stored in the iPhone Keychain on this device only. Your data goes to an AI service only when you use Ask AI: then the summary and your questions go from your iPhone to OpenRouter and the company behind the model you chose. An AI summary file goes only where you share or send it, and Cycle Tracking is never put in an AI summary or sent with Ask AI. Workout routes contain locations: Wish Genie reads them from Health only if you choose Workout Routes, doesn't use Location Services, and sends them only where you export them; they're never in an AI summary or Ask AI. Details are in the <a href="../privacy/">Privacy Policy</a>.</p>
 
 <footer>© 2026 Tzu-Yang Lin · <a href="../support/">Support</a> · <a href="../privacy/">Privacy Policy</a></footer>
 </main>
