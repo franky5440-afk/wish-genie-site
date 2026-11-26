@@ -61,8 +61,10 @@
 <h2 id="destinations">2. 新增目的地</h2>
 <p>目的地就是任務會把資料送到的地方。在首頁點「管理目的地」（或「設定 › 目的地」），再點「新增目的地」。</p>
 <ul>
-<li><strong>iCloud 雲碟：</strong>不用登入。精靈把檔案存在你自己 iCloud 雲碟裡的「Wish Genie」資料夾，用「檔案」App 就能打開（iCloud 雲碟 › Wish Genie）。想放在裡面的某個資料夾，就填「子資料夾」（用 / 建立多層，例如：健康/匯出）；留空就存在 Wish Genie 資料夾。iCloud 雲碟要先打開：iPhone「設定」› 你的名字 ›「iCloud」。</li>
-<li><strong>Dropbox、Google 雲端硬碟、OneDrive：</strong>點「連結帳號」登入。精靈會把檔案存在它自己的資料夾：Dropbox 和 OneDrive 是「應用程式 › Wish Genie」，Google 雲端硬碟是「Wish Genie」資料夾。它看不到你其他的檔案。OneDrive 只支援個人版 Microsoft 帳號，公司或學校帳號不行。</li>
+<li><strong>iCloud 雲碟：</strong>不用登入。「存放位置」選「Wish Genie 資料夾」或「自己選資料夾」。選「Wish Genie 資料夾」的話，精靈把檔案存在你自己 iCloud 雲碟裡的「Wish Genie」資料夾，用「檔案」App 就能打開（iCloud 雲碟 › Wish Genie）。想放在裡面的某個資料夾，就填「子資料夾」（用 / 建立多層，例如：健康/匯出）；留空就存在 Wish Genie 資料夾。iCloud 雲碟要先打開：iPhone「設定」› 你的名字 ›「iCloud」。</li>
+<li id="own-folder"><strong>自己選資料夾（2.3 起，iCloud 雲碟和 Dropbox）：</strong>點「選擇資料夾…」，挑一個你已經有的資料夾，例如你自己的程式或 AI 工具本來就在讀的那個。檔案會直接存進去。iCloud 雲碟的資料夾在 Mac 上是 Finder › iCloud 雲碟，路徑一樣。iCloud 雲碟卡片也可以選「我的 iPhone」裡的資料夾（檔案只留在這支 iPhone 上）。資料夾改名或搬到別處都沒關係，精靈會跟著走。資料夾刪掉，或關掉精靈的取用權限，任務會失敗並顯示訊息，打開這個目的地點「重新選擇資料夾」就好。之後想換資料夾，點「換一個資料夾…」；已經送出的檔案會留在原處。</li>
+<li><strong>Dropbox：</strong>選「Wish Genie 資料夾」的話，點「連結帳號」登入，精靈把檔案存在「應用程式 › Wish Genie」，看不到你其他的檔案。選「自己選資料夾」的話，不用在精靈裡登入，但這支 iPhone 要裝 Dropbox App 並登入：精靈把檔案寫進 iPhone 上你的 Dropbox 資料夾，再由 Dropbox App 上傳。選資料夾時，在位置清單選 Dropbox，再選資料夾。</li>
+<li><strong>Google 雲端硬碟、OneDrive：</strong>點「連結帳號」登入。精靈會把檔案存在它自己的資料夾：OneDrive 是「應用程式 › Wish Genie」，Google 雲端硬碟是「Wish Genie」資料夾。它看不到你其他的檔案，也不能改存到別的資料夾（見<a href="../support/#own-folder">支援</a>）。OneDrive 只支援個人版 Microsoft 帳號，公司或學校帳號不行。</li>
 <li><strong>REST API：</strong>輸入網址、選「送出方式」，API 金鑰之類的放在「標頭」，並打開「機密」，值會存在 iPhone 的鑰匙圈。如果網址本身就含有 token，打開「網址含密碼」，整條網址會存在 iPhone 的鑰匙圈。http:// 只限你自己網路裡的位址（見<a href="../support/">支援</a>）。</li>
 </ul>
 <p>要中斷雲端帳號，打開那個目的地點「中斷連結」。也可以到那個服務的帳號設定裡移除 Wish Genie 的存取權。</p>
@@ -171,7 +173,7 @@ This note only asks for an analysis of the data in this file.</pre>
 <ol>
 <li>新增一個雲端目的地：iCloud 雲碟、Dropbox、Google 雲端硬碟或 OneDrive（見<a href="#destinations">第 2 節</a>）。</li>
 <li>交給精靈一件事：選「給 AI 看的摘要」（在完整設定畫面就是內容選 AI 摘要；Markdown 對 AI 最好讀）、最近 7、30 或 90 天、每天在「送出時間」選的時間，送到那個目的地。</li>
-<li>在任務裡打開「另存一份最新版」，記下開關下面顯示的檔名。檔名會用你的任務名稱，例如任務叫「健康摘要」就是 WishGenie-健康摘要-latest.md。檔案在那個目的地裡精靈的資料夾（iCloud 雲碟 › Wish Genie、Dropbox 和 OneDrive 的「應用程式 › Wish Genie」，或 Google 雲端硬碟的「Wish Genie」資料夾）。</li>
+<li>在任務裡打開「另存一份最新版」，記下開關下面顯示的檔名。檔名會用你的任務名稱，例如任務叫「健康摘要」就是 WishGenie-健康摘要-latest.md。檔案在那個目的地裡精靈的資料夾（iCloud 雲碟 › Wish Genie、Dropbox 和 OneDrive 的「應用程式 › Wish Genie」，或 Google 雲端硬碟的「Wish Genie」資料夾），或是你自己選的資料夾（iCloud 雲碟和 Dropbox，見<a href="#own-folder">第 2 節</a>）。想讓檔案直接出現在你的工具本來就在讀的地方，就選那個資料夾。</li>
 <li>在你的 AI 工具裡，讓它可以讀那個檔案或資料夾，再設定排程定時讀這個檔。排程請比任務的送出時間晚一點（例如一小時以上），因為背景匯出確切什麼時候跑是 iOS 決定的。摘要裡寫了涵蓋的期間，AI 可以看出資料是不是最新的。</li>
 </ol>
 <ul>

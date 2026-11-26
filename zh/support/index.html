@@ -105,6 +105,8 @@
 <li><strong>精靈還沒有讀取健康資料的權限，請先允許讀取健康資料。</strong>在任務上點「檢查健康資料權限」，照著允許就好（見上一題）。</li>
 <li><strong>現在用不了 iCloud 雲碟。</strong>請打開 iPhone 的「設定」，點你的名字，再點「iCloud」，確認已經登入，而且 iCloud 雲碟是打開的。</li>
 <li id="icloud-write"><strong>存不進 iCloud 雲碟。</strong>檔案寫不進 iCloud 雲碟。請確認 iPhone 已登入 iCloud、iCloud 雲碟已開啟（iPhone「設定」› 你的名字 ›「iCloud」），而且 iCloud 空間足夠。1.7 以前這種情況會顯示成網路問題。</li>
+<li><strong>沒辦法使用你選的資料夾。</strong>你在「自己選資料夾」選的資料夾被刪掉了（或在「最近刪除」裡），或精靈的取用權限被關掉了。打開這個目的地，點「重新選擇資料夾」再選一次（見<a href="#own-folder">下面</a>）。</li>
+<li><strong>存不進 Dropbox 的資料夾。</strong>Dropbox 目的地自己選資料夾時：請確認這支 iPhone 有裝 Dropbox App 並已登入，空間也還夠。</li>
 <li><strong>請重新連結 Dropbox／Google 雲端硬碟／OneDrive。</strong>登入過期或被取消了。在任務上點「重新連結」，再登入一次。</li>
 <li><strong>Dropbox／Google 雲端硬碟／OneDrive 拒絕了這次請求（HTTP 401 或 403）。</strong>確認那個帳號還能存檔（例如沒有變成唯讀），或重新連結。</li>
 <li><strong>Dropbox／Google 雲端硬碟／OneDrive 找不到要存檔的資料夾（HTTP 404）。</strong>一直發生的話，請重新連結帳號。</li>
@@ -137,8 +139,11 @@
 <h3 id="ai">可以把健康資料給 ChatGPT、Claude 或 Gemini 分析嗎？</h3>
 <p>可以，有兩種方式。<strong>在 App 裡（1.6 起）：</strong>「問 AI」會透過你自己的 OpenRouter 帳號，把資料摘要和你的問題送給你選的模型（這幾家和其他公司的模型都有），用多少就付給 OpenRouter 多少，需要基本版或高級版，見<a href="../guide/#ask-ai">問 AI</a>。<strong>自己分享檔案：</strong>在手動匯出的「檔案裡放什麼？」選「AI 摘要」、選 7、30 或 90 天和 Markdown，再點「建立檔案並分享」，把檔案分享給你的 AI 助理 App（或先存起來，再到那個 App 裡上傳）。任務也可以每天或每週把 AI 摘要送到你的雲端。摘要裡有每天平均、跟前一段比較的變化、最低和最高的那天、每天的數值、睡眠各階段和體能訓練，內容是英文。分享給 AI App 的話，那家公司會收到這些健康資料。Markdown 摘要開頭會附一小段提示，請 AI 看趨勢、不要做診斷、看到異常時建議去看醫生，可以關掉。摘要不是醫療紀錄，也永遠不含經期追蹤。詳見<a href="../guide/#ai">使用說明</a>。</p>
 
+<h3 id="own-folder">可以存到我自己已經有的資料夾嗎？</h3>
+<p>可以，2.3 起 iCloud 雲碟和 Dropbox 都行。新增或編輯目的地時，「存放位置」選「自己選資料夾」，再點「選擇資料夾…」（步驟見<a href="../guide/#own-folder">使用說明</a>）。iCloud 雲碟卡片收 iCloud 雲碟或「我的 iPhone」裡的資料夾；Dropbox 卡片收 Dropbox 裡的資料夾，這支 iPhone 要裝 Dropbox App 並登入。資料夾改名或搬走都沒關係；刪掉的話重新選一次。位置清單裡其他雲端服務的資料夾會反灰或選了不收。</p>
+<p>Google 雲端硬碟和 OneDrive 不行，照舊存在精靈自己的資料夾。它們的 App 不讓別的 App 從位置清單存檔進去；精靈登入它們時拿到的權限也只到自己的資料夾，看不到、也改不了你其他的檔案。要放寬就得跟你要整個雲端硬碟的權限。檔案想放別的地方的話，可以改送到 iCloud 雲碟自己選的資料夾，或用電腦上的同步工具搬過去。</p>
 <h3 id="ai-schedule">可以讓 ChatGPT、Claude 或 Gemini 每天自己讀我的匯出檔嗎？</h3>
-<p>如果你的 AI 工具能定時讀雲端的檔案，就可以。交給精靈一件事，每天把 AI 摘要送到 iCloud 雲碟、Dropbox、Google 雲端硬碟或 OneDrive，在任務裡打開「另存一份最新版」，再設定你的 AI 工具（例如 ChatGPT、Claude 或 Gemini，或是你自己跑的 AI agent）在任務送出時間之後一段時間，定時讀開關下面顯示的那個固定檔名。工具能不能連你的雲端、能不能排程，要看那個工具和你在那邊的方案。許願精靈不會把檔案送給任何 AI 服務：是你的工具從你的雲端讀，那家公司就會收到這些健康資料。自動任務需要高級版。一步一步的做法見<a href="../guide/#ai-schedule">使用說明</a>。</p>
+<p>如果你的 AI 工具能定時讀雲端的檔案，就可以。交給精靈一件事，每天把 AI 摘要送到 iCloud 雲碟、Dropbox、Google 雲端硬碟或 OneDrive，在任務裡打開「另存一份最新版」，再設定你的 AI 工具（例如 ChatGPT、Claude 或 Gemini，或是你自己跑的 AI agent）在任務送出時間之後一段時間，定時讀開關下面顯示的那個固定檔名。用 iCloud 雲碟或 Dropbox 的話，可以直接送到你的工具本來就在讀的資料夾（<a href="#own-folder">見上面</a>）。工具能不能連你的雲端、能不能排程，要看那個工具和你在那邊的方案。許願精靈不會把檔案送給任何 AI 服務：是你的工具從你的雲端讀，那家公司就會收到這些健康資料。自動任務需要高級版。一步一步的做法見<a href="../guide/#ai-schedule">使用說明</a>。</p>
 
 <h3 id="cycle-ai">經期資料會送給 AI 嗎？</h3>
 <p>不會。經期追蹤（月經、點狀出血、排卵測試、子宮頸黏液和週期相關通知）永遠不會放進 AI 摘要或每小時／每天彙總，也不會送給「問 AI」。它只出現在原始資料（JSON 或 CSV）的匯出裡，而且只送到你指定的目的地。如果你自己把這種檔案分享給 AI App，那家公司就會收到。心理狀態在 AI 摘要裡是每天 valence 的平均（−1 非常不愉快到 +1 非常愉快）和筆數。</p>
