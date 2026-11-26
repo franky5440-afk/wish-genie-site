@@ -117,7 +117,12 @@ body > main:not([class]) h1 { font-size: 2rem; margin-bottom: .6em; }
   .nav-pill a { font-size: 14px; }
   .nav-links a, .nav-lang { padding: 10px 9px; }
 }
+/* When the links don't fit, they scroll inside the pill; the fade says there is more. */
+.nav-links.less, .nav-links.more { -webkit-mask-image: linear-gradient(90deg, transparent, #000 var(--l, 0px), #000 calc(100% - var(--r, 0px)), transparent); mask-image: linear-gradient(90deg, transparent, #000 var(--l, 0px), #000 calc(100% - var(--r, 0px)), transparent); }
+.nav-links.less { --l: 22px; }
+.nav-links.more { --r: 26px; }
 @media (max-width: 560px) {
+  .nav-links a, .nav-lang { padding: 10px 7px; }
   .nav-brand span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
   .nav-pill .nav-brand { padding-right: 3px; }
 }
@@ -162,7 +167,7 @@ body > main:not([class]) h1 { font-size: 2rem; margin-bottom: .6em; }
 }
 .btn-pearl::after { background: linear-gradient(105deg, transparent 38%, rgba(255, 255, 255, .95) 50%, transparent 62%); }
 .btn-clay:hover::after, .btn-clay:focus-visible::after, .btn-pearl:hover::after, .btn-pearl:focus-visible::after,
-.nav-pill .nav-cta:hover::after, .nav-pill .nav-cta:focus-visible::after { animation: sheen .85s var(--ease); }
+.nav-pill .nav-cta:hover::after, .nav-pill .nav-cta:focus-visible::after { animation: sheen 1.7s var(--ease); }
 @keyframes sheen { to { transform: translateX(110%); } }
 .cta-row { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin: 0; }
 
@@ -228,6 +233,7 @@ body > main:not([class]) h1 { font-size: 2rem; margin-bottom: .6em; }
 :lang(zh-Hant) .sentence { line-height: 1.6; }
 .chip { display: inline-block; white-space: nowrap; font-weight: inherit; line-height: 1.3; padding: .06em .42em; margin: .14em 0; border-radius: .42em; background: var(--chip-clay-bg); color: var(--chip-clay-fg); }
 .chip.data { background: var(--chip-sky-bg); color: var(--chip-sky-fg); }
+.nb { white-space: nowrap; }
 .fine { margin: 1.8em 0 0; max-width: 34em; color: var(--soft); font-size: 1rem; }
 .wish .phone { transform: rotate(3deg); }
 @media (max-width: 860px) {
@@ -312,6 +318,7 @@ body > main:not([class]) h1 { font-size: 2rem; margin-bottom: .6em; }
 .prose > :first-child { margin-top: 0; }
 .prose p { margin: 0 0 1.05em; }
 .prose h2 { font-size: clamp(1.5rem, 2.6vw, 1.9rem); font-weight: 780; margin: 2.3em 0 .75em; padding-top: 1.5em; border-top: 1px solid var(--line); }
+.prose h2 + .meta { margin: -.35em 0 1em; font-size: .95rem; }
 .prose h3 { font-size: 1.24rem; font-weight: 720; line-height: 1.35; margin: 2em 0 .6em; padding-top: 1.7em; border-top: 1px solid var(--line); text-wrap: pretty; }
 .prose h2 + h3 { border-top: 0; padding-top: 0; margin-top: 1.2em; }
 .prose ul, .prose ol { margin: 0 0 1.2em; padding-left: 1.35em; }

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>更新紀錄 – 許願精靈 Wish Genie：健康匯出</title>
+<meta name="description" content="許願精靈：健康匯出各版本的更新內容，由新到舊。">
+<meta name="theme-color" content="#F7EFE6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#17100C" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="../../assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../assets/icon-180.png">
+<link rel="stylesheet" href="../../style.css">
+<script src="../../site.js"></script>
+</head>
+<body>
+<header class="nav">
+<a class="skip" href="#content">跳到內容</a>
+<div class="nav-pill">
+<a class="nav-brand" href="../"><img src="../../assets/icon.svg" width="32" height="32" alt=""><span>許願精靈</span></a>
+<nav class="nav-links" aria-label="主選單"><a href="../guide/">使用說明</a><a href="../support/">支援</a><a href="../changelog/" aria-current="page">更新紀錄</a><a href="../privacy/">隱私權政策</a></nav>
+<a class="nav-lang" href="../../changelog/" lang="en" hreflang="en">English</a>
+<a class="nav-cta" href="https://apps.apple.com/tw/app/id6830697434">下載 App</a>
+</div>
+</header>
+<main id="content" class="doc">
+<div class="doc-hero">
+<picture class="doc-hero-bg"><source media="(max-aspect-ratio: 4/5)" srcset="../../assets/bg/clouds-tall.webp"><img src="../../assets/bg/clouds-wide.webp" width="2048" height="1152" alt="" fetchpriority="high"></picture>
+<div class="wrap">
+<h1>更新紀錄</h1>
+<p class="meta">許願精靈：健康匯出每一版的更新，由新到舊。</p>
+</div>
+</div>
+<div class="wrap doc-grid">
+<nav class="toc" aria-label="本頁內容"><details open><summary>本頁內容</summary>
+<ul>
+<li><a href="#v2-2">版本 2.2</a></li>
+<li><a href="#v2-1">版本 2.1</a></li>
+<li><a href="#v2-0">版本 2.0</a></li>
+<li><a href="#v1-9">版本 1.9</a></li>
+<li><a href="#v1-8">版本 1.8</a></li>
+<li><a href="#v1-7">版本 1.7</a></li>
+<li><a href="#v1-6">版本 1.6</a></li>
+<li><a href="#v1-5">版本 1.5</a></li>
+<li><a href="#v1-4">版本 1.4</a></li>
+<li><a href="#v1-3">版本 1.3</a></li>
+<li><a href="#v1-2">版本 1.2</a></li>
+<li><a href="#v1-1">版本 1.1</a></li>
+<li><a href="#v1-0">版本 1.0</a></li>
+</ul>
+</details></nav>
+<article class="prose">
+<h2 id="v2-2">版本 2.2</h2>
+<p class="meta"><time datetime="2026-11-25">2026 年 11 月 25 日</time></p>
+<ul>
+<li>心電圖（ECG）：「自己挑」多了「心電圖」一組，可以匯出 Apple Watch 記錄的心電圖，一筆一則，內容照「健康」App 上的樣子（結果、平均心率、症狀、取樣頻率）。打開「含電壓波形」，JSON 檔案會加上波形。</li>
+<li>高血壓通知（iOS 26.2 以上）加進「健康通知」組。</li>
+<li>要你勾選時 iOS 才會詢問權限，這些資料也不會放進 AI 摘要或問 AI。</li>
+</ul>
+
+<h2 id="v2-1">版本 2.1</h2>
+<p class="meta"><time datetime="2026-11-22">2026 年 11 月 22 日</time></p>
+<ul>
+<li>健康通知：「自己挑」多了一組，可以匯出「健康」App 記錄的通知（高心率、低心率、心律不整、心適能、步行穩定性、睡眠呼吸中止症、噪音、耳機通知），一則通知一筆，附上 Apple 提供的資訊。這組也有心房顫動記錄、步行穩定性和呼吸障礙。要你勾選時 iOS 才會詢問權限，這些資料也不會放進 AI 摘要或問 AI。</li>
+<li>捷徑的「執行任務」現在會講送出了幾個 GPX 檔；「匯出運動路線」也會出現在 Siri 與 Spotlight 的建議裡。</li>
+<li>當天數值顯示為 0 時，圖表不再畫出長條。</li>
+<li>勾「運動路線」會取消其他資料時（或反過來），會先問你要不要繼續。</li>
+</ul>
+
+<h2 id="v2-0">版本 2.0</h2>
+<p class="meta"><time datetime="2026-11-19">2026 年 11 月 19 日</time></p>
+<ul>
+<li>運動路線：選「原始資料」，再到「體能訓練」組勾「運動路線」，每個戶外運動各匯出一個 GPX 檔，可以匯入你的運動 App。手動匯出、任務和新的「匯出運動路線」捷徑都能用。要你勾選時 iOS 才會詢問權限，許願精靈也不使用定位服務。</li>
+<li>只分享最近 30 天的資料給許願精靈？AI 摘要現在會把「健康」沒分享的日子標成「not shared」，不當成沒資料，這些種類也不計算變化。手動匯出會在日期下面提示，並說明怎麼改成分享全部。</li>
+</ul>
+
+<h2 id="v1-9">版本 1.9</h2>
+<p class="meta"><time datetime="2026-11-18">2026 年 11 月 18 日</time></p>
+<ul>
+<li>新的一步一步設定：按「交給精靈一件事」，精靈一次只問一件事（要做什麼、帶哪些資料、送到哪裡、多久送一次），最後讓你看整句任務再確認。</li>
+<li>想在一個畫面看全部設定？第一步底下點「直接看全部設定」。編輯已有的任務跟以前一樣。</li>
+</ul>
+
+<h2 id="v1-8">版本 1.8</h2>
+<p class="meta"><time datetime="2026-11-17">2026 年 11 月 17 日</time></p>
+<ul>
+<li>為 iPhone Duo 設計：打開時，首頁的健康數字和任務並排顯示，造句畫面句子在左、選項在右；半開時兩欄會避開摺痕。</li>
+<li>新增大尺寸小工具：三個數字加上今天的走勢。</li>
+<li>新建的 AI 摘要任務，格式預設改成 Markdown。</li>
+<li>「交給精靈一件事」按鈕不會再蓋住任務清單。</li>
+<li>任務句裡，中文和英文名稱之間會自動空一格。</li>
+<li>關閉和取消按鈕改成圖示，跟系統一致。</li>
+</ul>
+
+<h2 id="v1-7">版本 1.7</h2>
+<p class="meta"><time datetime="2026-11-15">2026 年 11 月 15 日</time></p>
+<ul>
+<li>新資料：站立時數、正念分鐘數、心理狀態、活動圓圈和經期追蹤（月經、點狀出血、排卵測試結果等）。經期追蹤和心理狀態要你勾選時才會詢問權限，經期追蹤也永遠不會放進 AI 摘要或送給「問 AI」。</li>
+<li>另存一份最新版：內容是每小時／每天彙總或 AI 摘要的任務，可以用固定檔名再存一份同樣的檔案，讓你自己的工具每次都讀到最新的。</li>
+<li>存不進 iCloud 雲碟時，任務會直接說明，不再顯示成網路問題。</li>
+<li>修正：在資料清單點一下時，畫面不會再跳走。</li>
+</ul>
+
+<h2 id="v1-6">版本 1.6</h2>
+<p class="meta"><time datetime="2026-11-14">2026 年 11 月 14 日</time></p>
+<ul>
+<li>新功能「問 AI」：用你自己的 OpenRouter 帳號，針對你的健康資料摘要問 AI 模型。你同意之前什麼都不會送出，對話只存在你的 iPhone，也可以存成報告。基本版就能用。</li>
+<li>每天和每週的任務可以選幾點送出，每週的還可以選星期幾，之後隨時能改。</li>
+</ul>
+
+<h2 id="v1-5">版本 1.5</h2>
+<p class="meta"><time datetime="2026-11-13">2026 年 11 月 13 日</time></p>
+<ul>
+<li>排程照原本的時間走：晚跑一次不會把之後的時間往後推，錯過好幾次也只補送一次。</li>
+<li>打開許願精靈就會送出所有到期的任務。</li>
+<li>新功能「沒送出時提醒我」：任務晚了一小時還沒送出（例如 iPhone 一直鎖著），會發通知提醒你。</li>
+<li>新功能：小工具上的「補送」按鈕。</li>
+<li>新功能「重送最近的資料」：接收端漏收時，把最近 1 天、7 天或 30 天再送一次。</li>
+<li>選資料時可以「全選」。</li>
+<li>Markdown 的 AI 摘要開頭會附一小段給 AI 的分析提示：看趨勢、不做診斷、看到異常建議去看醫生。可以關掉。</li>
+<li>AI 摘要的 JSON 每天多了心率等取平均資料的最低和最高值。</li>
+</ul>
+
+<h2 id="v1-4">版本 1.4</h2>
+<p class="meta"><time datetime="2026-11-11">2026 年 11 月 11 日</time></p>
+<ul>
+<li>新功能：能匯出的健康資料從 14 種增加到 60 多種：跑步、步行、自行車的各項數據，血壓、血糖、身體量測、營養、音量、日照時間等等。選資料的清單也改成分組。</li>
+<li>新功能：體能訓練。每一筆都會匯出運動種類、開始和結束時間；有記錄的話，也包含距離、熱量和心率。不會讀取運動路線。</li>
+<li>每小時／每天彙總和 AI 摘要也會包含新的資料和體能訓練。</li>
+<li>CSV 檔最後面多了 6 個體能訓練的欄位，原本的欄位不變。</li>
+<li>更新後，首頁會提示你允許讀取新的資料種類；要讓精靈讀哪些，由你決定。</li>
+<li>任務上的「送出」那行，現在會照實顯示當次檔案裡放了什麼，之後改了任務也不會跟著變。</li>
+</ul>
+
+<h2 id="v1-3">版本 1.3</h2>
+<p class="meta"><time datetime="2026-11-10">2026 年 11 月 10 日</time></p>
+<ul>
+<li>新功能：可以選檔案裡放什麼。除了每一筆原始資料，也能匯出每小時或每天的彙總，或是 AI 摘要：最近 7、30 或 90 天，並和再前面同樣天數比較，存成 Markdown 或 JSON，AI 助理 App 好讀。</li>
+<li>任務也能送每小時或每天的彙總，或每天、每週送一份 AI 摘要。</li>
+<li>精靈不會連上任何 AI 服務。檔案由你自己分享，或由任務送到你自己的雲端或伺服器。</li>
+<li>用 Siri「執行任務」時，回話會說清楚送了什麼。</li>
+</ul>
+
+<h2 id="v1-2">版本 1.2</h2>
+<p class="meta"><time datetime="2026-11-09">2026 年 11 月 9 日</time></p>
+<ul>
+<li>新的目的地：iCloud 雲碟。精靈把匯出的檔案存到你自己 iCloud 雲碟裡的「Wish Genie」資料夾，用「檔案」App 就能打開。</li>
+<li>任務這次沒有新資料可送時，卡片上也會顯示上次送出幾筆、是什麼時候。</li>
+<li>首頁哪一格顯示「—」，下面會有一行小字說明今天還沒有這項資料（例如手錶沒戴）。</li>
+<li>小工具在等新資料時，也會維持你選的那三格。</li>
+<li>雲端帳號保持登入的小修正。</li>
+</ul>
+
+<h2 id="v1-1">版本 1.1</h2>
+<p class="meta"><time datetime="2026-11-08">2026 年 11 月 8 日</time></p>
+<ul>
+<li>新的目的地：Dropbox、Google 雲端硬碟、OneDrive（個人版）。登入一次，精靈就會把匯出的檔案存到它在你帳號裡的資料夾。</li>
+<li>首頁和小工具的三格，可以自己選要顯示哪些數字。</li>
+<li>設定頁新增「健康資料」：之前跳過的可以在這裡允許讀取，也會告訴你去哪裡改精靈能讀哪些資料。</li>
+<li>匯出失敗時的說明更清楚，還有按鈕直接帶你去修。</li>
+<li>匯出的檔名改成「WishGenie-…」。</li>
+</ul>
+
+<h2 id="v1-0">版本 1.0</h2>
+<p class="meta"><time datetime="2026-11-07">2026 年 11 月 7 日</time></p>
+<p>首次上架。</p>
+</article>
+</div>
+</main>
+<footer class="foot">
+<img class="foot-bg" src="../../assets/bg/dunes-wide.webp" width="2048" height="1152" alt="" loading="lazy" decoding="async">
+<div class="foot-bar">
+<span>© 2026 Tzu-Yang Lin</span>
+<nav aria-label="頁尾"><a href="../guide/">使用說明</a><a href="../support/">支援</a><a href="../changelog/">更新紀錄</a><a href="../privacy/">隱私權政策</a><a href="../../changelog/" lang="en" hreflang="en">English</a></nav>
+<a class="btn btn-clay" href="https://apps.apple.com/tw/app/id6830697434"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v10m0 0 4-4m-4 4-4-4M4 17h12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>到 App Store 下載</a>
+</div>
+</footer>
+</body>
+</html>

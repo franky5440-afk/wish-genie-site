@@ -22,6 +22,20 @@
       each(targets, function (el) { el.classList.add('in'); });
     }
 
+    /* Top links: on a narrow screen they scroll inside the pill. Start at the current page, fade the cut edge. */
+    var strip = doc.querySelector('.nav-links');
+    if (strip) {
+      var here = strip.querySelector('[aria-current]');
+      if (here) { strip.scrollLeft = Math.max(0, here.offsetLeft - strip.offsetLeft - 24); }
+      var edge = function () {
+        strip.classList.toggle('less', strip.scrollLeft > 2);
+        strip.classList.toggle('more', strip.scrollWidth - strip.clientWidth - strip.scrollLeft > 2);
+      };
+      strip.addEventListener('scroll', edge, { passive: true });
+      window.addEventListener('resize', edge);
+      edge();
+    }
+
     /* Contents list: closed on small screens, follows the section being read */
     var toc = doc.querySelector('.toc');
     var links = toc ? toc.querySelectorAll('a[href^="#"]') : [];

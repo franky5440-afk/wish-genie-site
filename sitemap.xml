@@ -32,4 +32,12 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://wishgenieapp.com/guide/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://wishgenieapp.com/zh/guide/"/>
   </url>
+  <url><loc>https://wishgenieapp.com/changelog/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wishgenieapp.com/changelog/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://wishgenieapp.com/zh/changelog/"/>
+  </url>
+  <url><loc>https://wishgenieapp.com/zh/changelog/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wishgenieapp.com/changelog/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://wishgenieapp.com/zh/changelog/"/>
+  </url>
 </urlset>
