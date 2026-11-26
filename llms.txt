@@ -40,12 +40,12 @@
 
 ## Docs
 
-- [User guide](https://franky5440-afk.github.io/wish-genie-site/guide/): setup, limited (30-day) Health access, workout routes (GPX), destinations, tasks and send times, latest copy, data types (including cycle tracking, State of Mind, Activity rings, ECG), formats and CSV columns, Ask AI, letting your own AI read exports on a schedule, Shortcuts, widgets, plans
-- [Support and FAQ](https://franky5440-afk.github.io/wish-genie-site/support/): workout routes (GPX), only the last 30 days shared (iOS 27) and "not shared", heart rate showing "—" after moving to a new iPhone or Apple Watch (check Watch pairing, Watch app › Passcode › Unlock with iPhone on, Health in iCloud, Wi-Fi), iPhone Duo, default formats, error messages (including iCloud Drive write failures and the latest copy), Ask AI messages, AI training and privacy, cycle tracking and AI, permissions for sensitive types, ECG export and waveform, Activity rings and stand hours limits, letting your own AI tools read exports on a schedule, background timing, local network servers, workouts, using the AI summary with AI assistant apps
-- [Privacy Policy](https://franky5440-afk.github.io/wish-genie-site/privacy/)
+- [User guide](https://wishgenieapp.com/guide/): setup, limited (30-day) Health access, workout routes (GPX), destinations, tasks and send times, latest copy, data types (including cycle tracking, State of Mind, Activity rings, ECG), formats and CSV columns, Ask AI, letting your own AI read exports on a schedule, Shortcuts, widgets, plans
+- [Support and FAQ](https://wishgenieapp.com/support/): workout routes (GPX), only the last 30 days shared (iOS 27) and "not shared", heart rate showing "—" after moving to a new iPhone or Apple Watch (check Watch pairing, Watch app › Passcode › Unlock with iPhone on, Health in iCloud, Wi-Fi), iPhone Duo, default formats, error messages (including iCloud Drive write failures and the latest copy), Ask AI messages, AI training and privacy, cycle tracking and AI, permissions for sensitive types, ECG export and waveform, Activity rings and stand hours limits, letting your own AI tools read exports on a schedule, background timing, local network servers, workouts, using the AI summary with AI assistant apps
+- [Privacy Policy](https://wishgenieapp.com/privacy/)
 
 ## 中文
 
-- [使用說明](https://franky5440-afk.github.io/wish-genie-site/zh/guide/)
-- [支援與常見問題](https://franky5440-afk.github.io/wish-genie-site/zh/support/)
-- [隱私權政策](https://franky5440-afk.github.io/wish-genie-site/zh/privacy/)
+- [使用說明](https://wishgenieapp.com/zh/guide/)
+- [支援與常見問題](https://wishgenieapp.com/zh/support/)
+- [隱私權政策](https://wishgenieapp.com/zh/privacy/)
