@@ -19,25 +19,25 @@
 <p>iOS 只會跳出這個清單一次。之後要改，請到 iPhone 的「設定」App › 隱私權與安全性 › 健康 › 許願精靈。精靈只讀取「健康」的資料，從不寫入。</p>
 <p>從舊版更新上來的嗎？1.4 和 1.7 能讀新的資料種類，所以首頁會顯示「有新的健康資料可以讀取」。點那個按鈕，iOS 只會列出你還沒回答過的項目，打開你要的就好。</p>
 <p>運動路線、經期追蹤、心理狀態、健康通知與心電圖不在一開始的清單裡：第一次在任務或匯出勾選它們時，iOS 才會詢問，沒用到就不會問。</p>
-<p id="limited-history">iOS 27 起，按允許之後還會多一頁「你要與『許願精靈』分享多少資料？」：「過去 30 天及未來資料」或「所有記錄的資料和未來資料」。選過去 30 天的話，許願精靈讀不到你允許那天往前 30 天以前的資料；這個起點是固定的，不會每天往後移。AI 摘要會把更早的日子標成「not shared」（見<a href="#not-shared">第 6 節</a>），手動匯出也會在日期下面提示。要分享全部，請到 iPhone 的「設定」App › 健康 › 資料取用與裝置 › 許願精靈，把每一項改成「完整取用權限」。沒有一次全改的按鈕，要一項一項點。</p>
+<p id="limited-history">iOS 27 起，按允許之後還會多一頁「你要與『許願精靈』分享多少資料？」：「過去 30 天及未來資料」或「所有記錄的資料和未來資料」。選過去 30 天的話，許願精靈讀不到你允許那天往前 30 天以前的資料；這個起點是固定的，不會每天往後移。AI 摘要會把更早的日子標成「not shared」（見<a href="#not-shared">第 6 節</a>），手動匯出也會在日期下面提示。要分享全部，請到 iPhone 的「設定」App › 健康 › 資料取用與裝置 › 許願精靈，把每一項改成「完整取用權限」。沒有一次全改的按鈕，要一項一項點。（這是許願精靈用的名稱，你的 iOS 版本用字可能略有不同。）</p>
 
 <h2 id="destinations">2. 新增目的地</h2>
 <p>目的地就是任務會把資料送到的地方。在首頁點「管理目的地」（或「設定 › 目的地」），再點「新增目的地」。</p>
 <ul>
-<li><strong>iCloud 雲碟：</strong>不用登入。精靈把檔案存在你自己 iCloud 雲碟裡的「Wish Genie」資料夾，用「檔案」App 就能打開（iCloud 雲碟 › Wish Genie）。iCloud 雲碟要先打開：iPhone「設定」› 你的名字 ›「iCloud」。</li>
+<li><strong>iCloud 雲碟：</strong>不用登入。精靈把檔案存在你自己 iCloud 雲碟裡的「Wish Genie」資料夾，用「檔案」App 就能打開（iCloud 雲碟 › Wish Genie）。想放在裡面的某個資料夾，就填「子資料夾」（用 / 建立多層，例如：健康/匯出）；留空就存在 Wish Genie 資料夾。iCloud 雲碟要先打開：iPhone「設定」› 你的名字 ›「iCloud」。</li>
 <li><strong>Dropbox、Google 雲端硬碟、OneDrive：</strong>點「連結帳號」登入。精靈會把檔案存在它自己的資料夾：Dropbox 和 OneDrive 是「應用程式 › Wish Genie」，Google 雲端硬碟是「Wish Genie」資料夾。它看不到你其他的檔案。OneDrive 只支援個人版 Microsoft 帳號，公司或學校帳號不行。</li>
-<li><strong>REST API：</strong>輸入網址，API 金鑰之類的放在「標頭」。如果網址本身就含有 token，打開「網址含密碼」，整條網址會存在 iPhone 的鑰匙圈。http:// 只限你自己網路裡的位址（見<a href="../support/">支援</a>）。</li>
+<li><strong>REST API：</strong>輸入網址、選「送出方式」，API 金鑰之類的放在「標頭」，並打開「機密」，值會存在 iPhone 的鑰匙圈。如果網址本身就含有 token，打開「網址含密碼」，整條網址會存在 iPhone 的鑰匙圈。http:// 只限你自己網路裡的位址（見<a href="../support/">支援</a>）。</li>
 </ul>
 <p>要中斷雲端帳號，打開那個目的地點「中斷連結」。也可以到那個服務的帳號設定裡移除 Wish Genie 的存取權。</p>
 
 <h2>3. 交給精靈一件事</h2>
 <p>點「交給精靈一件事」。從 1.9 開始，精靈會一次問一件事：要做什麼（給 AI 看的摘要、備份原始資料、送到我的伺服器、我自己來）、要帶哪些資料（日常基本、活動、全部資料、自己挑）、送到哪裡（可以當場新增目的地）、多久送一次。每個回答都會先帶好合適的預設，最後一步讓你看整句任務。想改前面的回答就點「上一步」；想在一個畫面看全部設定，第一步底下點「直接看全部設定」。編輯已有的任務會打開完整的設定畫面。</p>
 <p>任務就是一句話，例如「每小時把心率的原始資料存成 JSON，送到家裡的 NAS」。點句子裡任何一個醒目的詞，就能換資料、檔案裡放什麼（原始資料、每小時或每天彙總、AI 摘要，見<a href="#ai">第 6 節</a>）、格式（JSON 或 CSV；AI 摘要是 Markdown 或 JSON）、目的地或頻率（每 15 或 30 分鐘、每小時、每 6 或 12 小時、每天、每週；AI 摘要只能每天或每週）。每天的任務在「送出時間」選幾點送，每週的任務還可以選星期幾。新任務預設 8:00（每週的是星期一），之後隨時可以改。「要帶哪些資料？」那頁有「全選」，一次選好所有種類，但不含經期追蹤、健康通知、心電圖、心理狀態和運動路線，要的話請自己勾（再點「全部取消」就全部取消）。檔案內容是每小時／每天彙總或 AI 摘要時，不會出現經期追蹤、健康通知和心電圖這幾組（見<a href="#data">第 5 節</a>）。最後點「交給精靈」。</p>
-<p>你交代之前，精靈什麼都不會送出。每次執行只送上次成功之後的新資料。</p>
+<p>你交代之前，精靈什麼都不會送出。每次執行只送上次成功之後的新資料。任務（包含「立即匯出」和「重送最近的資料」）需要高級版。</p>
 <ul>
 <li><strong>立即匯出：</strong>打開任務點「立即匯出」，馬上把新資料送出去。</li>
 <li><strong>暫停：</strong>把任務的開關關掉，「立即匯出」仍然可以用。</li>
-<li><strong>沒送出時提醒我：</strong>在任務裡打開，任務晚了一小時還沒送出（例如 iPhone 一直鎖著），精靈會發通知提醒你。打開許願精靈就會補送。第一次打開時，iOS 會問要不要允許通知。</li>
+<li><strong>沒送出時提醒我：</strong>打開任務，在任務頁打開這個開關，任務晚了一小時還沒送出（例如 iPhone 一直鎖著），精靈會發通知提醒你。打開許願精靈就會補送。第一次打開時，iOS 會問要不要允許通知。</li>
 <li><strong>重送最近的資料：</strong>原始資料或每小時／每天彙總的任務，送成功過之後，可以把最近 1 天、7 天或 30 天再送一次，接收端漏收時用。已經送過的資料會再送一次：原始資料請用 uuid 略過已經有的，彙總請用「資料種類＋開始時間」覆蓋。</li>
 <li><strong>現在執行：</strong>任務失敗時首頁會出現這個按鈕，按了馬上重試。</li>
 <li id="latest"><strong>另存一份最新版：</strong>內容是每小時／每天彙總或 AI 摘要、送到 iCloud 雲碟、Dropbox、Google 雲端硬碟或 OneDrive 的任務才有這個開關。每次送出後，精靈會用固定檔名 WishGenie-&lt;任務名稱&gt;-latest.md（或 .json、.csv）再存一份同樣的檔案，蓋掉上一次的，方便讓 AI 助理 App 或其他工具定時讀同一個檔（見<a href="#ai-schedule">第 8 節</a>）。開關下面會顯示實際檔名。不能當檔名的字元會換成 -，名稱最多 40 個字，兩個任務同名時會在後面加一段短 ID。改了任務名稱之後，下一次會用新檔名存，舊檔留著（精靈不會刪你雲端的檔案）。原始資料的任務沒有這個開關（每次只送新增的資料，不是整段期間），REST API 也沒有。最新版沒存成功時，主檔還是有送出，任務上會顯示紅色提醒（見<a href="../support/#latest">支援</a>）。</li>
@@ -47,7 +47,7 @@
 <p>自動匯出在 iOS 給 App 背景執行時間時才會跑，確切時間由系統決定，可能比排定的時間晚。晚跑不會改掉排定的時間：排在 12:30 的每日任務，之後還是在 12:30 左右跑；錯過好幾次的話，只會補送一次。iPhone 鎖著時讀不到健康資料，剛好碰上的那一次會先等著。改了每天或每週任務的時間之後，下一次執行是存檔之後第一個到的時間，已經過去的不會補送。想馬上補送：打開許願精靈（會送出所有到期的任務）、點小工具上的「補送」，或在任務裡打開「沒送出時提醒我」。任務出現錯誤訊息時，請看<a href="../support/#messages">訊息是什麼意思</a>。</p>
 
 <h2 id="data">5. 會匯出什麼</h2>
-<p>60 多種健康資料，分組方式跟 App 裡一樣：</p>
+<p>80 多種健康資料，分組方式跟 App 裡一樣：</p>
 <ul>
 <li><strong>活動：</strong>步數、步行＋跑步距離、已爬樓層、活動能量、靜止能量、運動分鐘數、站立分鐘數、活動分鐘數、身體耗能、游泳距離、划水次數、輪椅距離、輪椅推動次數、日照時間、站立時數、活動圓圈</li>
 <li><strong>跑步：</strong>跑步速度、跑步功率、跑步步幅長度、垂直振幅、觸地時間</li>
@@ -82,7 +82,7 @@
 <li><strong>經期追蹤：</strong>每一筆紀錄一筆，value 是分鐘數。月經附上流量（unspecified、light、medium、heavy 或 none），有記錄的話也標出是不是週期的第一天。排卵測試結果是 negative、luteinizingHormoneSurge、estrogenSurge 或 indeterminate；子宮頸黏液品質是 dry、sticky、creamy、watery 或 eggWhite。JSON 放在「category」物件裡（value 和 cycleStart）。</li>
 <li id="health-notifications"><strong>健康通知</strong>（2.1 起）：「健康」App 記錄的通知，原樣匯出，許願精靈不做任何判讀。每一則通知一筆，value 是 1（單位 count），start 和 end 照記錄（有些通知涵蓋一段時間）。步行穩定性、心適能、噪音和耳機通知另外附上 Apple 的分類（initialLow、initialVeryLow、repeatLow 或 repeatVeryLow；lowFitness；momentaryLimit；sevenDayLimit）。Apple 有提供的話，也會附上心率門檻（bpm）、音量（dBASPL）、音量持續的秒數，以及最大攝氧量和它的門檻（mL/(kg·min)）；JSON 放在「event」物件裡（heartRateThreshold、audioLevel、audioDuration、vo2Max、vo2MaxThreshold）。心房顫動記錄和步行穩定性是百分比，呼吸障礙是次數，跟其他數值一樣。心房顫動記錄一週一筆，日期要包含那一週的開頭（星期一）才拿得到。2.2 起的高血壓通知做法一樣，但需要 iOS 26.2 以上，較舊的 iOS 不會出現在資料清單裡。</li>
 <li id="ecg"><strong>心電圖</strong>（2.2 起）：Apple Watch 記錄的心電圖，原樣匯出，許願精靈不做任何判讀。每一次記錄一筆，value 是 1（單位 count），附上「健康」App 提供的欄位。JSON 放在「ecg」物件裡，只寫有值的欄位：classification（例如 sinusRhythm、atrialFibrillation、inconclusiveLowHeartRate、inconclusiveHighHeartRate、inconclusivePoorReading、inconclusiveOther、notSet 或 unrecognized；這一版不認得的值會寫成 unknown_ 加數字）、symptomsStatus（notSet、none 或 present）、averageHeartRate（bpm）、samplingFrequency（Hz）和 numberOfVoltageMeasurements。<strong>含電壓波形：</strong>這個開關預設關閉，只在勾了心電圖、檔案內容是原始資料、格式是 JSON 時才會出現。打開後，「ecg」物件裡多一個「waveform」物件：{"lead": "appleWatchSimilarToLeadI", "unit": "µV", "voltages": [...]}。電壓的單位是微伏，最多兩位小數，照時間順序排列。裡面沒有時間：第 i 個點（從 0 算起）的時間是這筆記錄的 start 加上 i ÷ samplingFrequency 秒。每一筆記錄大約多 0.1 MB。CSV 永遠沒有波形，捷徑匯出也沒有。心電圖只放在原始資料的匯出裡，不會進每小時／每天彙總、AI 摘要或「問 AI」。</li>
-<li><strong>CSV 欄位：</strong>在 6 個 workout_ 欄位之後，CSV 檔最後面再多 14 個欄位，不是這幾種資料的列就留空：category、cycle_start、mood_kind、mood_valence、mood_classification、mood_labels、mood_associations（標籤和相關面向用 ; 分隔）、rings_move_kcal、rings_move_goal_kcal、rings_exercise_min、rings_exercise_goal_min、rings_stand_h、rings_stand_goal_h、rings_paused，2.1 起再加 heart_rate_threshold、audio_level、audio_duration、vo2max、vo2max_threshold，2.2 起再加 ecg_classification、ecg_avg_hr、ecg_symptoms、ecg_sampling_hz、ecg_points，總共 38 欄。新欄位都加在原本的欄位後面，原本的欄位沒有變，照欄名讀取的程式不受影響。</li>
+<li><strong>CSV 欄位：</strong>在 6 個 workout_ 欄位之後，CSV 檔最後面再多 24 個欄位，不是這幾種資料的列就留空：category、cycle_start、mood_kind、mood_valence、mood_classification、mood_labels、mood_associations（標籤和相關面向用 ; 分隔）、rings_move_kcal、rings_move_goal_kcal、rings_exercise_min、rings_exercise_goal_min、rings_stand_h、rings_stand_goal_h、rings_paused，2.1 起再加 heart_rate_threshold、audio_level、audio_duration、vo2max、vo2max_threshold，2.2 起再加 ecg_classification、ecg_avg_hr、ecg_symptoms、ecg_sampling_hz、ecg_points，總共 38 欄。新欄位都加在原本的欄位後面，原本的欄位沒有變，照欄名讀取的程式不受影響。</li>
 <li><strong>要注意的地方：</strong>活動圓圈只在任務執行或手動匯出時讀取，iOS 不會為了它在背景叫醒 App。如果你的活動圈是用「活動時間」（分鐘）當目標，「合上幾圈」不會算到活動圈，因為只比對大卡。同一個小時有多支裝置記錄站立時，站立時數可能會多算。跨過午夜的正念，整段算在開始的那一天。</li>
 <li><strong>單位</strong>每種資料固定，例如血壓是 mmHg、血糖是 mg/dL、身高是 cm。百分比是 0 到 100。</li>
 <li><strong>檔名</strong>像 WishGenie-&lt;任務&gt;-&lt;UTC 時間&gt;.json。REST API 收到的請求內容跟檔案一樣。</li>
@@ -119,7 +119,7 @@ This note only asks for an analysis of the data in this file.</pre>
 <li><strong>開始：</strong>點首頁的「問 AI 你的健康資料」（或「設定 › AI 助理 › 打開 AI 助理」）。</li>
 <li><strong>先同意：</strong>第一次會出現「問 AI 之前」，說明會送出什麼、送給誰、用你自己的帳號與費用，以及 AI 的回答不是醫療建議。按「我同意」之前什麼都不會送出。之後可以在「設定 › AI 助理 › 撤回同意」撤回。</li>
 <li><strong>連結 OpenRouter：</strong>點「連結 OpenRouter」，登入（沒有帳號可以當場建立）並允許存取，就會回到許願精靈（中間可能會經過本網站的一個轉接頁）。要儲值，請到 openrouter.ai 的 Settings › Credits。</li>
-<li><strong>新對話：</strong>選天數（7、30 或 90 天）和要帶哪些資料，再選模型。精靈會做出跟匯出「AI 摘要」一樣的摘要，接著輸入問題、按「送出」。回答可能要一分鐘左右，等待時可以取消。回答的語言跟 App 畫面一樣。資料清單裡沒有經期追蹤、健康通知和心電圖，所以它們不會被送出。</li>
+<li><strong>新對話：</strong>選天數（7、30 或 90 天）和要帶哪些資料，再選模型。精靈會做出跟匯出「AI 摘要」一樣的摘要。點「開始對話」，再輸入問題、按「送出」。回答可能要一分鐘左右，等待時可以取消。回答的語言跟 App 畫面一樣。資料清單裡沒有經期追蹤、健康通知和心電圖，所以它們不會被送出。</li>
 <li><strong>會送出什麼：</strong>每問一題，會把摘要、這個對話裡之前的問題和回答，以及新的問題，從你的 iPhone 送到 OpenRouter，再由 OpenRouter 轉給你選的模型背後的公司。</li>
 <li><strong>選模型：</strong>最上面是三個推薦模型和價格（每百萬 token 的美元價格，由 OpenRouter 收取），「其他模型」展開是其餘的模型，可以搜尋。免費模型常常很忙；有些模型背後的公司可能會保存你送出的內容，拿去訓練模型。你可以在 OpenRouter 帳號的隱私設定（Settings › Privacy）關掉「可能拿資料訓練」的提供者，付費和免費模型分開設定；關掉之後有些模型可能就不能用了。</li>
 <li><strong>不是醫療建議：</strong>AI 的回答可能有錯，每則回答下面都會提醒你，有健康上的疑問請諮詢醫師。</li>
@@ -134,7 +134,7 @@ This note only asks for an analysis of the data in this file.</pre>
 <ol>
 <li>新增一個雲端目的地：iCloud 雲碟、Dropbox、Google 雲端硬碟或 OneDrive（見<a href="#destinations">第 2 節</a>）。</li>
 <li>交給精靈一件事：選「給 AI 看的摘要」（在完整設定畫面就是內容選 AI 摘要；Markdown 對 AI 最好讀）、最近 7、30 或 90 天、每天在「送出時間」選的時間，送到那個目的地。</li>
-<li>在任務裡打開「另存一份最新版」，記下開關下面顯示的檔名，例如 WishGenie-健康摘要-latest.md。檔案在那個目的地裡精靈的資料夾（iCloud 雲碟 › Wish Genie、Dropbox 和 OneDrive 的「應用程式 › Wish Genie」，或 Google 雲端硬碟的「Wish Genie」資料夾）。</li>
+<li>在任務裡打開「另存一份最新版」，記下開關下面顯示的檔名。檔名會用你的任務名稱，例如任務叫「健康摘要」就是 WishGenie-健康摘要-latest.md。檔案在那個目的地裡精靈的資料夾（iCloud 雲碟 › Wish Genie、Dropbox 和 OneDrive 的「應用程式 › Wish Genie」，或 Google 雲端硬碟的「Wish Genie」資料夾）。</li>
 <li>在你的 AI 工具裡，讓它可以讀那個檔案或資料夾，再設定排程定時讀這個檔。排程請比任務的送出時間晚一點（例如一小時以上），因為背景匯出確切什麼時候跑是 iOS 決定的。摘要裡寫了涵蓋的期間，AI 可以看出資料是不是最新的。</li>
 </ol>
 <ul>
@@ -146,7 +146,7 @@ This note only asks for an analysis of the data in this file.</pre>
 <p>任務需要高級版（自動匯出）。</p>
 
 <h2>9. 手動匯出</h2>
-<p>點首頁的分享按鈕，選「檔案裡放什麼？」（原始資料、每小時彙總、每天彙總或 AI 摘要）、「要帶哪些資料？」和「哪幾天？」（AI 摘要改成選最近 7、30 或 90 個完整的日子）、選檔案格式，再點「建立檔案並分享」，就能存到「檔案」App、用 AirDrop 傳，或分享到任何地方。手動匯出需要基本版或高級版。</p>
+<p>點首頁的分享按鈕（「手動匯出」），選「檔案裡放什麼？」（原始資料、每小時彙總、每天彙總或 AI 摘要）、「要帶哪些資料？」和「哪幾天？」（AI 摘要改成選最近 7、30 或 90 個完整的日子）、選檔案格式，再點「建立檔案並分享」，就能存到「檔案」App、用 AirDrop 傳，或分享到任何地方。手動匯出需要基本版或高級版。</p>
 <ul>
 <li><strong>運動路線：</strong>選「原始資料」，再到「體能訓練」組勾「運動路線」。格式會變成 GPX，所有 GPX 檔（一個運動一個）一次分享。</li>
 <li><strong>心電圖：</strong>選「原始資料」，再勾「心電圖」。格式是 JSON 的話，想要電壓波形就打開「含電壓波形」（見<a href="#ecg">第 5 節</a>）。</li>
@@ -154,11 +154,11 @@ This note only asks for an analysis of the data in this file.</pre>
 </ul>
 
 <h2>10. 捷徑與 Siri</h2>
-<p>在「捷徑」App 裡，許願精靈提供三個動作：「匯出健康資料」（回傳今天、昨天、最近 7 天或 30 天原始資料的 JSON 或 CSV 檔，上面除了運動路線以外的任何一種資料都可以；心電圖匯出沒有電壓波形，在低於 iOS 26.2 的系統選高血壓通知會回「需要 iOS 26.2 以上才能匯出這項資料。」）、「匯出運動路線」（2.0 起：今天、昨天、最近 7 天或 30 天內，每個有路線的運動各回傳一個 GPX 檔）和「執行任務」（現在就把這個任務的新資料送出去）。也可以用 Siri 叫。捷徑需要基本版或高級版。</p>
-<p>小技巧：想在固定時間送出，可以在「捷徑」App 建立個人自動化（選「特定時間」），執行「執行任務」。iPhone 鎖著時一樣讀不到健康資料。</p>
+<p>在「捷徑」App 裡，許願精靈提供三個動作：「匯出健康資料」（回傳今天、昨天、最近 7 天或 30 天原始資料的 JSON 或 CSV 檔，上面除了運動路線以外的任何一種資料都可以；心電圖匯出沒有電壓波形，在低於 iOS 26.2 的系統選高血壓通知會回「需要 iOS 26.2 以上才能匯出這項資料。」）、「匯出運動路線」（2.0 起：今天、昨天、最近 7 天或 30 天內，每個有路線的運動各回傳一個 GPX 檔）和「執行任務」（現在就把這個任務的新資料送出去）。也可以用 Siri 叫。「匯出健康資料」和「匯出運動路線」需要基本版或高級版；「執行任務」是執行任務，跟其他任務一樣需要高級版。</p>
+<p>小技巧：想在固定時間送出，可以在「捷徑」App 建立個人自動化（選「特定時間」），執行「執行任務」（需要高級版）。iPhone 鎖著時一樣讀不到健康資料。</p>
 
 <h2>11. 首頁與小工具</h2>
-<p>首頁顯示三格，一大兩小（一開始是心率、步數和睡眠）。要換的話，到「設定 › 顯示的指標」，點一格再選它要顯示什麼（血壓、身高、營養、體能訓練、站立時數、活動圓圈、心理安康、經期追蹤、健康通知和心電圖不能放在格子上），主畫面小工具（小、中、大三種尺寸）也會顯示這三格，大尺寸還會畫出第一格今天的走勢。體重、最大攝氧量這類偶爾才量的，會顯示最近 30 天內最新的一筆和日期。iPhone 鎖著時小工具的數值會遮住。有啟用中的任務時，小工具上還會有「補送」按鈕：點了會打開許願精靈，送出到期的任務並顯示結果。</p>
+<p>首頁顯示三格，一大兩小（一開始是心率、步數和睡眠）。點格子可以看圖表。要換格子，點首頁的「自訂」或到「設定 › 顯示的指標」，點一格再選它要顯示什麼（血壓、身高、營養、體能訓練、站立時數、活動圓圈、心理安康、經期追蹤、健康通知、心電圖和運動路線不能放在格子上），主畫面小工具（小、中、大三種尺寸）也會顯示這三格，大尺寸還會畫出第一格今天的走勢。體重、最大攝氧量這類偶爾才量的，會顯示最近 30 天內最新的一筆和日期。iPhone 鎖著時小工具的數值會遮住。有啟用中的任務時，小工具上還會有「補送」按鈕：點了會打開許願精靈，送出到期的任務並顯示結果。</p>
 
 <h2>12. 方案</h2>
 <ul>
