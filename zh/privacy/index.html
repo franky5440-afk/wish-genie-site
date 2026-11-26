@@ -4,18 +4,51 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>隱私權政策 · 許願精靈：健康匯出</title>
+<meta name="theme-color" content="#F7EFE6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#17100C" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="../../assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../assets/icon-180.png">
 <link rel="stylesheet" href="../../style.css">
+<script src="../../site.js"></script>
 </head>
 <body>
-<main>
-<header><a class="brand" href="../">許願精靈</a><nav><a href="../support/">支援</a><a href="../../privacy/" lang="en">English</a></nav></header>
+<header class="nav">
+<a class="skip" href="#content">跳到內容</a>
+<div class="nav-pill">
+<a class="nav-brand" href="../"><img src="../../assets/icon.svg" width="32" height="32" alt=""><span>許願精靈</span></a>
+<nav class="nav-links" aria-label="主選單"><a href="../guide/">使用說明</a><a href="../support/">支援</a><a href="../privacy/" aria-current="page">隱私權政策</a></nav>
+<a class="nav-lang" href="../../privacy/" lang="en" hreflang="en">English</a>
+<a class="nav-cta" href="https://apps.apple.com/tw/app/id6830697434">下載 App</a>
+</div>
+</header>
+<main id="content" class="doc">
+<div class="doc-hero">
+<picture class="doc-hero-bg"><source media="(max-aspect-ratio: 4/5)" srcset="../../assets/bg/clouds-tall.webp"><img src="../../assets/bg/clouds-wide.webp" width="2048" height="1152" alt="" fetchpriority="high"></picture>
+<div class="wrap">
 <h1>隱私權政策</h1>
 <p class="meta">許願精靈：健康匯出 · 最後更新：2026 年 11 月 26 日</p>
-
-<h2>簡單說</h2>
+</div>
+</div>
+<div class="wrap doc-grid">
+<nav class="toc" aria-label="本頁內容"><details open><summary>本頁內容</summary>
+<ul>
+<li><a href="#the-short-version">簡單說</a></li>
+<li><a href="#health-data">健康資料</a></li>
+<li><a href="#dropbox-google-drive-and-onedrive">Dropbox、Google 雲端硬碟、OneDrive</a></li>
+<li><a href="#email">用你自己的信箱寄信（之後的版本）</a></li>
+<li><a href="#ask-ai">問 AI（OpenRouter）</a></li>
+<li><a href="#what-stays-on-your-iphone">留在你 iPhone 上的東西</a></li>
+<li><a href="#purchases">購買</a></li>
+<li><a href="#children">兒童</a></li>
+<li><a href="#changes">變更</a></li>
+<li><a href="#contact">聯絡我們</a></li>
+</ul>
+</details></nav>
+<article class="prose">
+<h2 id="the-short-version">簡單說</h2>
 <p>我們不收集任何資料。許願精靈在你的 iPhone 上讀取健康資料，只送到你自己設定的目的地。我們沒有架伺服器、不用分析或廣告服務，App 裡也沒有任何第三方追蹤程式。如果你選擇使用「問 AI」，你的健康資料摘要和問題會從 iPhone 送到 OpenRouter，以及你選的 AI 模型提供者，詳見下面的<a href="#ask-ai">問 AI</a>。</p>
 
-<h2>健康資料</h2>
+<h2 id="health-data">健康資料</h2>
 <ul>
 <li>經你同意後，App 會讀取「健康」App 裡的資料（例如心率、步數、睡眠）。要開放哪些項目由你在 iOS 設定裡決定，隨時可以改。</li>
 <li>App 只讀取，從不寫入「健康」App。</li>
@@ -26,7 +59,7 @@
 <li>我們不會收到、看到或儲存你的健康資料，也不會拿來做廣告、行銷或資料探勘。</li>
 </ul>
 
-<h2>Dropbox、Google 雲端硬碟、OneDrive</h2>
+<h2 id="dropbox-google-drive-and-onedrive">Dropbox、Google 雲端硬碟、OneDrive</h2>
 <ul>
 <li>登入是在該服務自己的網頁上進行，由 iOS 顯示。App 看不到你的密碼。</li>
 <li>App 只要求存取它自己的資料夾：Dropbox 的「Apps › Wish Genie」、Google 雲端硬碟裡的「Wish Genie」資料夾（App 只看得到它自己建立的檔案），或 OneDrive 的「Apps › Wish Genie」。連結時也會讀取你帳號的 email，只用來顯示連結的是哪個帳號。</li>
@@ -56,7 +89,7 @@
 <li>為了顯示模型清單，App 會下載 OpenRouter 公開的模型清單，這個請求不含健康資料，也不帶金鑰。</li>
 </ul>
 
-<h2>留在你 iPhone 上的東西</h2>
+<h2 id="what-stays-on-your-iphone">留在你 iPhone 上的東西</h2>
 <ul>
 <li><strong>設定</strong>（你交代的任務、目的地名稱與主機、匯出紀錄）：存在 App 的私有空間。跟其他 App 的資料一樣，可能會包含在你的 iPhone 備份裡。</li>
 <li><strong>機密</strong>（API 金鑰、機密 header、含密碼的網址，Dropbox、Google 雲端硬碟、OneDrive 的登入資訊與帳號 email，以及 OpenRouter 的金鑰）：存在 iPhone 的鑰匙圈，只在這台裝置上可用，不會同步到 iCloud 鑰匙圈。</li>
@@ -64,19 +97,27 @@
 <li><strong>「問 AI」的對話</strong>（送出的摘要、你的問題和回答）：只存在這支 iPhone 上，iPhone 鎖著時受到保護，不會進 iCloud，也不會進備份，隨時可以刪一則或全部刪掉。存成報告時只包含問題與回答，只會送到你分享的地方。</li>
 </ul>
 
-<h2>購買</h2>
+<h2 id="purchases">購買</h2>
 <p>購買與免費試用都由 Apple 透過 App Store 處理，我們收不到你的付款資料。App 用 Apple 的 StoreKit 在裝置上確認你的購買。</p>
 
-<h2>兒童</h2>
+<h2 id="children">兒童</h2>
 <p>本 App 並非以兒童為對象，也不會刻意向任何人（包括兒童）收集任何資料。</p>
 
-<h2>變更</h2>
+<h2 id="changes">變更</h2>
 <p>本政策如有變更，新版會公布在這一頁並更新日期。</p>
 
-<h2>聯絡我們</h2>
+<h2 id="contact">聯絡我們</h2>
 <p>隱私相關問題：<a href="mailto:franky5440@hotmail.com">franky5440@hotmail.com</a></p>
-
-<footer>© 2026 Tzu-Yang Lin</footer>
+</article>
+</div>
 </main>
+<footer class="foot">
+<img class="foot-bg" src="../../assets/bg/dunes-wide.webp" width="2048" height="1152" alt="" loading="lazy" decoding="async">
+<div class="foot-bar">
+<span>© 2026 Tzu-Yang Lin</span>
+<nav aria-label="頁尾"><a href="../guide/">使用說明</a><a href="../support/">支援</a><a href="../privacy/">隱私權政策</a><a href="../../privacy/" lang="en" hreflang="en">English</a></nav>
+<a class="btn btn-clay" href="https://apps.apple.com/tw/app/id6830697434"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v10m0 0 4-4m-4 4-4-4M4 17h12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>到 App Store 下載</a>
+</div>
+</footer>
 </body>
 </html>

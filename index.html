@@ -6,20 +6,88 @@
 <meta name="msvalidate.01" content="A6D7E776B60EA74DF2CAEA96C87149D2">
 <title>Wish Genie: Health Export</title>
 <meta name="description" content="iPhone app that exports Apple Health data (80+ kinds, plus workouts) as JSON or CSV to iCloud Drive, Dropbox, Google Drive, OneDrive or your own REST API. No account, no servers.">
+<meta name="theme-color" content="#F7EFE6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#17100C" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
 <link rel="stylesheet" href="style.css">
+<script src="site.js"></script>
 </head>
 <body>
-<main>
-<header><a class="brand" href="./">Wish Genie</a><nav><a href="guide/">Guide</a><a href="support/">Support</a><a href="privacy/">Privacy</a><a href="zh/" lang="zh-Hant">中文</a></nav></header>
-<h1>Your health data, sent only where you choose</h1>
-<p>Wish Genie: Health Export is an iPhone app that reads data from the Health app (more than 80 kinds, plus workouts) and sends it where you choose: iCloud Drive, Dropbox, Google Drive, OneDrive (personal accounts) or your own REST API endpoint, as JSON or CSV files (AI summaries as Markdown or JSON), on a schedule or whenever you like. It can also make hourly or daily values, or a summary of the last 7, 30 or 90 days that you can share with an AI assistant app, or ask an AI model about in the app with your own OpenRouter account. A task can also keep a latest copy under a fixed file name, so your own AI tools can read it on a schedule. There is no account to create, and your data never passes through our servers. We don't run any.</p>
-<p><a href="https://apps.apple.com/app/id6830697434">Download on the App Store</a></p>
-<ul>
+<header class="nav">
+<a class="skip" href="#content">Skip to content</a>
+<div class="nav-pill">
+<a class="nav-brand" href="./"><img src="assets/icon.svg" width="32" height="32" alt=""><span>Wish Genie</span></a>
+<nav class="nav-links" aria-label="Main"><a href="guide/">Guide</a><a href="support/">Support</a><a href="privacy/">Privacy</a></nav>
+<a class="nav-lang" href="zh/" lang="zh-Hant" hreflang="zh-Hant">中文</a>
+<a class="nav-cta" href="https://apps.apple.com/app/id6830697434">Get the app</a>
+</div>
+</header>
+<main id="content" class="home">
+
+<section class="hero">
+<picture class="hero-bg"><source media="(max-aspect-ratio: 4/5)" srcset="assets/bg/dunes-tall.webp"><img src="assets/bg/dunes-wide.webp" width="2048" height="1152" alt="" fetchpriority="high"></picture>
+<div class="sparks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="hero-copy">
+<h1><span>Your health data,</span><img class="h1-icon" src="assets/icon.svg" width="80" height="80" alt=""> <span>sent only where you choose</span></h1>
+<p class="lede">Wish Genie: Health Export is an iPhone app that reads data from the Health app and sends it where you choose. There is no account to create, and your data never passes through our servers. We don't run any.</p>
+<p class="cta-row"><a class="btn btn-clay" href="https://apps.apple.com/app/id6830697434"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v10m0 0 4-4m-4 4-4-4M4 17h12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Download on the App Store</a><a class="btn btn-glass" href="guide/">User guide</a></p>
+</div>
+<div class="hero-phone"><div class="phone"><img src="assets/app/en-dashboard.webp" width="600" height="1304" alt="Wish Genie home screen with heart rate, steps and sleep"></div></div>
+</section>
+
+<section class="wish">
+<div class="wrap wish-grid">
+<div>
+<p class="eyebrow">Give Genie a task</p>
+<h2 class="sentence">Send <b class="chip data">Health data</b> (<b class="chip data">more than 80 kinds</b>, <b class="chip data">plus workouts</b>) as <b class="chip">JSON</b> or <b class="chip">CSV</b> to <b class="chip">iCloud Drive</b>, <b class="chip">Dropbox</b>, <b class="chip">Google Drive</b>, <b class="chip">OneDrive</b> or <b class="chip">your own REST API</b>, <b class="chip">on a schedule</b> or <b class="chip">whenever you like</b>.</h2>
+<p class="fine">OneDrive works with personal accounts. AI summaries are saved as Markdown or JSON.</p>
+</div>
+<div class="phone" data-reveal><img src="assets/app/en-wish.webp" width="600" height="1304" alt="Making a new task as a sentence in Wish Genie" loading="lazy" decoding="async"></div>
+</div>
+</section>
+
+<section class="sky">
+<picture class="sky-bg"><source media="(max-aspect-ratio: 4/5)" srcset="assets/bg/clouds-tall.webp"><img src="assets/bg/clouds-wide.webp" width="2048" height="1152" alt="" loading="lazy" decoding="async"></picture>
+<div class="wrap sky-grid">
+<div>
+<p class="eyebrow">Hourly and daily values, and AI summaries</p>
+<h2>A summary an AI assistant app can read</h2>
+<ul class="glass-list">
+<li class="glass" data-reveal style="--d:0"><h3>Hourly or daily values</h3><p>Genie can turn your data into hourly or daily values.</p></li>
+<li class="glass" data-reveal style="--d:1"><h3>The last 7, 30 or 90 days</h3><p>A summary you can share with an AI assistant app, or ask an AI model about in the app with your own OpenRouter account.</p></li>
+<li class="glass" data-reveal style="--d:2"><h3>A latest copy, one file name</h3><p>A task can also keep a latest copy under a fixed file name, so your own AI tools can read it on a schedule.</p></li>
+</ul>
+</div>
+<div class="phone" data-reveal><img src="assets/app/en-wishes.webp" width="600" height="1304" alt="The list of tasks in Wish Genie, each with its last result" loading="lazy" decoding="async"></div>
+</div>
+</section>
+
+<section class="promise">
+<div class="wrap">
+<h2>No account.<br><em>No servers.</em></h2>
+<ul class="facts">
+<li data-reveal style="--d:0">We don't collect any data.</li>
+<li data-reveal style="--d:1">Your data never passes through our servers. We don't run any.</li>
+<li data-reveal style="--d:2">Genie only reads Health data; it never writes to it.</li>
+</ul>
+<p class="cta-row"><a class="btn btn-clay" href="https://apps.apple.com/app/id6830697434"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v10m0 0 4-4m-4 4-4-4M4 17h12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Download on the App Store</a></p>
+<ul class="doors">
 <li><a href="guide/">User guide</a></li>
 <li><a href="support/">Support and frequently asked questions</a></li>
 <li><a href="privacy/">Privacy Policy</a></li>
 </ul>
-<footer>© 2026 Tzu-Yang Lin</footer>
+</div>
+</section>
+
 </main>
+<footer class="foot">
+<img class="foot-bg" src="assets/bg/dunes-wide.webp" width="2048" height="1152" alt="" loading="lazy" decoding="async">
+<div class="foot-bar">
+<span>© 2026 Tzu-Yang Lin</span>
+<nav aria-label="Footer"><a href="guide/">Guide</a><a href="support/">Support</a><a href="privacy/">Privacy Policy</a><a href="zh/" lang="zh-Hant" hreflang="zh-Hant">中文</a></nav>
+<a class="btn btn-clay" href="https://apps.apple.com/app/id6830697434"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v10m0 0 4-4m-4 4-4-4M4 17h12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Download on the App Store</a>
+</div>
+</footer>
 </body>
 </html>

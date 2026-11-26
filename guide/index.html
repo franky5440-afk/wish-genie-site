@@ -5,16 +5,53 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>User Guide · Wish Genie: Health Export</title>
 <meta name="description" content="How to use Wish Genie: Health Export to send Apple Health data to iCloud Drive, Dropbox, Google Drive, OneDrive or your own REST API as JSON or CSV, plus hourly or daily values and AI summaries for AI assistant apps, including a fixed-name latest copy your own AI tools can read on a schedule.">
+<meta name="theme-color" content="#F7EFE6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#17100C" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
 <link rel="stylesheet" href="../style.css">
+<script src="../site.js"></script>
 </head>
 <body>
-<main>
-<header><a class="brand" href="../">Wish Genie</a><nav><a href="../support/">Support</a><a href="../privacy/">Privacy</a><a href="../zh/guide/" lang="zh-Hant">中文</a></nav></header>
+<header class="nav">
+<a class="skip" href="#content">Skip to content</a>
+<div class="nav-pill">
+<a class="nav-brand" href="../"><img src="../assets/icon.svg" width="32" height="32" alt=""><span>Wish Genie</span></a>
+<nav class="nav-links" aria-label="Main"><a href="../guide/" aria-current="page">Guide</a><a href="../support/">Support</a><a href="../privacy/">Privacy</a></nav>
+<a class="nav-lang" href="../zh/guide/" lang="zh-Hant" hreflang="zh-Hant">中文</a>
+<a class="nav-cta" href="https://apps.apple.com/app/id6830697434">Get the app</a>
+</div>
+</header>
+<main id="content" class="doc">
+<div class="doc-hero">
+<picture class="doc-hero-bg"><source media="(max-aspect-ratio: 4/5)" srcset="../assets/bg/clouds-tall.webp"><img src="../assets/bg/clouds-wide.webp" width="2048" height="1152" alt="" fetchpriority="high"></picture>
+<div class="wrap">
 <h1>User Guide</h1>
 <p class="meta">Wish Genie: Health Export 2.2 · iPhone with iOS 18 or later · Updated November 24, 2026</p>
+</div>
+</div>
+<div class="wrap doc-grid">
+<nav class="toc" aria-label="On this page"><details open><summary>On this page</summary>
+<ul>
+<li><a href="#allow-health-access">1. Allow Health access</a></li>
+<li><a href="#destinations">2. Add a destination</a></li>
+<li><a href="#give-genie-a-task">3. Give Genie a task</a></li>
+<li><a href="#when-automatic-exports-run">4. When automatic exports run</a></li>
+<li><a href="#data">5. What gets exported</a></li>
+<li><a href="#ai">6. Hourly and daily values, and AI summaries</a></li>
+<li><a href="#ask-ai">7. Ask AI</a></li>
+<li><a href="#ai-schedule">8. Let an AI read your exports on a schedule</a></li>
+<li><a href="#manual-export">9. Manual export</a></li>
+<li><a href="#shortcuts-and-siri">10. Shortcuts and Siri</a></li>
+<li><a href="#home-screen-and-widgets">11. Home screen and widgets</a></li>
+<li><a href="#plans">12. Plans</a></li>
+<li><a href="#privacy">13. Privacy</a></li>
+</ul>
+</details></nav>
+<article class="prose">
 <p>Wish Genie reads data from the Health app (more than 80 kinds, plus workouts) and sends it where you choose: iCloud Drive, Dropbox, Google Drive, OneDrive (personal accounts), your own REST API, or a file you share yourself. It can also turn your data into hourly or daily values, or a summary that an AI assistant app can read, and you can ask an AI model about that summary in the app with your own OpenRouter account. It has no account and no server of its own. <a href="https://apps.apple.com/app/id6830697434">Get it on the App Store</a>.</p>
 
-<h2>1. Allow Health access</h2>
+<h2 id="allow-health-access">1. Allow Health access</h2>
 <p>The first time you open the app, tap "Allow Health access". iOS lists each kind of Health data so you can choose what Genie reads. If you skipped this, tap "Allow Health access" on the home screen or in Settings › Health data. If a task fails because Genie can't read Health data, the task shows "Check Health access", which leads to the same steps.</p>
 <p>iOS shows that list only once. To change it later, open the iPhone Settings app › Privacy &amp; Security › Health › Wish Genie. Genie only reads Health data; it never writes to it.</p>
 <p>Updated from an earlier version? Versions 1.4 and 1.7 can read new kinds of data, so the home screen shows "More Health data can be read". Tap the button and iOS lists only the kinds you haven't answered yet; turn on the ones you want.</p>
@@ -30,7 +67,7 @@
 </ul>
 <p>To disconnect a cloud account, open the destination and tap "Disconnect". You can also remove Wish Genie's access from the service's own account settings.</p>
 
-<h2>3. Give Genie a task</h2>
+<h2 id="give-genie-a-task">3. Give Genie a task</h2>
 <p>Tap "Give Genie a task". Since 1.9, Genie walks you through it one question at a time: what it's for (A summary for AI, Back up raw data, Send to my server, or I'll set it up myself), which data (Everyday basics, Activity, All data, or Pick my own), where to send it (you can add a destination right there), and how often. Each answer fills in sensible defaults, and the last step shows the finished task. Tap "Back" to change an earlier answer, or "Show all settings" on the first step to see everything on one screen. Editing an existing task opens the full editor.</p>
 <p>A task is one sentence, for example "Send every reading of Heart Rate as JSON to Home NAS every hour." Tap any highlighted word to change the data, what goes in the file (every reading, hourly or daily values, or an AI summary; see <a href="#ai">section 6</a>), the format (JSON or CSV; Markdown or JSON for an AI summary), the destination or how often it runs (every 15 or 30 minutes, every hour, every 6 or 12 hours, every day or every week; an AI summary runs every day or every week). A daily task sends at the time you pick under "Send at"; a weekly task also lets you pick the day of the week. New tasks start at 8:00 (Monday for weekly), and you can change this later. On the data page, "Select all" picks every kind of data at once, except Cycle Tracking, Health Notifications, ECG, State of Mind and Workout Routes: tap those yourself if you want them ("Deselect all" clears them). For hourly or daily values or an AI summary, the Cycle Tracking, Health Notifications and ECG groups aren't shown (see <a href="#data">section 5</a>). Then tap "Hand it to Genie".</p>
 <p>Genie won't send anything until you give it a task. Each run sends only data that is new since the last successful run. Tasks, including "Export now" and "Resend recent data", need Premium.</p>
@@ -43,7 +80,7 @@
 <li id="latest"><strong>Also save a latest copy:</strong> for a task with hourly or daily values or an AI summary that sends to iCloud Drive, Dropbox, Google Drive or OneDrive. Each time it sends, Genie also saves the same file under a fixed name, WishGenie-&lt;task name&gt;-latest.md (or .json or .csv), replacing the copy from the run before, so an AI assistant app or another tool can always read one file on a schedule (see <a href="#ai-schedule">section 8</a>). The actual file name is shown below the switch. Characters that can't be in a file name become -, the name is cut to 40 characters, and two tasks with the same name get a short ID added. If you rename the task, the next copy uses the new name; the old file stays, because Genie doesn't delete files in your cloud. It isn't offered for tasks with every reading (each run sends only the new data, not the whole period) or for a REST API. If the latest copy couldn't be saved, the main file was still sent and the task shows a red message (see <a href="../support/#latest">Support</a>).</li>
 </ul>
 
-<h2>4. When automatic exports run</h2>
+<h2 id="when-automatic-exports-run">4. When automatic exports run</h2>
 <p>Automatic exports run in the background when iOS gives the app time, so the exact timing is decided by the system and can be later than the schedule. A late run doesn't move the schedule: a daily task set for 12:30 keeps running around 12:30, and if several runs were missed, Genie catches up once. Health data can't be read while your iPhone is locked, so a run that falls in that window waits. If you change the time of a daily or weekly task, the next run is the next time it's due after you save; times that already passed aren't sent. To catch up right away, open Wish Genie (it sends every task that is due), tap "Catch up" on the widget, or turn on "Remind me if it doesn't send" on the task. If a task shows an error, see <a href="../support/#messages">what the messages mean</a>.</p>
 
 <h2 id="data">5. What gets exported</h2>
@@ -145,7 +182,7 @@ This note only asks for an analysis of the data in this file.</pre>
 </ul>
 <p>Tasks need Premium (automatic exports).</p>
 
-<h2>9. Manual export</h2>
+<h2 id="manual-export">9. Manual export</h2>
 <p>Tap the share button on the home screen ("Export once"), choose "What goes in the file?" (raw data, hourly, daily or an AI summary), "Which data?" and "Which days?" (an AI summary uses the last 7, 30 or 90 complete days instead), pick a file format, then tap "Create file and share" to save the file to Files, AirDrop it or send it anywhere. Manual export needs Basic or Premium.</p>
 <ul>
 <li><strong>Workout Routes:</strong> choose raw data, then Workout Routes in the Workouts group. The format becomes GPX, and all the GPX files (one per workout) are shared at once.</li>
@@ -153,14 +190,14 @@ This note only asks for an analysis of the data in this file.</pre>
 <li><strong>Only recent data shared:</strong> if the dates start before the day Apple Health shares a chosen kind from, a note under the dates lists those kinds and how to share everything (see <a href="#limited-history">section 1</a>). You can still export; earlier days just won't be in the file.</li>
 </ul>
 
-<h2>10. Shortcuts and Siri</h2>
+<h2 id="shortcuts-and-siri">10. Shortcuts and Siri</h2>
 <p>In the Shortcuts app, Wish Genie adds three actions: "Export Health Data" (returns a JSON or CSV file of raw readings for today, yesterday, or the last 7 or 30 days, for any of the kinds of data above except Workout Routes; an ECG export has no voltage waveform, and Hypertension Notifications on an iOS older than 26.2 says "Exporting this data requires iOS 26.2 or later."), "Export Workout Routes" (since 2.0: returns one GPX file per workout with a route, for today, yesterday, or the last 7 or 30 days) and "Run Task" (sends a task's new data now). You can also ask Siri. "Export Health Data" and "Export Workout Routes" need Basic or Premium; "Run Task" runs a task, so like other tasks it needs Premium.</p>
 <p>Tip: to send at a set time, create a personal automation in the Shortcuts app (Time of Day) that runs "Run Task" (needs Premium). It still can't read Health data while your iPhone is locked.</p>
 
-<h2>11. Home screen and widgets</h2>
+<h2 id="home-screen-and-widgets">11. Home screen and widgets</h2>
 <p>The home screen shows three tiles, one large and two small (heart rate, steps and sleep to start). Tap a tile to see its chart. To change the tiles, tap "Customize" on the home screen or open Settings › Tiles, tap a tile and pick what it shows. Blood pressure, height, nutrition, workouts, Stand Hours, Activity Rings, Mental Wellbeing, Cycle Tracking, Health Notifications, ECG and Workout Routes can't be shown on a tile. Your Home Screen widgets (small, medium and large) show the same three; the large widget also shows today's trend for the first tile. Readings you take only now and then, such as weight or VO₂ Max, show the most recent value from the last 30 days with its date. Widget values are hidden while your iPhone is locked. When you have a task that's turned on, the widget also shows a "Catch up" button: it opens Wish Genie, sends the tasks that are due and shows the result.</p>
 
-<h2>12. Plans</h2>
+<h2 id="plans">12. Plans</h2>
 <ul>
 <li><strong>Free:</strong> Home Screen widgets and charts.</li>
 <li><strong>7-day free trial:</strong> tap "Start 7-day free trial" on the plans screen. It starts only when you tap it and never turns into a paid subscription.</li>
@@ -169,10 +206,18 @@ This note only asks for an analysis of the data in this file.</pre>
 </ul>
 <p>Prices are shown on the plans screen and on the App Store page, in your own currency. Bought on another device or reinstalled? Tap Settings › "Restore Purchases".</p>
 
-<h2>13. Privacy</h2>
+<h2 id="privacy">13. Privacy</h2>
 <p>We don't collect any data. Your health data goes straight from your iPhone to the destinations you set up. Cloud sign-ins, secret headers and secret URLs are stored in the iPhone Keychain on this device only. Your data goes to an AI service only when you use Ask AI: then the summary and your questions go from your iPhone to OpenRouter and the company behind the model you chose. An AI summary file goes only where you share or send it, and Cycle Tracking, Health Notifications and ECG are never put in an AI summary or sent with Ask AI. Workout routes contain locations: Wish Genie reads them from Health only if you choose Workout Routes, doesn't use Location Services, and sends them only where you export them; they're never in an AI summary or Ask AI. Details are in the <a href="../privacy/">Privacy Policy</a>.</p>
-
-<footer>© 2026 Tzu-Yang Lin · <a href="../support/">Support</a> · <a href="../privacy/">Privacy Policy</a></footer>
+</article>
+</div>
 </main>
+<footer class="foot">
+<img class="foot-bg" src="../assets/bg/dunes-wide.webp" width="2048" height="1152" alt="" loading="lazy" decoding="async">
+<div class="foot-bar">
+<span>© 2026 Tzu-Yang Lin</span>
+<nav aria-label="Footer"><a href="../guide/">Guide</a><a href="../support/">Support</a><a href="../privacy/">Privacy Policy</a><a href="../zh/guide/" lang="zh-Hant" hreflang="zh-Hant">中文</a></nav>
+<a class="btn btn-clay" href="https://apps.apple.com/app/id6830697434"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v10m0 0 4-4m-4 4-4-4M4 17h12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Download on the App Store</a>
+</div>
+</footer>
 </body>
 </html>

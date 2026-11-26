@@ -4,17 +4,69 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Support · Wish Genie: Health Export</title>
+<meta name="theme-color" content="#F7EFE6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#17100C" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
 <link rel="stylesheet" href="../style.css">
+<script src="../site.js"></script>
 </head>
 <body>
-<main>
-<header><a class="brand" href="../">Wish Genie</a><nav><a href="../privacy/">Privacy</a><a href="../zh/support/" lang="zh-Hant">中文</a></nav></header>
+<header class="nav">
+<a class="skip" href="#content">Skip to content</a>
+<div class="nav-pill">
+<a class="nav-brand" href="../"><img src="../assets/icon.svg" width="32" height="32" alt=""><span>Wish Genie</span></a>
+<nav class="nav-links" aria-label="Main"><a href="../guide/">Guide</a><a href="../support/" aria-current="page">Support</a><a href="../privacy/">Privacy</a></nav>
+<a class="nav-lang" href="../zh/support/" lang="zh-Hant" hreflang="zh-Hant">中文</a>
+<a class="nav-cta" href="https://apps.apple.com/app/id6830697434">Get the app</a>
+</div>
+</header>
+<main id="content" class="doc">
+<div class="doc-hero">
+<picture class="doc-hero-bg"><source media="(max-aspect-ratio: 4/5)" srcset="../assets/bg/clouds-tall.webp"><img src="../assets/bg/clouds-wide.webp" width="2048" height="1152" alt="" fetchpriority="high"></picture>
+<div class="wrap">
 <h1>Support</h1>
+</div>
+</div>
+<div class="wrap doc-grid">
+<nav class="toc" aria-label="On this page"><details open><summary>On this page</summary>
+<ul>
+<li><a href="#some-data-shows">Some data shows "—"</a></li>
+<li><a href="#new-iphone">I moved to a new iPhone or Apple Watch and the heart rate on the home screen shows "—"</a></li>
+<li><a href="#limited-history">Why do I only get the last 30 days, or see "not shared" in my AI summary?</a></li>
+<li><a href="#sensitive">Why weren't Cycle Tracking, State of Mind, Health Notifications and ECG asked for, or picked by "Select all"?</a></li>
+<li><a href="#health-notifications">What are Health Notifications, and why is there no AFib History in my export?</a></li>
+<li><a href="#ecg">What does an ECG export contain, and how do I get the waveform?</a></li>
+<li><a href="#messages">What does the message on a task mean?</a></li>
+<li><a href="#nothing-new">Why does a task with hourly or daily values or an AI summary keep saying &quot;Nothing new to send&quot;?</a></li>
+<li><a href="#latest">The latest copy wasn't saved. What should I do?</a></li>
+<li><a href="#when-do-automatic-exports-run">When do automatic exports run?</a></li>
+<li><a href="#ai">Can I give my health data to ChatGPT, Claude or Gemini?</a></li>
+<li><a href="#ai-schedule">Can ChatGPT, Claude or Gemini read my exports every day by themselves?</a></li>
+<li><a href="#cycle-ai">Is my cycle tracking data sent to AI?</a></li>
+<li><a href="#ai-training">Will the AI company use what I send to train its models?</a></li>
+<li><a href="#ask-ai-messages">What do the Ask AI messages mean?</a></li>
+<li><a href="#ai-disconnect">How do I stop using Ask AI?</a></li>
+<li><a href="#workouts">Can I export my workouts?</a></li>
+<li><a href="#routes">How do I export my workout routes (GPX)?</a></li>
+<li><a href="#rings">Why are Activity Rings, stand hours or mindful minutes different from the Health app?</a></li>
+<li><a href="#duo">Does Wish Genie work on iPhone Duo?</a></li>
+<li><a href="#guide">Where did the task sentence go when I tap "Give Genie a task"?</a></li>
+<li><a href="#new-format">Why does a new AI summary task start as Markdown?</a></li>
+<li><a href="#why-do-hourly-or-daily-files">Why do hourly or daily files repeat values I already received?</a></li>
+<li><a href="#what-does-my-server-receive">What does my server receive?</a></li>
+<li><a href="#local-network">Can I send to a server on my home network?</a></li>
+<li><a href="#how-does-the-free-trial-work">How does the free trial work?</a></li>
+<li><a href="#i-bought-a-plan-but-it">I bought a plan but it isn't unlocked</a></li>
+<li><a href="#how-do-i-cancel-premium-yearly">How do I cancel Premium Yearly?</a></li>
+</ul>
+</details></nav>
+<article class="prose">
 <p>Need help? Email <a href="mailto:franky5440@hotmail.com">franky5440@hotmail.com</a>. Please include your iPhone model, iOS version and what you were trying to do. Don't send your health data or API keys.</p>
 
-<h2>Frequently asked questions</h2>
+<h2 id="faq">Frequently asked questions</h2>
 
-<h3>Some data shows "—"</h3>
+<h3 id="some-data-shows">Some data shows "—"</h3>
 <p>Wish Genie can only read the Health data you allow, and iOS doesn't tell apps which types you turned off. To change it, open the iPhone Settings app, tap Privacy &amp; Security › Health › Wish Genie, and turn on the types you want. (If your iPhone was set to Chinese when you first allowed access, it's listed as 許願精靈.) Wish Genie doesn't appear under Apps in the Health app itself: that list only shows apps that write Health data, and Wish Genie only reads.</p>
 <p>If you never allowed Health access (for example, you tapped "Not now" at the start), Wish Genie isn't in that Settings list yet. Tap "Allow Health access" on Wish Genie's home screen, or in Wish Genie's Settings › Health data, and iOS lists each type so you can pick.</p>
 <p>Updated to 1.4 or 1.7 and new kinds of data (such as blood pressure or nutrition) show "—"? Tap "More Health data can be read" on the home screen and allow the new items. If an item still isn't turned on (some iOS versions close the list early), turn it on in Settings › Privacy &amp; Security › Health › Wish Genie.</p>
@@ -79,7 +131,7 @@
 <h3 id="latest">The latest copy wasn't saved. What should I do?</h3>
 <p>With "Also save a latest copy" on, Genie sends the main file first and then saves the same file under the fixed name. If only the second step fails, the main file was still sent and the task's progress is kept; the task shows the message in red with the reason, which means the same as the messages above (for example reconnect the account, free up space, or check iCloud Drive). The next run tries again, or tap "Export now" on the task. Until then, the latest copy is still the one from the last time it worked, so a tool that reads it sees older data.</p>
 
-<h3>When do automatic exports run?</h3>
+<h3 id="when-do-automatic-exports-run">When do automatic exports run?</h3>
 <p>Automatic exports run in the background when iOS gives the app time, so the exact timing is decided by the system. Daily and weekly tasks send at the time you pick (weekly ones on the day you pick). A late run doesn't move the schedule, and missed runs are caught up once. Health data can't be read while your iPhone is locked, so a run that falls in that window waits. To catch up, open Wish Genie or tap "Catch up" on the widget; turn on "Remind me if it doesn't send" on a task to get a notification when it's an hour late. You can always tap "Export now" on a task.</p>
 
 <h3 id="ai">Can I give my health data to ChatGPT, Claude or Gemini?</h3>
@@ -135,25 +187,33 @@
 <p>Since 1.9, a new task is set up step by step: what it's for, which data, where to send it and how often. The last step shows the same task sentence, and you can still tap any highlighted word there to change it. If you prefer the full editor, tap "Show all settings" on the first step. Editing an existing task opens the full editor as before.</p>
 <h3 id="new-format">Why does a new AI summary task start as Markdown?</h3>
 <p>Since 1.8, when you switch a task between every reading, hourly or daily values and an AI summary, the format changes to the new content's default (JSON for readings and values, Markdown for an AI summary). Switching between the same kind, for example from 7 to 30 days, keeps the format you picked. You can still choose JSON for an AI summary.</p>
-<h3>Why do hourly or daily files repeat values I already received?</h3>
+<h3 id="why-do-hourly-or-daily-files">Why do hourly or daily files repeat values I already received?</h3>
 <p>Watches often sync to the Health app hours later, so a task with hourly or daily values sends the last 24 hours (hourly) or the last 7 days (daily) again on every run, with up-to-date numbers. If you store them, replace earlier values that have the same data type and start time instead of adding them again.</p>
 
-<h3>What does my server receive?</h3>
+<h3 id="what-does-my-server-receive">What does my server receive?</h3>
 <p>A POST request (HTTPS, or http on your home network) with a JSON, CSV or Markdown body, depending on what goes in the file and the format you picked. Each sample has a unique ID, so your server can safely ignore duplicates. Sleep is sent one row per segment with its stage: deep, rem, core, awake, inBed, or unspecified (asleep, but no stage was recorded). Workouts are one row per workout; in JSON the details are in a "workout" object, and a CSV file has six columns workout_activity, workout_distance_m, workout_energy_kcal, workout_avg_hr, workout_max_hr and workout_indoor (empty for other kinds of data), followed by 14 columns for the kinds added in 1.7 (category, cycle_start, mood_ and rings_ columns; see the <a href="../guide/#data">user guide</a>). They come after the earlier columns, which haven't changed, so a server that reads columns by name keeps working.</p>
 
 <h3 id="local-network">Can I send to a server on my home network?</h3>
 <p>Yes. Besides HTTPS, the app accepts plain http:// for addresses on your own network: a name ending in .local (for example http://my-nas.local:8080), a private IP address (10.x.x.x, 172.16–31.x.x or 192.168.x.x), or localhost. Any other address needs HTTPS. The first time, iOS asks whether Wish Genie may connect to devices on your local network; tap Allow. If that first export fails while the question is on screen, tap "Export now" again. You can change this later in iOS Settings › Privacy &amp; Security › Local Network.</p>
 
-<h3>How does the free trial work?</h3>
+<h3 id="how-does-the-free-trial-work">How does the free trial work?</h3>
 <p>Open the plans screen and tap "Start 7-day free trial". Everything is unlocked for 7 days. It's free and never turns into a paid subscription. After it ends, widgets and charts stay free; manual export and Shortcuts need Basic, and automatic exports need Premium.</p>
 
-<h3>I bought a plan but it isn't unlocked</h3>
+<h3 id="i-bought-a-plan-but-it">I bought a plan but it isn't unlocked</h3>
 <p>Open Settings in the app and tap "Restore Purchases". Make sure you're signed in with the same Apple Account you used to buy it.</p>
 
-<h3>How do I cancel Premium Yearly?</h3>
+<h3 id="how-do-i-cancel-premium-yearly">How do I cancel Premium Yearly?</h3>
 <p>In iOS Settings, tap your name › Subscriptions › Wish Genie. Cancel at least 24 hours before the renewal date.</p>
-
-<footer>© 2026 Tzu-Yang Lin · <a href="../privacy/">Privacy Policy</a></footer>
+</article>
+</div>
 </main>
+<footer class="foot">
+<img class="foot-bg" src="../assets/bg/dunes-wide.webp" width="2048" height="1152" alt="" loading="lazy" decoding="async">
+<div class="foot-bar">
+<span>© 2026 Tzu-Yang Lin</span>
+<nav aria-label="Footer"><a href="../guide/">Guide</a><a href="../support/">Support</a><a href="../privacy/">Privacy Policy</a><a href="../zh/support/" lang="zh-Hant" hreflang="zh-Hant">中文</a></nav>
+<a class="btn btn-clay" href="https://apps.apple.com/app/id6830697434"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v10m0 0 4-4m-4 4-4-4M4 17h12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Download on the App Store</a>
+</div>
+</footer>
 </body>
 </html>
