@@ -9,7 +9,7 @@
     var each = function (list, fn) { Array.prototype.forEach.call(list, fn); };
 
     /* Reveal on scroll */
-    var targets = doc.querySelectorAll('[data-reveal], .sentence');
+    var targets = doc.querySelectorAll('[data-reveal], .sentence, .row');
     each(doc.querySelectorAll('.sentence .chip'), function (chip, i) { chip.style.setProperty('--i', i); });
     if ('IntersectionObserver' in window && !still.matches) {
       var seen = new IntersectionObserver(function (entries) {
