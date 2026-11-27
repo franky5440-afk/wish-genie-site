@@ -27,7 +27,7 @@
 <picture class="doc-hero-bg"><source media="(max-aspect-ratio: 4/5)" srcset="../../assets/bg/clouds-tall.webp"><img src="../../assets/bg/clouds-wide.webp" width="2048" height="1152" alt="" fetchpriority="high"></picture>
 <div class="wrap">
 <h1>使用說明</h1>
-<p class="meta">許願精靈 Wish Genie：健康匯出 2.3 · iPhone（iOS 18 以上）· 2026 年 11 月 27 日更新</p>
+<p class="meta">許願精靈 Wish Genie：健康匯出 2.4 · iPhone（iOS 18 以上）· 2026 年 11 月 27 日更新</p>
 </div>
 </div>
 <div class="wrap doc-grid">
@@ -156,11 +156,13 @@ This note only asks for an analysis of the data in this file.</pre>
 <p>直接在 App 裡，針對你的健康資料摘要問 AI 模型。用的是你自己的 <a href="https://openrouter.ai">OpenRouter</a> 帳號（一個可以連到很多家公司 AI 模型的服務），用多少就付給 OpenRouter 多少。問 AI 需要基本版或高級版。</p>
 <ul>
 <li><strong>開始：</strong>點首頁的「問 AI 你的健康資料」（或「設定 › AI 助理 › 打開 AI 助理」）。</li>
-<li><strong>先同意：</strong>第一次會出現「問 AI 之前」，說明會送出什麼、送給誰、用你自己的帳號與費用，以及 AI 的回答不是醫療建議。按「我同意」之前什麼都不會送出。之後可以在「設定 › AI 助理 › 撤回同意」撤回。</li>
+<li><strong>先同意：</strong>第一次會出現「問 AI 之前」，說明會送出什麼、送給誰、用你自己的帳號與費用，以及 AI 的回答不是醫療建議。按「我同意」之前什麼都不會送出。之後可以在「設定 › AI 助理 › 撤回同意」撤回。2.4 的同意內容加了 Exa（只有打開出處時才會用到），所以之前同意過的人會再看到一次。</li>
 <li><strong>連結 OpenRouter：</strong>點「連結 OpenRouter」，登入（沒有帳號可以當場建立）並允許存取，就會回到許願精靈（中間可能會經過本網站的一個轉接頁）。要儲值，請到 openrouter.ai 的 Settings › Credits。</li>
 <li><strong>新對話：</strong>選天數（7、30 或 90 天）和要帶哪些資料，再選模型。精靈會做出跟匯出「AI 摘要」一樣的摘要。點「開始對話」，再輸入問題、按「送出」。回答可能要一分鐘左右，等待時可以取消。回答的語言跟 App 畫面一樣。資料清單裡沒有經期追蹤、健康通知和心電圖，所以它們不會被送出。</li>
-<li><strong>會送出什麼：</strong>每問一題，會把摘要、這個對話裡之前的問題和回答，以及新的問題，從你的 iPhone 送到 OpenRouter，再由 OpenRouter 轉給你選的模型背後的公司。</li>
+<li><strong>會送出什麼：</strong>每問一題，會把摘要、這個對話裡之前的問題和回答，以及新的問題，從你的 iPhone 送到 OpenRouter，再由 OpenRouter 轉給你選的模型背後的公司。打開出處時，AI 寫的搜尋字詞也會送到 Exa。</li>
 <li><strong>選模型：</strong>最上面是三個推薦模型和價格（每百萬 token 的美元價格，由 OpenRouter 收取），「其他模型」展開是其餘的模型，可以搜尋。免費模型常常很忙；有些模型背後的公司可能會保存你送出的內容，拿去訓練模型。你可以在 OpenRouter 帳號的隱私設定（Settings › Privacy）關掉「可能拿資料訓練」的提供者，付費和免費模型分開設定；關掉之後有些模型可能就不能用了。</li>
+<li id="sources"><strong>回答附上出處（2.4 起）：</strong>新對話畫面的模型下面有「回答附上出處」開關，打開後模型會先搜尋醫療機構網站，並在回答裡附上它參考的連結。只會搜尋這些網站：nih.gov、medlineplus.gov、cdc.gov、who.int、mayoclinic.org、heart.org、nhs.uk、clevelandclinic.org，透過 OpenRouter 使用搜尋服務 Exa。AI 寫的搜尋字詞會送到 Exa；我們要求 AI 只用跟主題有關的一般字詞，不放你的數值、日期或摘要裡的其他個人資料。打開後每問一次的費用大約是原本的 3～9 倍（約多 US$0.02～0.04），由 OpenRouter 收取。開關預設關閉，精靈會記住你上次的選擇。開始對話時就定好，對話中途不能改，要換就開新對話；有附出處的對話會顯示「附出處」。你選的模型不支援搜尋時，開關會變灰，並寫「這個模型不支援搜尋。」出處通常是英文網站，用中文問也一樣。</li>
+<li><strong>回答裡的連結（2.4 起）：</strong>不管有沒有打開出處，回答裡的連結只有來自這一題搜尋結果的才能點；其他連結（包括 AI 憑記憶寫出來的）都只顯示成文字。回答裡的圖片會顯示成它的文字說明。</li>
 <li><strong>不是醫療建議：</strong>AI 的回答可能有錯，每則回答下面都會提醒你，有健康上的疑問請諮詢醫師。</li>
 <li><strong>對話紀錄</strong>只存在這支 iPhone 上，不會進 iCloud，也不會進備份。按垃圾桶可以刪一則，「設定 › AI 助理 › 刪除所有對話」可以全部刪掉。</li>
 <li><strong>存成報告：</strong>把問題與回答做成 Markdown 檔（不含你的健康摘要），可以分享或儲存。</li>
@@ -209,7 +211,7 @@ This note only asks for an analysis of the data in this file.</pre>
 <p>價格以方案畫面和 App Store 頁面顯示的為準（依你所在地區的幣別）。在別的裝置買過或重新安裝了？到「設定」點「恢復購買」。</p>
 
 <h2 id="privacy">13. 隱私</h2>
-<p>我們不收集任何資料，你的健康資料直接從 iPhone 送到你設定的目的地。雲端登入資訊、機密標頭和含密碼的網址都存在這台 iPhone 的鑰匙圈。只有在你使用「問 AI」時，資料才會送到 AI 服務：摘要和你的問題會從 iPhone 送到 OpenRouter，以及你選的模型背後的公司。AI 摘要檔只會送到你分享或設定的地方，經期追蹤、健康通知和心電圖也永遠不會放進 AI 摘要或送給「問 AI」。運動路線裡有位置：只有你勾選運動路線時，許願精靈才會從「健康」讀取它，不使用定位服務，也只送到你匯出的地方，永遠不會放進 AI 摘要或「問 AI」。詳細內容見<a href="../privacy/">隱私權政策</a>。</p>
+<p>我們不收集任何資料，你的健康資料直接從 iPhone 送到你設定的目的地。雲端登入資訊、機密標頭和含密碼的網址都存在這台 iPhone 的鑰匙圈。只有在你使用「問 AI」時，資料才會送到 AI 服務：摘要和你的問題會從 iPhone 送到 OpenRouter，以及你選的模型背後的公司；打開「回答附上出處」時，AI 寫的搜尋字詞也會送到 Exa。AI 摘要檔只會送到你分享或設定的地方，經期追蹤、健康通知和心電圖也永遠不會放進 AI 摘要或送給「問 AI」。運動路線裡有位置：只有你勾選運動路線時，許願精靈才會從「健康」讀取它，不使用定位服務，也只送到你匯出的地方，永遠不會放進 AI 摘要或「問 AI」。詳細內容見<a href="../privacy/">隱私權政策</a>。</p>
 </article>
 </div>
 </main>
